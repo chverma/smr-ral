@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.1. Comunicación </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD01. Teoría y arquitectura de redes</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="resultados_de_aprendizaje.html" class="no-ch">Resultados de aprendizaje</a></li>
+   <li><a href="mapa_conceptual.html" class="no-ch">Mapa conceptual</a></li>
+   <li><a href="referencias.html" class="no-ch">Referencias</a></li>
+   <li class="current-page-parent"><a href="1_conceptos_bsicos_de_redes.html" class="current-page-parent daddy">1. Conceptos básicos de redes</a>
+   <ul>
+      <li id="active"><a href="11_comunicacin.html" class="active no-ch">1.1. Comunicación</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1_conceptos_bsicos_de_redes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.1. Comunicación</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id8">
+<div class="iDevice emphasis0" >
+<div id="ta8_116_2" class="block iDevice_content">
+<div class="exe-text"><p><span class="tlid-translation translation" lang="es"><span title="">Se</span> <span title="">denomina</span> <span title="">canal</span> <span title="">de comunicaciones</span> <span title="">el recorrido</span> <span title="" class="">físico que</span> <span title="">hay que establecer</span> <span title="">usando</span> <span title="">uno o varios medios</span> <span title="" class="">de comunicación</span> <span title="">(</span><span title="">cobre,</span> <span title="">fibra,</span> <span title="">etc.</span><span title="">) para que</span> <span title="">una señal eléctrica</span><span title="">,</span> <span title="">óptico</span> <span title="">o</span> <span title="">electroóptico</span> <span title="">se pueda</span> <span title="">desplazar</span> <span title="">entre</span> <span title="" class="">dos puntos</span> <span title="">(véase</span> <span title="">la</span> <span title="" class="">figura.1</span><span title="">)</span><span title="">.</span></span></p>
+<p><span class="tlid-translation translation" lang="es"><img src="ic10m5u1_01.png" alt="" width="709" height="118" /></span></p>
+<p>Los elementos que forman parte de una transmisión son:</p>
+<ul>
+<li>Un emisor, donde se origina la comunicación.</li>
+<li>Un receptor, donde se recibe la comunicación.</li>
+<li>Un canal de comunicación, por donde circula la señal.</li>
+</ul>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>Definimos la transmisión de datos como la transferencia de información codificada desde un punto a otro u otros mediante señales eléctricas, electroópticos o electromagnéticos.</code></pre>
+</div>
+</div>
+<p><span class="tlid-translation translation" lang="es"><span title="">La transmisión</span> <span title="">es</span> <span title="">un proceso que</span> <span title="">transporta</span> <span title="">señales</span> <span title="">de un</span> <span title="">lugar a otro</span><span title="">.</span> <span title="" class="">Las señales pueden ser</span> <span title="">luminosos</span><span title="">, eléctricos</span><span title="">,</span> <span title="">magnéticos</span><span title="">,</span> <span title="">acústicos</span><span title="">,</span> <span title="">etc.</span> <span title="">Los parámetros</span> <span title="">de transmisión</span> <span title="">son</span> <span title="">magnitudes</span> <span title="">físicas</span><span title="">:</span> <span title="">tensión,</span> <span title="" class="">intensidad</span> <span title="" class="">de corriente</span><span title="">, presión</span><span title="">, frecuencia,</span> <span title="">amplitud,</span> <span title="">etc.</span><br /><br /><span title="" class="">Para obtener una</span> <span title="">comunicación</span><span title="">,</span> <span title="">necesitamos</span> <span title="" class="">una transmisión</span> <span title="">de señales.</span></span></p>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>Protocolos
+
+Un proceso de comunicación de datos lo pueden establecer dos ordenadores, ejecutando todos los programas de acuerdo con unas reglas convenidas con anterioridad: protocolos.</code></pre>
+</div>
+</div>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>La comunicación es el proceso con el que se transporta información; esta información viaja en una señal que se transmite desde el emisor hasta el receptor. El emisor y el receptor conocen el mismo código, por eso son capaces de interpretar las señales para obtener la información.</code></pre>
+</div>
+</div>
+<p>En cualquier comunicación participan unos elementos básicos que son:</p>
+<ol>
+<li><strong>Emisor / receptor.</strong> El emisor se encarga de proporcionar la información, y el receptor es quien la recibe. Hay comunicaciones en que no se puede identificar el emisor y el receptor, ya que durante la comunicación actúan de emisor y receptor indistintamente. Por ejemplo, en una transmisión telefónica.
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>ETD
+
+En el mundo de las comunicaciones utilizamos el término ETD (equipo terminal de datos), que se refiere al elemento de red capaz de actuar como emisor y como receptor de una comunicación.</code></pre>
+</div>
+</div>
+<ul>
+<li>En toda comunicación hay al menos un emisor y un receptor, pero podemos tener casos con las características siguientes:</li>
+<li>Varios emisores y un receptor: por ejemplo, una agencia de noticias tiene varios emisores y un solo receptor.</li>
+<li>Un emisor y varios receptores: por ejemplo, la televisión tiene un emisor y varios receptores.</li>
+<li>Varios emisores y varios receptores: por ejemplo, una red de ordenadores</li>
+</ul>
+</li>
+<li><strong>Transductores</strong>. Un transductor es un elemento capaz de transformar la naturaleza de la señal. La señal físico que más se utiliza en las telecomunicaciones es la señal eléctrica, porque es fácil y rápido de transportar y transformar, pero cada vez gana más peso la señal óptica. Son ejemplos de transductores un micrófono, un altavoz, un teléfono o un fax.</li>
+<li>
+<p><strong>Canal</strong>. El canal es el elemento por donde se transporta la señal desde el emisor hasta el receptor. Cada señal tiene su tipo de canal: las señales ópticas, la fibra; las señales eléctricas, el cobre; y las señales inalámbricas, el aire.</p>
+<p>Un canal se define desde el punto de vista de las telecomunicaciones por sus propiedades físicas:</p>
+<p></p>
+<ul>
+<li>
+<p>Naturaleza de la señal que se ha de transportar.</p>
+</li>
+<li>
+<p>Velocidad de transmisión.</p>
+</li>
+<li>
+<p>Capacidad de la transmisión (ancho de banda).</p>
+</li>
+<li>
+<p>Nivel de ruido que genera.</p>
+</li>
+<li>
+<p>Longitud.</p>
+</li>
+<li>
+<p>Modo de enlace entre el emisor y el receptor.</p>
+</li>
+</ul>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>RTC
+
+Red de telefonía conmutada es la red de transmisión de voz clásica, que utiliza cable paralelo o de par trenzado no apantallado. También transmite datos a baja velocidad utilizando la modulación.</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Moduladores y codificadores</strong>. Para transmitir, no sólo hay que la señal y el medio sean los apropiados, ya que a veces la señal no es el adecuado para lograr eficacia en la transmisión.</p>
+<p>Si queremos transmitir información entre dos ordenadores a través de una línea RTC, necesitaremos un módem.</p>
+<p>El ordenador emite señales eléctricas -capaces de circular por el hilo de cobre-, pero estas señales son digitales y la línea RTC es de transmisión analógica: hay, pues, transformar la señal digital en analógica. Un módem -modulador / desmodulador- convierte la señal digital en analógica y cuando llega al receptor, transforma la señal analógica en digital.</p>
+</li>
+</ol>
+<div class="highlighted-code language-markup">
+<div>
+<pre><code>Ejemplo de comunicación
+
+Cuando hablamos por teléfono, queremos establecer una comunicación y, por tanto, el emisor y el receptor acordarán un código conocido por ambos -catalán. La voz generada por el emisor crea una onda de presión de naturaleza mecánica, señal que se convierte en impulsos eléctricos a través del micrófono. La señal se transporta -transmisinó- a través de los hilos de la compañía telefónica. Una vez llegue al receptor -auricular del teléfono- la señal eléctrica se volverá a convertir en onda de presión, por lo que el receptor comprenderá el mensaje y se habrá establecido una comunicación (véase la figura.2).</code></pre>
+</div>
+</div>
+<p><img src="ic10m5u1_02.png" alt="" style="display: block; margin-left: auto; margin-right: auto;" width="709" height="301" /></p>
+<p><span class="tlid-translation translation" lang="es"><span title="">El códec</span> <span title="">-codificador</span> <span title="">/</span> <span title="">descodificador-</span> <span title="">encarga de</span> <span title="">codificar</span> <span title="">adecuadamente</span> <span title="">las señales eléctricas</span> <span title="">digitales</span> <span title="">adaptándolos al</span> <span title="">modo</span> <span title="">que requiere</span> <span title="">el canal</span><span title="">,</span> <span title="">siempre</span> <span title="">digital.</span></span></p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1_conceptos_bsicos_de_redes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
