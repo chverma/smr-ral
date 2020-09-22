@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>1.3. Componentes básicos de una red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="    Coordinació     Joan Carles Pérez Vàzquez     Redacció     Víctor Carceler Hontoria     Josep Ferrer Tura     Àngel Alejandro Juan Pérez     Xavier Marchador Márquez     Ramón Murillo Casals     Juan Carlos Pérez Vázquez     Jordi Prats Català     Immaculada Salas Díaz     Oriol Torres Carrió" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-143"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD01. Teoría y arquitectura de redes</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="resultados_de_aprendizaje.html" class="no-ch">Resultados de aprendizaje</a></li>
+   <li><a href="mapa_conceptual.html" class="no-ch">Mapa conceptual</a></li>
+   <li><a href="referencias.html" class="no-ch">Referencias</a></li>
+   <li class="current-page-parent"><a href="1_conceptos_bsicos_de_redes.html" class="current-page-parent daddy">1. Conceptos básicos de redes</a>
+   <ul>
+      <li><a href="11_comunicacin.html" class="no-ch">1.1. Comunicación</a></li>
+      <li><a href="12_origen_y_evolucin.html" class="no-ch">1.2. Origen y evolución</a></li>
+      <li id="active"><a href="13_componentes_bsicos_de_una_red.html" class="active no-ch">1.3. Componentes básicos de una red</a></li>
+      <li><a href="14_ejemplo_de_conexin_de_elementos_de_una_red.html" class="no-ch">1.4. Ejemplo de conexión de elementos de una red</a></li>
+      <li><a href="15_clasificacin_de_las_redes.html" class="no-ch">1.5. Clasificación de las redes</a></li>
+      <li><a href="16_organismos_reguladores_en_materia_de_telecomunicaciones.html" class="no-ch">1.6. Organismos reguladores en materia de telecomunicaciones</a></li>
+   </ul>
+   </li>
+   <li><a href="2_estndares_de_red.html" class="daddy">2. Estándares de red</a>
+   <ul class="other-section">
+      <li><a href="21_protocolos.html" class="no-ch">2.1. Protocolos</a></li>
+      <li><a href="22_modelos_de_red_osi_tcp__ip_el_modelo_internet.html" class="daddy">2.2. Modelos de red OSI, TCP / IP (el modelo Internet)</a>
+      <ul class="other-section">
+         <li><a href="221_el_modelo_osi.html" class="no-ch">2.2.1. El modelo OSI</a></li>
+         <li><a href="222_modelo_tcp__ip.html" class="no-ch">2.2.2. Modelo TCP / IP</a></li>
+      </ul>
+      </li>
+      <li><a href="23_ethernet.html" class="daddy">2.3. Ethernet</a>
+      <ul class="other-section">
+         <li><a href="231_configuracin_y_conceptos_bsicos_de_conmutacin.html" class="no-ch">2.3.1. Configuración y conceptos básicos de conmutación</a></li>
+         <li><a href="232_ieee_8023__ethernet_y_el_modelo_de_referencia_osi.html" class="no-ch">2.3.2. IEEE 802.3 / Ethernet y el modelo de referencia OSI</a></li>
+         <li><a href="233_tramas_de_ethernet.html" class="no-ch">2.3.3. Tramas de Ethernet</a></li>
+         <li><a href="234_autonegociacin.html" class="no-ch">2.3.4. Autonegociación</a></li>
+      </ul>
+      </li>
+      <li><a href="24_dispositivos_de_redes.html" class="daddy">2.4. Dispositivos de redes</a>
+      <ul class="other-section">
+         <li><a href="241_tarjetas_de_red.html" class="no-ch">2.4.1. Tarjetas de red</a></li>
+         <li><a href="242_repetidores.html" class="no-ch">2.4.2. Repetidores</a></li>
+         <li><a href="243_concentradores_hub.html" class="no-ch">2.4.3. Concentradores (Hub)</a></li>
+         <li><a href="244_enrutadores.html" class="no-ch">2.4.4. Enrutadores</a></li>
+         <li><a href="245_otros_elementos.html" class="no-ch">2.4.5. Otros elementos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="12_origen_y_evolucin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="14_ejemplo_de_conexin_de_elementos_de_una_red.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">1.3. Componentes básicos de una red</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id142">
+<div class="iDevice emphasis0" >
+<div id="ta142_243_2" class="block iDevice_content">
+<div class="exe-text"><div class="level2">
+<p>Una red de área local, red local o LAN (del inglés local area network) es la interconexión de varios ordenadores y periféricos. La aplicación más extendida es la interconexión de ordenadores personales y estaciones de trabajo en oficinas, fábricas, etc., para compartir recursos e intercambiar datos y aplicaciones. En definitiva, permite que dos o más máquinas se comuniquen.</p>
+<p>El término red local incluye tanto el hardware como el software necesario para la interconexión de los distintos dispositivos y el tratamiento de la información. Hay muchos componentes que pueden formar parte de una red, por ejemplo ordenadores personales, servidores, dispositivos de red y cables.</p>
+<p>Estos componentes se pueden agrupar en cuatro categorías principales:</p>
+<ul>
+<li class="level1">
+<div>Hosts.</div>
+</li>
+<li class="level1">
+<div>Periféricos compartidos.</div>
+</li>
+<li class="level1">
+<div>Dispositivos de red.</div>
+</li>
+<li class="level1">
+<div>Medios de red.</div>
+</li>
+<li class="level1">
+<div>Protocolos y reglas.</div>
+</li>
+</ul>
+<p>En la figura mostramos algunos de los dispositivos más comunes, utilizados para encaminar y administrar los mensajes en la red, y también otros símbolos comunes de interconexión de redes. Los símbolos genéricos son los siguientes:</p>
+<ul>
+<li class="level1">
+<div class="li"><strong>Switch: </strong>el dispositivo más utilizado para interconectar redes de área local.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Firewall: </strong>Proporciona seguridad en las redes.</div>
+</li>
+<li class="level1">
+<div class="li">
+<div style="overflow: hidden; position: absolute; top: -5000px; height: 1px;">Router</div>
+<strong>Router: </strong>ayuda a dirigir los mensajes que viajan por la red.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Router inalámbrico: </strong>un tipo específico de router que generalmente se encuentra en redes domésticas.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Nube:</strong> se utiliza para resumir un grupo de dispositivos de red.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Enlace serial:</strong> una forma de interconexión WAN (red de área extendida), representada por la línea en forma de rayo.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figure3"></a>
+<figure>
+<figcaption><span>Figura Símbolos comunes utilizados en redes</span></figcaption>
+<img src="ic10m5u1_03.png" width="598" height="723" /></figure>
+</div>
+</div>
+<h3><a id="host"></a>Host</h3>
+<div class="level3">
+<p>Los hosts envían y reciben tráfico de los usuarios. Host es un nombre genérico para la mayoría de los dispositivos de usuario final. Un host debe tener una dirección IP de red. Los ordenadores personales y las impresoras conectadas a la red son algunos ejemplos de hosts.</p>
+</div>
+<h3><a id="periferics_compartits"></a>Periféricos compartidos</h3>
+<div class="level3">
+<p>Los dispositivos periféricos compartidos no se comunican directamente a través de la red. Los periféricos utilizan el host al que están conectados para realizar todas las operaciones de red. Algunos ejemplos de periféricos compartidos pueden ser las cámaras, los escáneres y las impresoras conectadas localmente.</p>
+</div>
+<h3><a id="dispositius_de_xarxa"></a>Dispositivos de red</h3>
+<div class="level3">
+<p>Los dispositivos de red se conectan a otros dispositivos, principalmente hosts. Estos dispositivos mueven o controlan el tráfico de la red. Los hubs, switches o routers son algunos ejemplos de dispositivos de red.</p>
+<div class="iocnote">
+<div class="ioccontent">
+<p>Internetworking, en inglés, significa red de redes.</p>
+</div>
+</div>
+<p>Además de los dispositivos finales con los que la gente está familiarizada, las redes dependen de dispositivos intermedios para proporcionar conectividad y para garantizar que los datos fluyan a través de la red. Este dispositivos conectan los hosts individuales en la red y pueden conectar varias redes individuales para formar una red de redes. Los siguientes son ejemplos de dispositivos de red intermediarios:</p>
+<ul>
+<li class="level1">
+<div>Dispositivos de acceso a la red (hubs, switches y puntos de acceso inalámbrico).</div>
+</li>
+<li class="level1">
+<div>Dispositivos de internetworking (routers).</div>
+</li>
+<li class="level1">
+<div>Servidores de comunicación y módems, y dispositivos de seguridad (firewalls).</div>
+</li>
+</ul>
+<p>La administración de datos mientras fluyen a través de la red también es una función de los dispositivos intermediarios. Este dispositivos utiliza la dirección host de destino, conjuntamente con información sobre las interconexiones de la red, para determinar la ruta que deben tomar los mensajes a través de la red.</p>
+<p>Los procesos que se ejecutan en los dispositivos de red intermediarios pueden realizar, dependiendo del dispositivo, las siguientes funciones:</p>
+<ul>
+<li class="level1">
+<div>Regenerar y retransmitir señales de datos.</div>
+</li>
+<li class="level1">
+<div>Mantener la información sobre qué rutas existen a través de la red y de la Internetwork.</div>
+</li>
+<li class="level1">
+<div>Notificar a otros dispositivos los errores y los errores de comunicación.</div>
+</li>
+<li class="level1">
+<div>Encaminar datos para rutas alternativas cuando existen fallos en un enlace.</div>
+</li>
+<li class="level1">
+<div>Clasificar y encaminar mensajes según las prioridades de QoS (calidad del servicio).</div>
+</li>
+<li class="level1">
+<div>Permitir o denegar el flujo de datos en base a configuraciones de seguridad.</div>
+</li>
+</ul>
+</div>
+<h3><a id="medis_de_xarxa"></a>Medios de red</h3>
+<div class="level3">
+<div class="iocimportant">
+<div class="ioccontent">
+<p>Los medios de red proporcionan la conexión entre los hosts y los dispositivos de red. Los medios de red pueden ser tecnologías de conexión por cable, como cable de cobre o fibra óptica, o tecnologías inalámbricas.</p>
+</div>
+</div>
+<p>La comunicación a través de una red es transportada por un medio. El medio proporciona el canal por el que viaja el mensaje desde el origen hasta el destino.</p>
+<p>Las redes modernas utilizan principalmente tres tipos de medios para interconectar los dispositivos y proporcionar la ruta por el que pueden transmitirse los datos. Estos medios son:</p>
+<ul>
+<li class="level1">
+<div>Hijos metálicos dentro de los cables.</div>
+</li>
+<li class="level1">
+<div>Fibras de vidrio o plásticas (cable de fibra óptica).</div>
+</li>
+<li class="level1">
+<div>Transmisión inalámbrica.</div>
+</li>
+</ul>
+<p>La codificación de la señal que se debe realizar para que el mensaje sea transmitido es diferente para cada tipo de medio. A los hilos metálicos, los datos se codifican dentro de impulsos eléctricos que coinciden con patrones especifiques. Las transmisiones por fibra óptica dependen de pulsos de luz, dentro de intervalos de luz visible o infrarroja. En las transmisiones inalámbricas, los patrones de ondas electromagnéticas muestran los diferentes valores de bits.</p>
+<p>Los diferentes tipos de medios de red tienen diferentes características y beneficios (figura). No todos los medios de red tienen las mismas características ni son adecuados para el mismo fin. Los criterios para elegir un medio de red son:</p>
+<ul>
+<li class="level1">
+<div>La distancia en la que el medio puede transportar exitosamente una señal.</div>
+</li>
+<li class="level1">
+<div>El ambiente en el que se instalará el medio</div>
+</li>
+<li class="level1">
+<div>la cantidad de datos</div>
+</li>
+<li class="level1">
+<div>la velocidad a la que se debe transmitir</div>
+</li>
+<li class="level1">
+<div>el coste del medio y de la instalación</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figure4"></a>
+<figure>
+<figcaption><span>Figura Diferentes medios de red</span></figcaption>
+<img src="ic10m5u1_04.png" width="595" height="453" /></figure>
+</div>
+</div>
+<h3><a id="servei_i_protocols"></a>Servicios y protocolos</h3>
+<div class="level3">
+<p>Las personas generalmente buscan enviar y recibir diferentes tipos de mensajes a través de aplicaciones informáticas; estas aplicaciones necesitan servicios para funcionar en la red. Algunos de estos servicios engloban World Wide Web, correo electrónico, mensajería instantánea y telefonía IP. Los dispositivos interconectados a través de medios para proporcionar servicios deben estar gobernados por reglas o protocolos. En la tabla se enumeran algunos servicios y un protocolo vinculado de manera más directa con estos servicios.</p>
+<p>Actualmente el estándar de la industria en redes es TCP / IP (protocolo de control de transmisión / protocolo de Internet). TCP / IP se utiliza en redes comerciales y domésticas, y también es el protocolo primario de Internet. Son los protocolos TCP / IP los que especifican los mecanismos de formateo, de encaminamiento que garantizaran que nuestros mensajes sean entregados a los destinatarios correctos.</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table1"></a><span>tabla:Servicios y protocolos</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<th>servicio</th>
+<th>Protocol (o regla)</th>
+</tr>
+<tr class="row1">
+<td>World Wide Web (WWW)</td>
+<td>HTTP (protocolo de transporte de hipertexto)</td>
+</tr>
+<tr class="row2">
+<td>Email</td>
+<td>SMTP (protocolo simple de transporte de correo) POP (protocolo de oficina postal)</td>
+</tr>
+<tr class="row3">
+<td>Mensaje instantáneo (Jabber, AIM)</td>
+<td>XMPP (Extensible Messaging and Presence Protocol) OSCAR (sistema abierto para la comunicación en tiempo real)</td>
+</tr>
+<tr class="row4">
+<td>Telefonía IP</td>
+<td>SIP (protocolo de inicio de sesión)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 3.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="12_origen_y_evolucin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="14_ejemplo_de_conexin_de_elementos_de_una_red.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

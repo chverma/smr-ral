@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.2.1. El modelo OSI </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="    Coordinació     Joan Carles Pérez Vàzquez     Redacció     Víctor Carceler Hontoria     Josep Ferrer Tura     Àngel Alejandro Juan Pérez     Xavier Marchador Márquez     Ramón Murillo Casals     Juan Carlos Pérez Vázquez     Jordi Prats Català     Immaculada Salas Díaz     Oriol Torres Carrió" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-150"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD01. Teoría y arquitectura de redes</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="resultados_de_aprendizaje.html" class="no-ch">Resultados de aprendizaje</a></li>
+   <li><a href="mapa_conceptual.html" class="no-ch">Mapa conceptual</a></li>
+   <li><a href="referencias.html" class="no-ch">Referencias</a></li>
+   <li><a href="1_conceptos_bsicos_de_redes.html" class="daddy">1. Conceptos básicos de redes</a>
+   <ul class="other-section">
+      <li><a href="11_comunicacin.html" class="no-ch">1.1. Comunicación</a></li>
+      <li><a href="12_origen_y_evolucin.html" class="no-ch">1.2. Origen y evolución</a></li>
+      <li><a href="13_componentes_bsicos_de_una_red.html" class="no-ch">1.3. Componentes básicos de una red</a></li>
+      <li><a href="14_ejemplo_de_conexin_de_elementos_de_una_red.html" class="no-ch">1.4. Ejemplo de conexión de elementos de una red</a></li>
+      <li><a href="15_clasificacin_de_las_redes.html" class="no-ch">1.5. Clasificación de las redes</a></li>
+      <li><a href="16_organismos_reguladores_en_materia_de_telecomunicaciones.html" class="no-ch">1.6. Organismos reguladores en materia de telecomunicaciones</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_estndares_de_red.html" class="current-page-parent daddy">2. Estándares de red</a>
+   <ul>
+      <li><a href="21_protocolos.html" class="no-ch">2.1. Protocolos</a></li>
+      <li class="current-page-parent"><a href="22_modelos_de_red_osi_tcp__ip_el_modelo_internet.html" class="current-page-parent daddy">2.2. Modelos de red OSI, TCP / IP (el modelo Internet)</a>
+      <ul>
+         <li id="active"><a href="221_el_modelo_osi.html" class="active no-ch">2.2.1. El modelo OSI</a></li>
+         <li><a href="222_modelo_tcp__ip.html" class="no-ch">2.2.2. Modelo TCP / IP</a></li>
+      </ul>
+      </li>
+      <li><a href="23_ethernet.html" class="daddy">2.3. Ethernet</a>
+      <ul class="other-section">
+         <li><a href="231_configuracin_y_conceptos_bsicos_de_conmutacin.html" class="no-ch">2.3.1. Configuración y conceptos básicos de conmutación</a></li>
+         <li><a href="232_ieee_8023__ethernet_y_el_modelo_de_referencia_osi.html" class="no-ch">2.3.2. IEEE 802.3 / Ethernet y el modelo de referencia OSI</a></li>
+         <li><a href="233_tramas_de_ethernet.html" class="no-ch">2.3.3. Tramas de Ethernet</a></li>
+         <li><a href="234_autonegociacin.html" class="no-ch">2.3.4. Autonegociación</a></li>
+      </ul>
+      </li>
+      <li><a href="24_dispositivos_de_redes.html" class="daddy">2.4. Dispositivos de redes</a>
+      <ul class="other-section">
+         <li><a href="241_tarjetas_de_red.html" class="no-ch">2.4.1. Tarjetas de red</a></li>
+         <li><a href="242_repetidores.html" class="no-ch">2.4.2. Repetidores</a></li>
+         <li><a href="243_concentradores_hub.html" class="no-ch">2.4.3. Concentradores (Hub)</a></li>
+         <li><a href="244_enrutadores.html" class="no-ch">2.4.4. Enrutadores</a></li>
+         <li><a href="245_otros_elementos.html" class="no-ch">2.4.5. Otros elementos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="22_modelos_de_red_osi_tcp__ip_el_modelo_internet.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="222_modelo_tcp__ip.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.2.1. El modelo OSI</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id151">
+<div class="iDevice emphasis0" >
+<div id="ta151_252_2" class="block iDevice_content">
+<div class="exe-text"><div class="level3">
+<div class="iocimportant">
+<div class="ioccontent">
+<p>El modelo de referencia OSI, lanzado en 1984, es el esquema descriptivo que creó la ISO. Este modelo proporciona a los fabricantes un conjunto de normas que facilitan más compatibilidad y operabilidad entre los diferentes tipos de tecnologías de red producidas por diferentes empresas de todo el mundo.</p>
+</div>
+</div>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Servicios</p>
+<p>Un servicio es un conjunto de tareas, de funciones, de operaciones ... que suministra un sistema y que sirven para un uso determinado.</p>
+</div>
+</div>
+<div class="iocfigure"><a name="Figure20"></a>
+<figure>
+<figcaption><span>Figura Capas OSI</span></figcaption>
+<img src="ic10m5u1_26.png" width="709" height="654" /></figure>
+</div>
+<p>El modelo de referencia OSI define las funciones de red de cada capa y configura el esqueleto que ayuda a entender cómo viaja y se comporta la información por la red. Además, ayuda a visualizar como la información y los paquetes de datos viajan desde las aplicaciones origen (hojas de cálculo, documentos ...) para los dispositivos y los medios de red hasta otro sistema ubicado en la red que los utiliza, aunque este otro sistema tenga diferentes tipos de medios de acceso a la red.</p>
+<p>El modelo de referencia OSI se define en siete capas numeradas, y cada una define una función especifica de la red (figura):</p>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Protocolo</p>
+<p>Toda comunicación, ya sea cara a cara o por una red, está regida por reglas predeterminadas denominadas protocolos. Estos protocolos son específicos de las características de la conversación.</p>
+</div>
+</div>
+<ul>
+<li class="level1">
+<div>Capa 7: capa de aplicación.</div>
+</li>
+<li class="level1">
+<div>Capa 6: capa de presentación.</div>
+</li>
+<li class="level1">
+<div>Capa 5: capa de sesión.</div>
+</li>
+<li class="level1">
+<div>Capa 4: capa de transporte.</div>
+</li>
+<li class="level1">
+<div>Capa 3: capa de red.</div>
+</li>
+<li class="level1">
+<div>Capa 2: capa de enlace de datos.</div>
+</li>
+<li class="level1">
+<div>Capa 1: capa física.</div>
+</li>
+</ul>
+<p>El hecho de dividir en capas proporciona las siguientes ventajas:</p>
+<ul>
+<li class="level1">
+<div>Divide la comunicación en partes más pequeñas y sencillas.</div>
+</li>
+<li class="level1">
+<div>Facilita la normalización de los componentes de la red, con lo que permite el desarrollo y el apoyo de diferentes fabricantes.</div>
+</li>
+<li class="level1">
+<div>Permite que diferentes tipos de hardware (hardware) y programas (software) se comuniquen entre ellos.</div>
+</li>
+<li class="level1">
+<div>Impide que los cambios en una capa afecten las otras, lo que permite un desarrollo más acelerado.</div>
+</li>
+<li class="level1">
+<div>Divide la comunicación de la red en partes más pequeñas y hace más fácil la comprensión.</div>
+</li>
+</ul>
+<p>En la tabla se hace una breve descripción de la tarea que hace cada capa.</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table7"></a><span>tabla:Definición de cada capa OSI</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<th>Número de capa</th>
+<th>Nombre de la capa</th>
+<th>Tarea que desarrolla</th>
+</tr>
+<tr class="row1">
+<td>Capa 7</td>
+<td>aplicación</td>
+<td>Procesos de red en aplicaciones</td>
+</tr>
+<tr class="row2">
+<td>Capa 6</td>
+<td>presentación</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row3">
+<td>Capa 5</td>
+<td>sesión</td>
+<td>Comunicación entre ordenadores</td>
+</tr>
+<tr class="row4">
+<td>Capa 4</td>
+<td>Transporte</td>
+<td>Conexión de extremo a extremo</td>
+</tr>
+<tr class="row5">
+<td>Capa 3</td>
+<td>red</td>
+<td>Enrutamiento y búsqueda de la mejor ruta</td>
+</tr>
+<tr class="row6">
+<td>Capa 2</td>
+<td>Enlace de datos</td>
+<td>Acceso al medio</td>
+</tr>
+<tr class="row7">
+<td>Capa 1</td>
+<td>Física</td>
+<td>transmisión binaria</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>A continuación definiremos cada capa con sus funciones:</p>
+<ul>
+<li class="level1">
+<div class="li"><strong>Capa 7. Aplicación. La capa de aplicación es la capa del modelo OSI más cercana al usuario, ya que provee de servicios de red sus aplicaciones. Es la única capa que no proporciona servicios a ninguna otra capa OSI, sino sólo a aplicaciones que se encuentran fuera del modelo OSI. Son ejemplos de aplicaciones los programas de cliente de correo, navegador web, cliente</strong><acronym>FTP, Aplicaciones de videoconferencia, etc.</acronym></div>
+</li>
+<li class="level1">
+<div class="li"><strong>Capa 6. Presentación. La capa de presentación garantiza que la información que envía la capa de aplicación de un sistema pueda leer la capa de aplicación de otro. La capa de presentación también puede traducir entre varios formatos de datos, utilizando un formato común.</strong></div>
+</li>
+<li class="level1">
+<div class="li"><strong>Capa 5. Sesión. Las misiones principales de la capa de sesión son:</strong></div>
+<ul>
+<li class="level2">
+<div>Iniciar, administrar y terminar las sesiones entre dos ordenadores que se comunican.</div>
+</li>
+<li class="level2">
+<div>Proporcionar sus servicios a la capa de presentación.</div>
+</li>
+<li class="level2">
+<div>Sincronizar el diálogo entre las capas de presentación de los dos ordenadores.</div>
+</li>
+<li class="level2">
+<div>Regular la sesión.</div>
+</li>
+</ul>
+</li>
+<li class="level1">
+<div class="li"><strong>Capa 4. Transporte. La capa de transporte segmenta los datos originales en el ordenador emisor y las asemeja dentro del sistema del ordenador receptor.</strong></div>
+</li>
+<li class="level1">
+<div class="li"><strong>Capa 3. Red. La capa de red proporciona conectividad y selección de ruta entre dos sistemas de ordenadores, que pueden estar ubicados en redes geográficamente distintas.</strong></div>
+</li>
+<li class="level1">
+<div class="li"><strong>Capa 2. Enlace. La capa de enlace de datos proporciona tráfico de datos de confianza a través de un enlace físico. Esta capa se ocupa del direccionamiento físico, la topología de red, el acceso a la red, la notificación de errores, la entrega ordenada de tramas y el control de flujo.</strong></div>
+</li>
+<li class="level1">
+<div class="li"><strong>Capa 1. Física. La capa física define las especificaciones eléctricas, mecánicas, de procedimiento y funcionales para activar, mantener y desactivar el enlace físico entre sistemas finales.</strong></div>
+</li>
+</ul>
+<p>Las comunicaciones de una red parten de un emisor, y se envían a un receptor. La información que se envía a través de una red se denominan datos o paquete de datos. Si un ordenador envía datos a otro, deberán empaquetar mediante un proceso denominado encapsulación de datos.</p>
+<p>La encapsulación envuelve los datos con la información de protocolo necesaria antes de que circule por la red. A medida que los datos se desplazan a través de las capas del modelo OSI, reciben diferentes tipos de información complementaria.</p>
+<p>Las redes deben hacer cinco pasos de conversión a fin de encapsular los datos (como se representa en la figura).</p>
+<ul>
+<li class="level1">
+<div>Crear los datos.</div>
+</li>
+<li class="level1">
+<div>Empaquetar los datos para transportarlas de extremo a extremo.</div>
+</li>
+<li class="level1">
+<div>Agregar la dirección de red en el encabezamiento.</div>
+</li>
+<li class="level1">
+<div>Agregar la dirección local en el encabezamiento de enlace de datos.</div>
+</li>
+<li class="level1">
+<div>Hacer la conversión a bits para transmitirlos.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figure21"></a>
+<figure>
+<figcaption><span>Figura Relación entre capas</span></figcaption>
+<img src="ic10m5u1_27.png" width="804" height="473" /></figure>
+</div>
+<p>Según este modelo, el conjunto de datos generado por el equipo terminal que actúa de emisor, se va añadiendo, por medio de los diferentes protocolos de capa, la información necesaria para permitir el procesamiento del protocolo en el equipo que actuará como receptor (proceso de encapsulación, representado en la figura)</p>
+<p>Cada conjunto de datos o información añadida se denomina encabezamiento, y se van añadiendo a medida que se pasa de una capa a otra hasta llegar a la capa física, capa que finalmente procederá a la transmisión de bits hacia otro terminal.</p>
+<p>El conjunto de información compuesta por el encabezamiento más los datos recibe nombres diferentes según el nivel donde está situada:</p>
+<ul>
+<li class="level1">
+<div>En la capa de transporte se denomina segmento.</div>
+</li>
+<li class="level1">
+<div>En el nivel de capa de red se denomina paquete.</div>
+</li>
+<li class="level1">
+<div>En el nivel de capa de enlace, trama.</div>
+</li>
+<li class="level1">
+<div>En el nivel de capa física, bit.</div>
+</li>
+</ul>
+<div class="iocfigure"><a name="Figure22"></a>
+<figure>
+<figcaption><span>Figura Proceso de encapsulación</span></figcaption>
+<img src="ic10m5u1_28.png" width="709" height="414" /></figure>
+</div>
+<p>El modelo OSI define dos tipos de servicios:</p>
+<p><strong>1. Servicios orientados a la conexión. </strong>El usuario establece inicialmente la conexión, intercambiando la información y finalmente, al terminar, libera el circuito. Un ejemplo de este servicio es la red telefónica y la comunicación de datos a través de la RTC.</p>
+<p><strong>2. Servicios sin conexión. </strong>No es necesario establecer ningún circuito antes de enviar la información. Cada paquete lleva información de la dirección de destino y sigue la mejor ruta, los paquetes pueden llegar en orden diferente y es necesario reorganizarlos. Hay varios tipos de servicios sin conexión:</p>
+<ul>
+<li class="level1">
+<div class="li"><strong>Servicio de datagramas sin confirmación. </strong>El emisor no necesita que el receptor le confirme que los paquetes de datos le llegan correctamente como en el protocolo IP (<em>Protocolo de Internet).</em></div>
+</li>
+<li class="level1">
+<div class="li"><strong>Servicio de datagramas con confirmación. </strong>El receptor envía confirmaciones al emisor. Por ejemplo, el correo electrónico con acuse de recibo.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Servicio de petición y respuesta.</strong> Es un servicio propio de la gestión interactiva, en la que a cada petición sigue una respuesta. Por ejemplo, al hacer una petición a una base de datos, la sigue un mensaje de respuesta que contiene los datos solicitados.</div>
+</li>
+</ul>
+<p>Para estudiar el modelo OSI, lo podemos dividir en tres partes: las capas orientadas a la red, las capas orientadas al transporte y las capas orientadas a la aplicación.</p>
+</div>
+<h4><a id="capes_de_xarxa_1_2_i_3_orientades_a_la_xarxa"></a>Capas de red 1, 2 y 3 orientadas a la red</h4>
+<div class="level4">
+<p>El primer grupo, que comprende las tres primeras capas -física, enlace y red- se denomina entorno de la red o subred de comunicaciones, para que estas capas son las que interactúan con las redes de comunicaciones, o con la parte de la red que tiene el fin de transmitir la información hasta el equipo receptor.</p>
+<p><strong>1. Capa 1: física. </strong>La capa física es la capa que define las especificaciones eléctricas, mecánicas, de procedimiento y funcionales para activar, mantener y desactivar el enlace físico y para transmitir bits entre sistemas finales (<span class="tabref"><a href="#Table8">tabla</a></span>).</p>
+<p>La misión básica de esta capa es transmitir bits por un canal de comunicación, de modo que cuando el emisor envíe lleguen sin cambios al receptor.</p>
+<p>Este nivel incluye cables, conectores, los medios de transmisión, ordenadores y equipos de comunicaciones. Por lo tanto, hay que definir:</p>
+<ul>
+<li class="level1">
+<div>El tipo de sistema de cables que utilizará la red.</div>
+</li>
+<li class="level1">
+<div>Si hay proceso de modulación o no.</div>
+</li>
+<li class="level1">
+<div>Tipo de conectores, características y funciones de cada uno.</div>
+</li>
+<li class="level1">
+<div>Tipo de transmisión.</div>
+</li>
+</ul>
+<div class="ioctable ">
+<div class="titletable"><a name="Table8"></a><span>tabla:Capa física</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<td>7</td>
+<td>aplicación</td>
+<td>Procesos de red de aplicaciones</td>
+</tr>
+<tr class="row1">
+<td>6</td>
+<td>presentación</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row2">
+<td>5</td>
+<td>sesión</td>
+<td>Comunicación entre elementos de comunicación</td>
+</tr>
+<tr class="row3">
+<td>4</td>
+<td>Transporte</td>
+<td>Conexiones de extremo a extremo</td>
+</tr>
+<tr class="row4">
+<td>3</td>
+<td>red</td>
+<td>Enrutamiento y ruta mejor</td>
+</tr>
+<tr class="row5">
+<td>2</td>
+<td>Enlace de datos</td>
+<td>Acceso al medio</td>
+</tr>
+<tr class="row6">
+<td class="col0"><strong>1</strong></td>
+<td class="col1"><strong>Física</strong></td>
+<td class="col2"><strong>transmisión binaria</strong><br /><strong>Cables, conexiones, voltajes, velocidades de datos</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>2. Capa 2: </strong>enlace de datos. La función principal de este nivel es velar por la transmisión de datos de un nodo a otro. Su misión es establecer una línea de comunicación libre de errores que pueda ser utilizada por la capa inmediatamente superior, la capa de red (<span class="tabref"><a href="#Table9">tabla</a></span>).</p>
+<p>La capa de enlace de datos administra la notificación de errores, la topología de red y el control de flujo.</p>
+<p>Con el nivel físico opera con bits, sin comprobar su significado. Estos bits viajan en forma de bloques de datos, tramas. Los protocolos se encargan del formato de las tramas, los códigos de dirección de la detección y recuperación de errores en el orden de transmisión de los datos.</p>
+<p>Estas tramas se envían por la línea de transmisión de manera secuencial a través de los servicios que ofrece el nivel físico, mientras que el resto de niveles superiores trabajan sin tener en cuenta el tipo de medio físico.</p>
+<p>Este nivel se divide en dos subniveles:</p>
+<ul>
+<li class="level1">
+<div>Control de acceso al medio (MAC, media access control)</div>
+</li>
+<li class="level1">
+<div>Control de enlace lógico (LLC, logical link control)</div>
+</li>
+</ul>
+<div class="ioctable ">
+<div class="titletable"><a name="Table9"></a><span>tabla:Capa de enlace</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<td>7</td>
+<td>aplicación</td>
+<td>Procesos de red de aplicaciones</td>
+</tr>
+<tr class="row1">
+<td>6</td>
+<td>presentación</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row2">
+<td>5</td>
+<td>sesión</td>
+<td>Comunicación entre elementos de comunicación</td>
+</tr>
+<tr class="row3">
+<td>4</td>
+<td>Transporte</td>
+<td>Conexiones de extremo a extremo</td>
+</tr>
+<tr class="row4">
+<td>3</td>
+<td>red</td>
+<td>Enrutamiento y ruta mejor</td>
+</tr>
+<tr class="row5">
+<td>2</td>
+<td class="col1"><strong>Enlace de datos</strong></td>
+<td class="col2"><strong>Acceso a los medios</strong><br /><strong>Permite la transferencia de confianza de los datos a través de los medios</strong><br /><strong>Encaminamiento físico, topología de red, notificación de errores, control de flujo</strong></td>
+</tr>
+<tr class="row6">
+<td>1</td>
+<td>Física</td>
+<td>transmisión binaria</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>3. Capa 3: red.</strong>La capa de red es la que permite encaminar el tráfico de paquetes desde el emisor hasta el receptor. Mediante mecanismos de conmutación, establece el camino que deben seguir los paquetes (<span class="tabref"><a href="#Table10">tabla</a></span>).</p>
+<p>La capa de red controla la de subred, la función principal es elegir la ruta mejor para que el paquete llegue a su destino.</p>
+<p>Otra función de esta capa es el tratamiento de la saturación del tráfico: si hay muchos paquetes en la red, unos obstruyen el paso a otros y se generan atascos en los puntos más críticos.</p>
+<p>Esta capa es también la encargada de ajustar el tamaño de los paquetes y la velocidad de transmisión para que cumpla los requisitos de la red de recepción. Además, al ser la responsable de las funciones de conmutación y enrutamiento de la información -Proporciona los procedimientos precisos y necesarios para el intercambio de datos entre el emisor y el receptor-, debe conocer la topología de la red para determinar la ruta más adecuada.</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table10"></a><span>tabla:Capa de red</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<td>7</td>
+<td>aplicación</td>
+<td>Procesos de red de aplicaciones</td>
+</tr>
+<tr class="row1">
+<td>6</td>
+<td>presentación</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row2">
+<td>5</td>
+<td>sesión</td>
+<td>Comunicación entre elementos de comunicación</td>
+</tr>
+<tr class="row3">
+<td>4</td>
+<td>Transporte</td>
+<td>Conexiones de extremo a extremo</td>
+</tr>
+<tr class="row4">
+<td class="col0"><strong>3</strong></td>
+<td class="col1"><strong>red</strong></td>
+<td class="col2"><strong>Enrutamiento y ruta mejor</strong><br /><strong>Proporciona conectividad y selección de la ruta mejor entre dos sistemas finales.</strong><br /><strong>Dominio de enrutamiento</strong></td>
+</tr>
+<tr class="row5">
+<td>2</td>
+<td>Enlace de datos</td>
+<td>Acceso al medios</td>
+</tr>
+<tr class="row6">
+<td>1</td>
+<td>Física</td>
+<td>transmisión binaria</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4><a id="capa_orientada_al_transport"></a>Capa orientada al transporte</h4>
+<div class="level4">
+<p>La capa de transporte es la primera capa que comunica los equipos terminales de punto a punto y actúa como enlace de las capas orientadas a la red (capas física, de enlace y red) y las capas orientadas a la aplicación (capas de sesión, presentación y aplicación) (tabla).</p>
+<p>Esta capa hace de puente entre las capas 1, 2 y 3, que trabajan en red, y las capas 5, 6 y 7, que trabajan las aplicaciones para el usuario. Acepta los datos de la capa de sesión y las parte a pedazos que sean comprensibles para la capa de red y las inferiores, y se asegura que lleguen correctamente a la capa de transporte del ordenador receptor, aunque el receptor no sea a la misma red.</p>
+<p>La capa de transporte hace las comunicaciones entre ordenadores de igual a igual (peer to peer) en la que un programa emisor puede conversar con un programa receptor. En las capas inferiores eso no existe.</p>
+<p>La finalidad de la capa 4 es optimizar los servicios del nivel de red y corregir las posibles deficiencias en la calidad del servicio con la ayuda de mecanismos de recuperación.</p>
+<p>Este nivel o capa está muy relacionado con la calidad del servicio ofrecido por la capa de red, ya que es el encargado de establecer el puente entre las carencias de la red y las necesidades del usuario.</p>
+<p>Un enrutador puede decidir de manera inteligente cuál es la mejor ruta para la entrega de datos a través de una red, lo que se basa en un esquema de direccionamiento de capa 3 o capa de red. El router usa esta información para tomar decisiones de envío. Una vez que los paquetes de datos pasan a través de la capa de red, la capa de transporte -la capa 4- da por hecho que puede usar la red para enviar paquetes de datos desde el origen al destino.</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table11"></a><span>tabla:Capa de transporte</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<td>7</td>
+<td>aplicación</td>
+<td>Procesos de red de aplicaciones</td>
+</tr>
+<tr class="row1">
+<td>6</td>
+<td>presentación</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row2">
+<td>5</td>
+<td>sesión</td>
+<td>Comunicación entre elementos de comunicación</td>
+</tr>
+<tr class="row3">
+<td class="col0"><strong>4</strong></td>
+<td class="col1"><strong>Transporte</strong></td>
+<td class="col2"><strong>Conexiones de extremo a extremo</strong><br /><strong>Vigila el transporte entre ordenador Dominio de enrutamiento</strong><br /><strong>Da confianza al transporte de datos</strong><br /><strong>Inicia, mantiene y cierra los circuitos virtuales.</strong><br /><strong>Detecta y recupera los errores</strong><br /><strong>Control del flujo de la información</strong></td>
+</tr>
+<tr class="row4">
+<td>3</td>
+<td>red</td>
+<td>Enrutamiento y ruta mejor</td>
+</tr>
+<tr class="row5">
+<td>2</td>
+<td>Enlace de datos</td>
+<td>Acceso al medio</td>
+</tr>
+<tr class="row6">
+<td>1</td>
+<td>Física</td>
+<td>transmisión binaria</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<h4><a id="capes_de_xarxa_5_6_i_7_orientades_a_l_aplicacio"></a>Capas de red 5, 6 y 7 orientadas a la aplicación</h4>
+<div class="level4">
+<p>Grupo formado por las capas de sesión, presentación y transporte, que recibe el nombre genérico de entorno de la aplicación, para que estas tres capas se procesan en los equipos terminales que intervienen en la comunicación.</p>
+<p>Un ordenador puede ejecutar múltiples aplicaciones simultáneas que solicitan servicios de comunicación a la capa de transporte. A su vez, la capa de transporte solicita servicios en el entorno de red con el fin de elegir la mejor ruta y el fraccionamiento de datos adecuado. Muchas comunicaciones de alto nivel pueden ser ejecutadas por múltiples transmisiones de bajo nivel, pero hay un nivel común -ya que el emisor y el receptor son únicos- en que el transporte se realza de extremo a extremo: este nivel es la capa de transporte.</p>
+<p>Las capas situadas por encima del nivel de transporte están orientadas a las aplicaciones, y especializadas en funciones de aplicación.</p>
+<p><strong>1. Capa 5: sesión. </strong>Cuando los paquetes llegan a la capa de sesión, son transformados en sesiones por el protocolo de capa 5 o capa de sesión del modelo OSI, lo que se consigue implementando diversos mecanismos de control (<span class="tabref"><a href="#Table12">tabla</a></span>). La capa de sesión coordina las peticiones y las respuestas de servicio cuando las aplicaciones se comunican con diferentes ordenadores.</p>
+<p>La capa de sesión mejora el servicio de la capa de transporte. La capa de sesión se encarga de resincronizar una transferencia cortada, por lo que en la conexión siguiente se transmitan los datos a partir del último bloque transmitido sin error.</p>
+<p>En el establecimiento de una sesión se distinguen dos fases:</p>
+<ul>
+<li class="level1">
+<div>Establecimiento de la sesión y creación de un espacio donde se almacenarán los mensajes de la capa de transporte y del entorno de red.</div>
+</li>
+<li class="level1">
+<div>Intercambio de datos entre los espacios creados por el emisor y el receptor siguiendo unas reglas para el control del diálogo.</div>
+</li>
+</ul>
+<div class="ioctable ">
+<div class="titletable"><a name="Table12"></a><span>tabla:Capa de sesión</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<td>7</td>
+<td>aplicación</td>
+<td>Procesos de red de aplicaciones</td>
+</tr>
+<tr class="row1">
+<td>6</td>
+<td>presentación</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row2">
+<td class="col0"><strong>5</strong></td>
+<td class="col1"><strong>sesión</strong></td>
+<td class="col2"><strong>Comunicación entre elementos de comunicación</strong><br /><strong>Establece, administra y cierra sesiones entre aplicaciones</strong></td>
+</tr>
+<tr class="row3">
+<td>4</td>
+<td>Transporte</td>
+<td>Conexiones de extremo a extremo</td>
+</tr>
+<tr class="row4">
+<td>3</td>
+<td>red</td>
+<td>Enrutamiento y ruta mejor</td>
+</tr>
+<tr class="row5">
+<td>2</td>
+<td>Enlace de datos</td>
+<td>Acceso al medio</td>
+</tr>
+<tr class="row6">
+<td>1</td>
+<td>Física</td>
+<td>transmisión binaria</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>2. Capa 6: presentación. </strong>Esta capa es generalmente un protocolo de transferencia de la información desde capas adyacentes. Permite la comunicación entre aplicaciones en diversos sistemas informáticos, de tal manera que sean transparentes para las aplicaciones.</p>
+<p>La capa de presentación se ocupa del formato y de la representación de datos. Esta capa puede servir de intermediario entre diferentes formatos de datos.</p>
+<p>La capa de presentación proporciona el formato y la conversión de códigos, que se utiliza para asegurarse de que las aplicaciones tienen información comprensible para procesar. La capa 6 también abarca las estructuras de datos que utilizan las aplicaciones y es responsable del cifrado de datos que protege la información durante la transmisión.</p>
+<p>Las transacciones financieras (por ejemplo, los datos de las tarjetas de crédito) utilizan el cifrado para proteger la información confidencial que se envía a través de Internet. Se utiliza una clave de cifrado para cifrar los datos en el lugar de origen y luego descifrar en el lugar de destino.</p>
+<p>La capa de presentación también se ocupa de la compresión de los archivos (tabla).</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table13"></a><span>tabla:Capa de presentación</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<td>7</td>
+<td>aplicación</td>
+<td>Procesos de red de aplicaciones</td>
+</tr>
+<tr class="row1">
+<td class="col0"><strong>6</strong></td>
+<td class="col1"><strong>Presentració</strong></td>
+<td class="col2"><strong>Representación de datos</strong><br /><strong>Garantiza que los datos puedan ser leídas por el receptor Da forma a los datos</strong><br /><strong>Estructura los datos Prepara la sintaxis de transferencia de datos para la capa de aplicación</strong></td>
+</tr>
+<tr class="row2">
+<td>5</td>
+<td>sesión</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row3">
+<td>4</td>
+<td>Transporte</td>
+<td>Conexiones de extremo a extremo</td>
+</tr>
+<tr class="row4">
+<td>3</td>
+<td>red</td>
+<td>Enrutamiento y ruta mejor</td>
+</tr>
+<tr class="row5">
+<td>2</td>
+<td>Enlace de datos</td>
+<td>Acceso al medio</td>
+</tr>
+<tr class="row6">
+<td>1</td>
+<td>Física</td>
+<td>transmisión binaria</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>4. Capa 7: aplicación. </strong>La capa de aplicación es la capa más próxima al usuario: es la que funciona cuando interactúa con aplicaciones de software, como por ejemplo, enviar y recibir correo electrónico a través de una red.</p>
+<p>Su función es proporcionar los procedimientos necesarios que permitan a los usuarios ejecutar las órdenes relativas a sus aplicaciones propias. Los procesos de las aplicaciones se comunican internamente por medio de aplicaciones controladas por protocolos de aplicación y utilizando los servicios del nivel de presentación (tabla).</p>
+<div class="ioctable ">
+<div class="titletable"><a name="Table14"></a><span>tabla:Capa de aplicación</span></div>
+<div class="table">
+<table class="inline">
+<tbody>
+<tr class="row0">
+<td class="col0"><strong>7</strong></td>
+<td class="col1"><strong>aplicación</strong></td>
+<td class="col2"><strong>Procesos de red de aplicaciones</strong><br /><strong>Da servicio de red a los procesos de aplicación</strong></td>
+</tr>
+<tr class="row1">
+<td>6</td>
+<td>presentación</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row2">
+<td>5</td>
+<td>sesión</td>
+<td>Representación de datos</td>
+</tr>
+<tr class="row3">
+<td>4</td>
+<td>Transporte</td>
+<td>Conexiones de extremo a extremo</td>
+</tr>
+<tr class="row4">
+<td>3</td>
+<td>red</td>
+<td>Enrutamiento y ruta mejor</td>
+</tr>
+<tr class="row5">
+<td>2</td>
+<td>Enlace de datos</td>
+<td>Acceso al medio</td>
+</tr>
+<tr class="row6">
+<td>1</td>
+<td>Física</td>
+<td>transmisión binaria</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 3.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="22_modelos_de_red_osi_tcp__ip_el_modelo_internet.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="222_modelo_tcp__ip.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

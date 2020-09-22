@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3.3. Tramas de Ethernet </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="    Coordinació     Joan Carles Pérez Vàzquez     Redacció     Víctor Carceler Hontoria     Josep Ferrer Tura     Àngel Alejandro Juan Pérez     Xavier Marchador Márquez     Ramón Murillo Casals     Juan Carlos Pérez Vázquez     Jordi Prats Català     Immaculada Salas Díaz     Oriol Torres Carrió" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-155"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD01. Teoría y arquitectura de redes</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="resultados_de_aprendizaje.html" class="no-ch">Resultados de aprendizaje</a></li>
+   <li><a href="mapa_conceptual.html" class="no-ch">Mapa conceptual</a></li>
+   <li><a href="referencias.html" class="no-ch">Referencias</a></li>
+   <li><a href="1_conceptos_bsicos_de_redes.html" class="daddy">1. Conceptos básicos de redes</a>
+   <ul class="other-section">
+      <li><a href="11_comunicacin.html" class="no-ch">1.1. Comunicación</a></li>
+      <li><a href="12_origen_y_evolucin.html" class="no-ch">1.2. Origen y evolución</a></li>
+      <li><a href="13_componentes_bsicos_de_una_red.html" class="no-ch">1.3. Componentes básicos de una red</a></li>
+      <li><a href="14_ejemplo_de_conexin_de_elementos_de_una_red.html" class="no-ch">1.4. Ejemplo de conexión de elementos de una red</a></li>
+      <li><a href="15_clasificacin_de_las_redes.html" class="no-ch">1.5. Clasificación de las redes</a></li>
+      <li><a href="16_organismos_reguladores_en_materia_de_telecomunicaciones.html" class="no-ch">1.6. Organismos reguladores en materia de telecomunicaciones</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_estndares_de_red.html" class="current-page-parent daddy">2. Estándares de red</a>
+   <ul>
+      <li><a href="21_protocolos.html" class="no-ch">2.1. Protocolos</a></li>
+      <li><a href="22_modelos_de_red_osi_tcp__ip_el_modelo_internet.html" class="daddy">2.2. Modelos de red OSI, TCP / IP (el modelo Internet)</a>
+      <ul class="other-section">
+         <li><a href="221_el_modelo_osi.html" class="no-ch">2.2.1. El modelo OSI</a></li>
+         <li><a href="222_modelo_tcp__ip.html" class="no-ch">2.2.2. Modelo TCP / IP</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="23_ethernet.html" class="current-page-parent daddy">2.3. Ethernet</a>
+      <ul>
+         <li><a href="231_configuracin_y_conceptos_bsicos_de_conmutacin.html" class="no-ch">2.3.1. Configuración y conceptos básicos de conmutación</a></li>
+         <li><a href="232_ieee_8023__ethernet_y_el_modelo_de_referencia_osi.html" class="no-ch">2.3.2. IEEE 802.3 / Ethernet y el modelo de referencia OSI</a></li>
+         <li id="active"><a href="233_tramas_de_ethernet.html" class="active no-ch">2.3.3. Tramas de Ethernet</a></li>
+         <li><a href="234_autonegociacin.html" class="no-ch">2.3.4. Autonegociación</a></li>
+      </ul>
+      </li>
+      <li><a href="24_dispositivos_de_redes.html" class="daddy">2.4. Dispositivos de redes</a>
+      <ul class="other-section">
+         <li><a href="241_tarjetas_de_red.html" class="no-ch">2.4.1. Tarjetas de red</a></li>
+         <li><a href="242_repetidores.html" class="no-ch">2.4.2. Repetidores</a></li>
+         <li><a href="243_concentradores_hub.html" class="no-ch">2.4.3. Concentradores (Hub)</a></li>
+         <li><a href="244_enrutadores.html" class="no-ch">2.4.4. Enrutadores</a></li>
+         <li><a href="245_otros_elementos.html" class="no-ch">2.4.5. Otros elementos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="232_ieee_8023__ethernet_y_el_modelo_de_referencia_osi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="234_autonegociacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.3.3. Tramas de Ethernet</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id157">
+<div class="iDevice emphasis0" >
+<div id="ta157_258_2" class="block iDevice_content">
+<div class="exe-text"><div class="level3">
+<p>Aunque la existencia de un flujo de información en forma de bits codificados transmitidos por un medio físico se ha convertido, por sí mismo, un gran avance tecnológico, deben cumplirse ciertas condiciones. De hecho, estos condicionantes se fundamentan en la necesidad de proporcionar cierto orden y coherencia a la información que se transmite, por ejemplo, organizar la información en secuencias de datos con forma de trama.</p>
+<p>La acción de envolver la información para transmitir en tramas se basa en la inclusión de un abanico de añadidos que ayudan a reafirmar los parámetros de seguridad y de integridad necesarios para la comunicación. Este abanico de añadidos proporciona información tan relevante como el reconocimiento de los errores aparecidos durante la comunicación, donde están situadas los datos dentro de la trama o bien cuáles son los dispositivos que se están comunicando.</p>
+<div class="iocimportant">
+<div class="ioccontent">
+<p>La acción de envolver la información en forma de tramas se produce en la capa 2 del modelo de referencia OSI.</p>
+</div>
+</div>
+<p>El concepto de trama como secuencia de información implica imaginar una larga cadena de dígitos en el que cada uno de estos dígitos tiene una función preestablecida. Cabe decir que estas funciones se asignan a grupos predefinidos de bytes dentro de la trama en secciones secuenciales llamadas campos (figura).</p>
+<div class="iocfigure"><a name="Figure29"></a>
+<figure>
+<figcaption><span>Figura Campos de una trama estándar</span></figcaption>
+<img src="ic10m5u1_40.png" width="709" height="287" /></figure>
+</div>
+<p>Para el correcto funcionamiento de la transmisión de los paquetes de información, cada uno de los campos que forman la trama tiene una función concreta que el ordenador emisor sabe cómo definir y que el receptor sabe cómo interpretar. Un cambio en el contenido de estos campos puede variar completamente la función final del paquete de información.</p>
+<ul>
+<li class="level1">
+<div class="li"><strong>Campo de inicio de trama (A). </strong>Cuando los ordenadores están conectados a un medio físico necesitan un mecanismo que les ayude a difundir sus mensajes o, a grandes rasgos, avisar del envío de una trama. Es por ello que, tomando el símil de las banderas que hay en el frontal de un coche diplomático, todas las tramas tienen una secuencia inicial de bytes de señalización que avisa de su llegada.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Campo de dirección (B). </strong>Todas las tramas contienen información que permite identificarlas, como, por ejemplo, la dirección del ordenador que envía la información, esto es, la dirección MAC y la dirección MAC del ordenador de destino.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Campos de longitud y tipología (C). </strong>Las tramas tienen campos especializados con diferentes fines en función de la tecnología utilizada. Por ejemplo, este campo se puede utilizar para indicar qué protocolo de la capa 3 del modelo de referencia OSI ha utilizado o bien para especificar la longitud exacta de la trama.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Campo de datos (D). </strong>El principal motivo por el que se envían tramas es para obtener los datos de la capa superior, esto es, los datos de la aplicación del usuario y enviarlas de un ordenador a otro. Como si de una carta se tratara, dentro del sobre, en este caso el envoltorio que se ha convertido la trama, está el mensaje que se quiere enviar (los datos).</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Campo de secuencia de verificación de trama (FCS, frame check sequence) (E). </strong>Considerando en qué grado son susceptibles a errores las tramas y los campos contenidos, es necesario establecer un parámetro que verifique la integridad de la trama. De hecho, el campo de secuencia de verificación de trama contiene un número que es el resultado de un cálculo realizado por el ordenador que envía la trama. Cuando el ordenador destinatario recibe la trama, vuelve a calcular el número FCS y lo compara con el número FCS insertado dentro de la trama. En caso de que ambos números no coincidan, se asume el error y la trama es descartada.</div>
+</li>
+</ul>
+<div class="iocimportant">
+<div class="ioccontent">
+<p>El esquema más sencillo para detectar errores se basa en la paridad, esto es, añadir un bit que indica si el número de bits de valor 1 en los datos que le preceden es par o impar.</p>
+<p>Si un solo bit cambia por error durante la transmisión, el mensaje cambia de paridad y el error se puede detectar (siempre que el error no se produzca en el bit de paridad). Un valor de paridad de 1 indica que hay un número impar de unos dentro de los datos. Un valor de paridad 0 indica que hay un número par de unos dentro de los datos.</p>
+</div>
+</div>
+</div>
+<h5><a id="trames_ethernet_ieee_8023"></a>Tramas Ethernet IEEE 802.3</h5>
+<div class="level5">
+<p>Es importante tratar el tipo de trama que hay en las redes Ethernet actuales, esto es, la trama básica Ethernet IEEE 802.3. A diferencia de una trama genérica, la trama básica Ethernet IEEE 802.3 presenta un número de campos distribuidos más elevado, en este caso, en bytes (figura).</p>
+<p>Los diferentes campos que forman la trama básica Ethernet IEEE 802.3 tienen una misión definida por parte del ordenador emisor para que sean interpretados por el ordenador receptor. Cualquier cambio en el contenido de estos campos puede variar la interpretación correcta de la trama.</p>
+<div class="iocfigure"><a name="Figure30"></a>
+<figure>
+<figcaption><span>Figura Campos de una trama Ethernet</span></figcaption>
+<img src="ic10m5u1_41.png" width="709" height="178" /></figure>
+</div>
+<ol>
+<li class="level1">
+<div class="li"><strong>preámbulo.</strong> Con la intención de presentar todo tipo de compatibilidad, este campo contiene un patrón de siete bytes de longitud donde se alternan el 1 y el 0 para indicar el inicio de la trama.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Delimitador de trama de inicio (SFD). </strong>Este campo marca el punto final de la información de sincronización de tiempo.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Dirección de destino. </strong>Este campo contiene los seis octetos de la dirección MAC destino. En este caso, es importante destacar que hay tres tipos de direcciones, esto es, de unidifusión (para enviar un punto a otro punto), multidifusión (para enviar un punto a grupos de puntos) y, por último, dirección de difusión (de un punto a todos los demás).</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Dirección de origen. </strong>Este campo contiene los seis octetos de la dirección MAC de origen.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Longitud / tipo. </strong>En caso de que el valor insertado sea menor que el valor decimal 1536, el valor se refiere a la longitud. En caso contrario, el valor especifica el protocolo de la capa superior que recibe los datos una vez que se haya completado el procesamiento Ethernet.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Datos y relleno. </strong>Este campo puede devenir de cualquier longitud que no provoque que la trama exceda su tamaño máximo. De hecho, la unidad máxima de transmisión (MTU,<em> maximum unit transmision) </em>Para la Ethernet es de 1.500 bytes, es decir, el tamaño que no pueden exceder los datos. De hecho, en caso de necesidad, se suele aplicar la técnica del relleno de bits (bit stuffing) cuando no hay suficientes datos del usuario para que la trama alcance su longitud máxima.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Secuencia de verificación (FCS, frame check sequence). </strong>Esta secuencia contiene el código de redundancia cíclica (CRC, cyclic redundancy check), Esto es, el valor resultante de un cálculo para la detección de errores en la trama realizado por parte del dispositivo emisor. Es en el momento de la recepción cuando el dispositivo receptor vuelve a hacer este cálculo de verificación para comprobar la integridad de la trama y la inexistencia de posibles errores. En caso de que el cálculo realizado coincida con el valor insertado en la trama, la trama sería aceptada. En caso contrario, el dispositivo receptor la rechazaría.</div>
+</li>
+</ol>
+<div class="iocfigurec">
+<ul>
+<li><img alt="/-103" class="imgB" src="ic10m5u1_42.png" title="/-103" width="266" height="177" /></li>
+<li><small></small></li>
+</ul>
+</div>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Poco relleno</p>
+<p>Tomando el nombre de la acción de rellenar los osos de peluche (bear stuffing), la técnica del bit stuffing se fundamenta en la inserción de bits que no contienen (ni en su conjunto forman) ninguna información para que el campo de datos de las tramas presenta una longitud máxima.</p>
+</div>
+</div>
+</div>
+<h3><a id="control_d_acces_al_medi"></a>Control de acceso al medio</h3>
+<div class="level3">
+<div class="iocimportant">
+<div class="ioccontent">
+<p>El control de acceso al medio (MAC, media access control) hace referencia a los protocolos que deciden qué ordenador se permite transmitir datos.</p>
+</div>
+</div>
+<p>A la hora de hablar del control de acceso al medio (MAC, media access control) es importante citar las dos categorías existentes, esto es, las deterministas (por turnos) y las no deterministas (a grandes rasgos, "el primero que llega convierte el primero en ser servido ").</p>
+</div>
+<h4><a id="protocols_mac_deterministes"></a>Protocolos MAC deterministas</h4>
+<div class="level4">
+<p>Los protocolos MAC deterministas utilizan una modalidad basada en la creación de turnos. Un ejemplo de estos turnos se fundamenta en la transmisión de testigos (tokens).</p>
+<div class="iocimportant">
+<div class="ioccontent">
+<p>La técnica de la transmisión de testigos se fundamenta en una costumbre propia de las tribus de indios nativos americanos que, durante sus reuniones, se pasaban el testigo. De hecho, aquel que tenía en sus manos el "bastón" era escuchado por todos hasta que finalizaba su parlamento, momento en que el testigo se pasaba a otra persona.</p>
+</div>
+</div>
+<p>Hay un protocolo de enlace de datos, que recibe el nombre de anillo de testigo (token ring), en el que los ordenadores que están conectados a la red se distribuyen en forma de anillo (figura). Es por este anillo por donde circula un testigo (token) de datos especiales que es tomado temporalmente por el ordenador que quiere transmitir datos. Una vez ha finalizado la transmisión de datos, el ordenador deja libre el testigo para que vuelva a circular por el anillo y pueda ser tomado por otro ordenador.</p>
+<div class="iocfigure"><a name="Figure31"></a>
+<figure>
+<figcaption><span>Figura Red en forma de anillo</span></figcaption>
+<img src="ic10m5u1_43.png" width="535" height="399" /></figure>
+</div>
+</div>
+<h4><a id="protocols_mac_no_deterministes"></a>Protocolos MAC no deterministas</h4>
+<div class="level4">
+<p>Los protocolos MAC no deterministas utilizan la premisa "el primero que llega se convierte en el primero en ser servido" (FCFS, first-come, first-served) como, por ejemplo, el acceso múltiple con detección de portadora y detección de colisiones (CSMA / CD, carrier sense multiple access / colisión detect).</p>
+<p>Este tipo de protocolo es el que utiliza Ethernet, dado que permite que los dispositivos de red se conviertan en los responsables de administrar su derecho a transmitir. De hecho, la mecánica se fundamenta en el hecho de que las estaciones de una red CSMA / CD escuchen cuál es el mejor momento para transmitir. Sin embargo, en caso de que dos estaciones transmitan al mismo tiempo se produce una colisión y ninguna de las transmisiones de las estaciones tiene éxito.</p>
+<div class="ioctext">
+<div class="ioccontent">
+<p>colisión</p>
+<p>A Ethernet, una colisión es el resultado de dos nodos que transmiten simultáneamente. Las tramas de cada uno de los dispositivos impactan y se dañan cuando se encuentran en el medio físico.</p>
+</div>
+</div>
+<p>En el momento en que las estaciones de la red sienten que ha habido una colisión, esperan en silencio, es decir, a partir de una orden por turnos, las estaciones transmisoras esperan un periodo de tiempo aleatorio antes de transmitir. Esta espera por parte de las estaciones permite que no haya una segunda colisión.</p>
+</div>
+<h4><a id="ethernet_mac"></a>Ethernet MAC</h4>
+<div class="level4">
+<p>El Ethernet es una tecnología de difusión basada en la compartición del medio en que el método de acceso utilizado es el acceso múltiple con detección de portadora y detección de colisiones (CSMA / CD, carrier sense multiple access / colisión detect) . Cabe decir que esta tecnología de difusión lleva a cabo tres funciones fundamentales:</p>
+<ol>
+<li class="level1">
+<div>Transmitir y recibir paquetes de datos.</div>
+</li>
+<li class="level1">
+<div>Decodificar paquetes de datos y comprobar la validez de las direcciones antes de pasarlos a las capas superiores del modelo de referencia OSI.</div>
+</li>
+<li class="level1">
+<div>Detectar los errores que puedan haber en la red o en los mismos paquetes que se transmiten.</div>
+</li>
+</ol>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Detección de colisión</p>
+<p>Los dispositivos de red tienen la capacidad de detectar cuando se ha producido una colisión, ya que aumenta la amplitud de la señal (CD, colisión detect). Cuando se produce una colisión, cada uno de los dispositivos que esta transmitiendo datos, continúa con la transmisión durante un breve espacio de tiempo para confirmar que todos los dispositivos vean la colisión e introduzcan un algoritmo de retraso, esto es, esperar un espacio de tiempo aleatorio.</p>
+</div>
+</div>
+<p>En el método de acceso múltiple con detección de portadora y detección de colisiones (CSMA / CD, carrier sense multiple access / colisión detect), los dispositivos de la red trabajan "escuchando antes de transmitir" (CS, carrier sense), es decir, cuando un dispositivo quiere enviar datos, en primer lugar comprueba si el medio está ocupado. En caso de que esté libre, el dispositivo comienza a transmitir los datos, aunque mientras tanto el dispositivo continúa escuchando para confirmar que ninguna otra estación también esté transmitiendo datos. En caso de que se dé esta situación, se podría producir una colisión. En caso contrario, el dispositivo finaliza la transmisión y vuelve a la modalidad de oyente (figura).</p>
+<div class="iocfigure"><a name="Figure32"></a>
+<figure>
+<figcaption><span>Figura Método CSMA-CD</span></figcaption>
+<img src="ic10m5u1_44.png" width="709" height="554" /></figure>
+</div>
+<p>Ahora bien, en caso de que se produzca una colisión durante la transmisión, se suspende inmediatamente la transmisión del paquete de información y se genera una breve señal, que indica la existencia de una colisión. Con todo, tras indicar que ha habido una colisión, se hace una pausa durante un tiempo aleatorio para, una vez finalizado, intentar hacer la transmisión nuevo.</p>
+</div>
+<h3><a id="ethernet_10_100_i_gigabitethernet"></a>Ethernet 10, 100 y Gigabit Ethernet</h3>
+<div class="level3">
+<div class="iocimportant">
+<div class="ioccontent">
+<p>El Ethernet es una norma de red que, junto con sus protocolos asociados IEEE 802.3, se ha convertido en una de las normas más importantes del mundo. Esto conllevó una importante evolución con respecto a las redes de área local actuales.</p>
+</div>
+</div>
+<div class="iocfigurec">
+<ul>
+<li><img class="imgB" src="ic10m5u1_45.png" width="266" height="161" /></li>
+</ul>
+</div>
+<p>Dentro del gran abanico de especificaciones propias del Ethernet es bastante interesante centrar la atención (y describir) las tipologías más relevantes. A modo introductoria, cabe destacar que la popularidad de la Ethernet comenzó mediante el cable coaxial grueso (10Base5), aunque, ante las dificultades a la hora de manipularlo, se tendió a trabajar con el cable coaxial delgado (10Base2), dado que su manipulación era mucho más sencilla (figura).</p>
+<div class="iocfigure"><a name="Figure33"></a>
+<figure>
+<figcaption><span>Figura Cables coaxiales</span></figcaption>
+<img src="ic10m5u1_46.png" width="297" height="260" /></figure>
+</div>
+<p>Aprovechando esta tendencia hacia la sencillez de instalación y manipulación (sin olvidar la reducción correspondiente de los gastos económicos), se acabó introduciendo el 10BaseT basado en los cables pares trenzados sin apantallar (UTP, Unshielded twisted pair).</p>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Cables UTP</p>
+<p>La utilización de cables pares trenzados sin apantallar motivó la necesidad de utilizar repetidores, dado que su distancia óptima de trabajo era de 100 metros.</p>
+</div>
+</div>
+<p>La potencia, la versatilidad y el bajo coste del 10BaseT coincidió con una explosión en el número de usuarios de red y de Internet, y en la complejidad de las aplicaciones. De hecho, el aumento de la solicitud de anchos de banda mayores se tradujo en la aparición de la Ethernet rápido (Fast Ethernet), esto es, un conjunto de estándares del IEEE para redes Ethernet de 100 Mbps.</p>
+</div>
+<h4><a id="versions_de_l_ethernet_a_10_mbps"></a>Versiones del Ethernet a 10 Mbps</h4>
+<div class="level4">
+<p>Las implementaciones 10Base5, 10Base2 y 10BaseT del Ethernet se pueden considerar implementaciones heredadas de la Ethernet. De hecho, a pesar de esta evolución, cabe destacar que hay algunas cosas que no han variado, como las siguientes:</p>
+<ul>
+<li class="level1">
+<div>Los parámetros de temporización.</div>
+</li>
+<li class="level1">
+<div>El formato de la trama.</div>
+</li>
+<li class="level1">
+<div>El proceso de transmisión.</div>
+</li>
+<li class="level1">
+<div>Una regla de diseño básica.</div>
+</li>
+</ul>
+<p>El formato de la trama es común en las tres tipologías (10Base5, 10Base2 y 10BaseT) y, además, el proceso de transmisión Ethernet es idéntico hasta la parte inferior de la capa física del modelo de referencia OSI (open system interconnection).</p>
+</div>
+<h4><a id="versions_de_l_ethernet_a_100_mbps"></a>Versiones del Ethernet a 100 Mbps</h4>
+<div class="level4">
+<p>El Ethernet rápido o de alta velocidad es el nombre que se otorga a una serie de estándares del IEEE de las redes Ethernet a 100 Mbps. Esta tecnología surgió ante la necesidad de tener una velocidad más elevada en las redes, dado que la importante tamaño de los archivos transmitidos provocaba importantes problemas de retraso en las redes.</p>
+<p>Algunos de los factores que acontecieron básicos a la hora de implementar la Ethernet rápido fueron los siguientes:</p>
+<ul>
+<li class="level1">
+<div>El incremento de las velocidades de los procesadores.</div>
+</li>
+<li class="level1">
+<div>El importante aumento de los usuarios de las redes.</div>
+</li>
+<li class="level1">
+<div>La necesidad de tener altos niveles de ancho de banda por parte de las nuevas aplicaciones.</div>
+</li>
+</ul>
+</div>
+<h4><a id="gigabit_ethernet"></a>Gigabit Ethernet</h4>
+<div class="level4">
+<p>Aunque la tecnología Ethernet rápido se convirtió en una de las mejoras más importantes de la tecnología Ethernet, hubo una importante progresión con la instauración de la tecnología Gigabit Ethernet. De hecho, la GigaEthernet es la principal representante de los avances de la ingeniería y de la capacidad del mercado, dado que es una red 100 veces más rápida que, por ejemplo, una red basada en la tecnología 10BaseT.</p>
+<p>Cabe destacar que la tecnología GigaEthernet es diez veces más rápida que la tecnología rápida, esto es la Ethernet rápido (Fast Ethernet). Con todo, este incremento de la velocidad implica una serie de requerimientos como, por ejemplo, la duración más corta del tiempo de envío de los bits (1 nanosegundo) y una mayor vigilancia ante su alta susceptibilidad hacia el ruido.</p>
+<div class="iocimportant">
+<div class="ioccontent">
+<p>Con la llegada de la GigaEthernet, lo que comenzó como una tecnología propia de las redes de área local (LAN, local area network), se extendió a grandes distancias que hicieron que la tecnología Ethernet se convirtiera en un estándar de red propia de áreas metropolitanas (MAN, metropolitan area network) y de áreas mucho más amplias (WAN, wide area network).</p>
+</div>
+</div>
+</div>
+<h4><a id="regla_5-4-3"></a>Regla 5-4-3</h4>
+<div class="level4">
+<p>Ante la necesidad que tiene un ordenador de escuchar si las tramas Ethernet que ha ido enviando han sufrido algún tipo de colisión antes de finalizar la transmisión, se establecieron unos límites de tamaño para las redes Ethernet a 10 Mbps. Para dictar los principales parámetros de esta limitación se estableció una regla que los englobara todos, esto es, la regla 5-4-3.</p>
+<p>Básicamente, la regla 5-4-3 limita la utilización de los repetidores mediante el establecimiento de la premisa "entre dos equipos de red no puede haber más de cuatro repetidores y cinco segmentos de cable". Con todo, sólo tres segmentos pueden tener conectados dispositivos que no sean estos repetidores mismos, es decir, solamente dos de los cinco segmentos utilizados se pueden dedicar a la interconexión entre repetidores. De hecho, tal y como muestra la figura, uno de los caminos trazados desde los ordenadores menos alejados pasa por tres segmentos de cable y dos repetidores y, por tanto, cumple la regla 5-4-3.</p>
+<p>Un ejemplo de red mal diseñada es la que se muestra en la figura, donde encontramos cinco repetidores que actúan como concentradores conectados con una topología de árbol. De hecho, en la figura se muestra como una de las rutas trazadas entre los dos ordenadores más alejados pasa por cinco repetidores y seis segmentos de cable. Esta red, sin embargo, no funcionaría de manera adecuada, ya que el retraso introducido por parte de los repetidores sería demasiado alto.</p>
+<div class="iocfigure"><a name="Figure34"></a>
+<figure>
+<figcaption><span>Figura Conexiones de repetidores</span></figcaption>
+<img src="ic10m5u1_47.png" width="709" height="283" /></figure>
+</div>
+<div class="iocfigure"><a name="Figure35"></a>
+<figure>
+<figcaption><span>Figura Red mal diseñada</span></figcaption>
+<img src="ic10m5u1_48.png" width="709" height="419" /></figure>
+</div>
+</div>
+<h3><a id="tipus_d_enllac_simplex_semiduplex_i_duplex"></a>Tipos de enlace (símplex, semidúplex i dúplex)</h3>
+<div class="level3">
+<div class="iocimportant">
+<div class="ioccontent">
+<p>Las modalidades en que se transmiten los datos por un medio físico son tres. La modalidad símplex se basa en la transmisión de los datos en un único sentido. En el caso de las modalidades semidúplex y dúplex, los datos se pueden transmitir en ambos sentidos, pero, en el caso de la modalidad semidúplex, la transmisión en dos sentidos se hará por turnos.</p>
+</div>
+</div>
+<div class="iocfigurec">
+<ul>
+<li><img alt="Transceptors portàtils" class="imgB" src="ic10m5u1_49.png" title="Transceptors portàtils" width="266" height="200" /></li>
+<li><small>transceptores portátiles</small></li>
+</ul>
+</div>
+<p>Tomando el ejemplo de la transmisión de la radio o la televisión, es posible comprender la modalidad de transmisión de datos símplex en que los datos sólo viajan en un único sentido.</p>
+<p>En el caso de la modalidad de transmisión de datos semidúplex, el tráfico de datos puede viajar en ambos sentidos, pero cumpliendo la condición de que las transmisiones no se hagan al mismo tiempo. En este caso, un ejemplo muy claro para explicar esta modalidad de transmisión son los transmisores de radio portátiles, es decir, los transceptores portátiles.</p>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Dominios de colisión</p>
+<p>En el ámbito de la Ethernet, los dominios de colisión son las áreas de la red por donde se propagan las tramas que chocan. Desde el punto de vista de los dispositivos, los repetidores y los concentradores propagan las colisiones existentes y los conmutadores, los puentes y los routers no las propagan.</p>
+</div>
+</div>
+<p>La modalidad de transmisión de datos dúplex se fundamenta en la posibilidad de transmitir el tráfico de datos en ambos sentidos y al mismo tiempo.</p>
+<p>Desde el punto de vista de la Ethernet dúplex, no hay ningún tipo de colisión, dado que la tecnología de conmutación crea un circuito virtual de dos estaciones punto a punto, o bien mediante pequeños segmentos cuando dos dispositivos deben comunicar. A modo de ejemplo, podemos destacar la comunicación mediante el teléfono como un claro ejemplo de una transmisión de datos en modalidad dúplex.</p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 3.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="232_ieee_8023__ethernet_y_el_modelo_de_referencia_osi.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="234_autonegociacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>2.3.2. IEEE 802.3 / Ethernet y el modelo de referencia OSI </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="    Coordinació     Joan Carles Pérez Vàzquez     Redacció     Víctor Carceler Hontoria     Josep Ferrer Tura     Àngel Alejandro Juan Pérez     Xavier Marchador Márquez     Ramón Murillo Casals     Juan Carlos Pérez Vázquez     Jordi Prats Català     Immaculada Salas Díaz     Oriol Torres Carrió" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-154"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD01. Teoría y arquitectura de redes</a></li>
+   <li><a href="introduccin.html" class="no-ch">Introducción</a></li>
+   <li><a href="resumen.html" class="no-ch">Resumen</a></li>
+   <li><a href="resultados_de_aprendizaje.html" class="no-ch">Resultados de aprendizaje</a></li>
+   <li><a href="mapa_conceptual.html" class="no-ch">Mapa conceptual</a></li>
+   <li><a href="referencias.html" class="no-ch">Referencias</a></li>
+   <li><a href="1_conceptos_bsicos_de_redes.html" class="daddy">1. Conceptos básicos de redes</a>
+   <ul class="other-section">
+      <li><a href="11_comunicacin.html" class="no-ch">1.1. Comunicación</a></li>
+      <li><a href="12_origen_y_evolucin.html" class="no-ch">1.2. Origen y evolución</a></li>
+      <li><a href="13_componentes_bsicos_de_una_red.html" class="no-ch">1.3. Componentes básicos de una red</a></li>
+      <li><a href="14_ejemplo_de_conexin_de_elementos_de_una_red.html" class="no-ch">1.4. Ejemplo de conexión de elementos de una red</a></li>
+      <li><a href="15_clasificacin_de_las_redes.html" class="no-ch">1.5. Clasificación de las redes</a></li>
+      <li><a href="16_organismos_reguladores_en_materia_de_telecomunicaciones.html" class="no-ch">1.6. Organismos reguladores en materia de telecomunicaciones</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="2_estndares_de_red.html" class="current-page-parent daddy">2. Estándares de red</a>
+   <ul>
+      <li><a href="21_protocolos.html" class="no-ch">2.1. Protocolos</a></li>
+      <li><a href="22_modelos_de_red_osi_tcp__ip_el_modelo_internet.html" class="daddy">2.2. Modelos de red OSI, TCP / IP (el modelo Internet)</a>
+      <ul class="other-section">
+         <li><a href="221_el_modelo_osi.html" class="no-ch">2.2.1. El modelo OSI</a></li>
+         <li><a href="222_modelo_tcp__ip.html" class="no-ch">2.2.2. Modelo TCP / IP</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="23_ethernet.html" class="current-page-parent daddy">2.3. Ethernet</a>
+      <ul>
+         <li><a href="231_configuracin_y_conceptos_bsicos_de_conmutacin.html" class="no-ch">2.3.1. Configuración y conceptos básicos de conmutación</a></li>
+         <li id="active"><a href="232_ieee_8023__ethernet_y_el_modelo_de_referencia_osi.html" class="active no-ch">2.3.2. IEEE 802.3 / Ethernet y el modelo de referencia OSI</a></li>
+         <li><a href="233_tramas_de_ethernet.html" class="no-ch">2.3.3. Tramas de Ethernet</a></li>
+         <li><a href="234_autonegociacin.html" class="no-ch">2.3.4. Autonegociación</a></li>
+      </ul>
+      </li>
+      <li><a href="24_dispositivos_de_redes.html" class="daddy">2.4. Dispositivos de redes</a>
+      <ul class="other-section">
+         <li><a href="241_tarjetas_de_red.html" class="no-ch">2.4.1. Tarjetas de red</a></li>
+         <li><a href="242_repetidores.html" class="no-ch">2.4.2. Repetidores</a></li>
+         <li><a href="243_concentradores_hub.html" class="no-ch">2.4.3. Concentradores (Hub)</a></li>
+         <li><a href="244_enrutadores.html" class="no-ch">2.4.4. Enrutadores</a></li>
+         <li><a href="245_otros_elementos.html" class="no-ch">2.4.5. Otros elementos</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="231_configuracin_y_conceptos_bsicos_de_conmutacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="233_tramas_de_ethernet.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">2.3.2. IEEE 802.3 / Ethernet y el modelo de referencia OSI</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id156">
+<div class="iDevice emphasis0" >
+<div id="ta156_257_2" class="block iDevice_content">
+<div class="exe-text"><div class="level3">
+<p>Aunque el Ethernet y el IEEE 802.3 son estándares que definen un método de acceso para una red de área local, no son idénticos. De hecho, tal y como muestra la figura, grupos de nodos utilizando estos dos estándares pueden convivir en el mismo medio físico a diferencia del medio físico de trabajo. De hecho, en los inicios de la aplicación y utilización del estándar Ethernet, este utilizaba exclusivamente en el cable coaxial. En cambio, el IEEE 802.3 fue diseñado con la intención de que pudiera utilizar cualquier medio, esto es, radio, cable coaxial, par trenzado, fibra óptica, etc.</p>
+<div class="iocfigure"><a name="Figure26"></a>
+<figure>
+<figcaption><span>Figura Diferente estándar conviviendo al mismo medio físico</span></figcaption>
+<img src="ic10m5u1_33.png" width="709" height="426" /></figure>
+</div>
+<p>Desde un punto de vista técnico, la metodología que utilizan tanto la Ethernet como el IEEE 802.3 para transmitir la información es el acceso múltiple con detección de portadora y detección de colisiones (CSMA / CD, <em>carrier sense multiple access / colisión detect</em>). A grandes rasgos, podemos afirmar que el CSMA / CD se dirige a sistemas de comunicaciones para el transporte de datos digitales para diferentes redes de área local en la que todos los nodos conectados comparten un mismo canal de comunicaciones pasivo, esto es, la éter (ether). Cabe destacar que esta es una forma literaria de definir la acción de compartir un mismo medio, es decir, un mismo cable.</p>
+<p>En este tipo de redes (tanto las Ethernet como las IEEE 802.3) no hay un control centralizado del tráfico, dado que cada una de las estaciones tiene la responsabilidad de conocer sus paquetes propios y de extraer los datos correspondientes. Además, cada una de las estaciones debe ser capaz de acceder al medio para transmitir en el momento en que sea requerida.</p>
+</div>
+<h5><a id="ethernet_i_ieee_8023_envers_el_model_de_referencia_osi"></a><span class="tlid-translation translation" lang="es"><span title="">Ethernet</span> <span title="">y</span> <span title="">IEEE</span> <span title="">802.3</span> <span title="">para con</span> <span title="">el modelo de referencia</span> <span title="">OSI</span></span></h5>
+<div class="level5">
+<p>El modelo de referencia de interconexión de sistemas abiertos (OSI, Open System Interconnection) define una arquitectura de comunicación fundamentada en siete niveles verticales, en los que cada uno de los niveles ejecuta un abanico de funciones que permiten establecer la comunicación con otro sistema. Cabe decir que cada nivel fundamenta sus tareas en los servicios que ofrece el nivel que hay por debajo suyo y, al mismo tiempo, ofrece sus servicios al nivel que está por encima suyo.</p>
+<div class="iocfigurec">
+<ul>
+<li><img class="imgB" src="ic10m5u1_34.png" width="152" height="281" /></li>
+</ul>
+</div>
+<div class="iocimportant">
+<div class="ioccontent">
+<p>La distribución en capas del modelo de referencia OSI se basa en la sentencia de perfil bélico "Divide y vencerás" de Julio César.</p>
+</div>
+</div>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Julio César</p>
+<p>Julio César fue un general militar y político romano que creó los cimientos del sistema imperial romano. Las recopilaciones históricos lo muestran vistiendo la toga, la corona y el cetro de un general triunfante y utilizando el título de emperador. Fue jefe de la religión del estado (pontifex maximus) y poseía el mando de todos los ejércitos.</p>
+</div>
+</div>
+<p>Desde el punto de vista de los estándares Ethernet y IEEE 802.3, podemos destacar que ambos protocolos forman parte de la zona inferior del modelo de referencia OSI, esto es, en la capa física y en la mitad inferior de la capa de enlace de datos (figura). Esta situación privilegiada para con el modelo de referencia OSI les permite comunicarse con cualquier tipo de protocolo superior.</p>
+<div class="iocfigure"><a name="Figure27"></a>
+<figure>
+<figcaption><span>Figura Capa física y mitad de la capa de enlace</span></figcaption>
+<img src="ic10m5u1_35.png" width="563" height="494" /></figure>
+</div>
+<p>Tanto en la Ethernet como en el IEEE 802.3 la capa de enlace de datos del modelo de referencia OSI se divide en dos subcapas:</p>
+<ul>
+<li class="level1">
+<div class="li"><strong>Control de acceso al medio (MAC, </strong><em>media acces control). </em>Esta capa define el modo en que se transmiten las tramas por el hilo físico. Manipula el direccionamiento físico asociado a cada uno de los dispositivos, la definición de la topología de la red y la disciplina de la línea.</div>
+</li>
+<li class="level1">
+<div class="li"><strong>Control de enlace lógico(LLC, </strong><em>logical link control). </em>Define el modo en que los datos son transferidas por el medio físico y proporciona servicios a las capas superiores. Esta subcapa se encarga del control de errores, el control de flujo y cómo se encapsula la información.</div>
+</li>
+</ul>
+<div class="iocimportant">
+<div class="ioccontent">
+<p>IEEE 802.3 es, actualmente, la implementación Ethernet más frecuente.</p>
+</div>
+</div>
+</div>
+<h3><a id="adrecament_mac"></a>Direccionamiento MAC</h3>
+<div class="level3">
+<div class="iocfigurec">
+<ul>
+<li><img alt="/5" class="imgB" src="ic10m5u1_36.png" title="/5" width="266" height="197" /></li>
+<li><small></small></li>
+</ul>
+</div>
+<p>Para permitir la distribución local de tramas en el Ethernet, debe haber un sistema de direccionamiento, esto es, una modalidad para nombrar los ordenadores y las interfaces. De hecho, cada uno de los ordenadores tiene un único modo de identificarse y, con respecto a la red, tiene una dirección física. Es importante, pues, recordar que en el ámbito de la red no puede haber dos direcciones físicas iguales. De hecho, la dirección física se ubica en la tarjeta de interfaz de red (NIC, network interface card) con el nombre control de acceso al medio (MAC, media access control).</p>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Tarjeta de red</p>
+<p>La tarjeta de interfaz de red es una tarjeta de circuito impreso que proporciona capacidades de comunicación en red hacia un ordenador y desde un ordenador. Muchos ordenadores tienen una tarjeta de red del estándar Ethernet conectada a la placa madre del ordenador.</p>
+</div>
+</div>
+<p>El Ethernet utiliza las direcciones MAC para identificar únicamente los dispositivos a título individual. De hecho, cada uno de los dispositivos presentes en una red de área local con una tarjeta de interfaz de red (NIC, network interface card) debe tener asignada una dirección MAC. De lo contrario, los otros dispositivos no se podrían comunicar con estos dispositivos.</p>
+<div class="iocfigure"><a name="Figure28"></a>
+<figure>
+<figcaption><span>Figura Estructura de la dirección MAC</span></figcaption>
+<img src="ic10m5u1_38.png" width="709" height="190" /></figure>
+</div>
+<div class="iocfigurec">
+<ul>
+<li><img alt="/-28" class="imgB" src="ic10m5u1_37.png" title="/-28" width="266" height="157" /></li>
+<li><small></small></li>
+</ul>
+</div>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Número de bastidor de un coche</p>
+<p>El número de bastidor es una sucesión de números y letras grabados sobre el chasis o el bastidor del vehículo que lo identifica a efectos legales y proporciona información sobre el modelo, el año y la fecha de fabricación del vehículo.</p>
+</div>
+</div>
+<p>Si nos centramos en la estructura de la dirección MAC (figura), veremos que tiene una longitud de 48 bits, donde los seis primeros dígitos están administrados por el IEEE, esto identifica el fabricante y distribuidor y se llama identificador único de la organización (OUI, organizationally unique identifier). El resto de los dígitos comprenden el número de serie de la interfaz o bien cualquier otro valor administrativo de un distribuidor específico. A grandes rasgos, podemos identificar la dirección MAC como el número de bastidor presente en un coche. Con todo, hay que destacar que la dirección MAC es única en todo el mundo, por lo tanto, tomando como base el ejemplo, podríamos decir que la modalidad de nomenclatura del bastidor sería única para todo el mundo.</p>
+<p>Hay que destacar la importancia del papel que tienen las direcciones MAC, dado que, en caso de que no existieran, las redes de área local convertirían un conjunto de ordenadores sin identificar y por donde no podría circular ningún paquete de información ya que no se sabría a quién va dirigido ni quien lo envía. De hecho, las redes de área local tipo Ethernet y 802.3 son redes basadas en la difusión, es decir, todas las estaciones ven (y examinan) cada uno de los paquetes de información que circulan, y averiguan a qué estación se dirigen.</p>
+<div class="ioctext">
+<div class="ioccontent">
+<p>Transmisión de información</p>
+<p>Es inevitable destacar el importante abanico de semejanzas que hay entre la preparación y posterior transmisión de un paquete de información por una red respecto del envío de un paquete mediante el correo ordinario.</p>
+</div>
+</div>
+<p>Llegados a este punto, es inevitable que nos preguntamos qué necesidad tienen los diferentes dispositivos presentes en una red de evaluar cada uno de los paquetes de información que circulan. De hecho, cuando un dispositivo presente dentro de una red Ethernet quiere enviar información a otro dispositivo, puede abrir una vía de comunicación mediante su dirección MAC, es decir, añadiendo la dirección MAC del dispositivo de destino a la información que envía.</p>
+<p>Mientras los paquetes de información circulan por la red, las tarjetas de interfaz de red (NIC, network interface card) verifican si la dirección MAC insertada en la trama de información se corresponde con su dirección MAC.</p>
+<p>En caso de que se dé esta coincidencia, la NIC verifica la dirección de destino presente en la cabecera de la trama y decide si acepta o no esta trama.</p>
+<p>Cuando los datos son entregadas al destinatario, la NIC correspondiente saca los datos de "el envoltorio" y las entrega al ordenador para que las procese mediante los protocolos de capa superior como, por ejemplo, el IP y el TCP.</p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-nc-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Licencia Creative Commons Reconocimiento No comercial Compartir igual 3.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="231_configuracin_y_conceptos_bsicos_de_conmutacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="233_tramas_de_ethernet.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
