@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.4. IPv6 </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-11"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD03. La Capa de Red</a></li>
+   <li><a href="31_conceptos_generales.html" class="daddy">3.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="311_concepto_de_capa_de_red.html" class="no-ch">3.1.1. Concepto de capa de red</a></li>
+      <li><a href="312_direcciones_ip.html" class="no-ch">3.1.2. Direcciones IP</a></li>
+      <li><a href="313_mscara_de_red_y_subred.html" class="no-ch">3.1.3. Máscara de red y subred</a></li>
+      <li><a href="314_configuracin_de_clientes.html" class="no-ch">3.1.4. Configuración de clientes</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="32_estndares.html" class="current-page-parent daddy">3.2. Estándares</a>
+   <ul>
+      <li><a href="321_protocolo_ip.html" class="no-ch">3.2.1. Protocolo IP</a></li>
+      <li><a href="322_protocolo_arp.html" class="no-ch">3.2.2. Protocolo ARP</a></li>
+      <li><a href="323_protocolo_icmp.html" class="no-ch">3.2.3. Protocolo ICMP</a></li>
+      <li id="active"><a href="324_ipv6.html" class="active no-ch">3.2.4. IPv6</a></li>
+   </ul>
+   </li>
+   <li><a href="33_dispositivos.html" class="daddy">3.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="331_routers.html" class="no-ch">3.3.1. Routers</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="323_protocolo_icmp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33_dispositivos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.2.4. IPv6</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id8">
+<div class="iDevice emphasis0">
+<div id="ta8_85" class="block iDevice_content">
+<div class="figure"><img alt="../_images/tema08-047.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-047.png" /></div>
+<p>Diseñado por Steve Deering de Xerox PARC y Craig Mudge, IPv6 está destinado a sustituir al estándar IPv4, cuyo límite en el número de direcciones de red admisibles está empezando a restringir el crecimiento de Internet y su uso, especialmente en China, India, y otros países asiáticos densamente poblados. Pero el nuevo estándar mejorará el servicio globalmente; por ejemplo, proporcionando a futuras celdas telefónicas y dispositivos móviles con sus direcciones propias y permanentes. Al día de hoy se calcula que las dos terceras partes de las direcciones que ofrece IPv4 ya están asignadas.</p>
+<p>IPv4 soporta 4.294.967.296 (2<sup>32</sup>) direcciones de red diferentes, un número inadecuado para dar una dirección a cada persona del planeta, y mucho menos para cada coche, teléfono, PDA o tostadora; mientras que <strong>IPv6</strong> soporta 340.282.366.920.938.463.463.374.607.431.768.211.456 (2<sup>128</sup> ó 340 sextillones) direcciones —cerca de 4,3 × 10<sup>20</sup> (430 trillones) direcciones por cada pulgada cuadrada (6,7 × 10<sup>17</sup> ó 670 mil billones direcciones/mm<sup>2</sup>) de la superficie de La Tierra.</p>
+<p>Adoptado por el <strong>Internet Engineering Task Force (IETF)</strong> en 1994 (cuando era llamado «IP Next Generation» o IPng), IPv6 cuenta con un pequeño porcentaje de las direcciones públicas de Internet, que todavía están dominadas por IPv4. La adopción de IPv6 ha sido frenada por la traducción de direcciones de red (NAT), que alivia parcialmente el problema de la falta de direcciones IP. Pero NAT hace difícil o imposible el uso de algunas aplicaciones P2P, como son la voz sobre IP (VoIP) y juegos multiusuario. Además, NAT rompe con la idea originaria de Internet donde todos pueden conectarse con todos. Actualmente, el gran catalizador de IPv6 es la capacidad de ofrecer nuevos servicios, como la movilidad, Calidad de Servicio (QoS), privacidad, etc. El gobierno de los Estados Unidos ha ordenado el despliegue de IPv6 por todas sus agencias federales para el año 2008.</p>
+<p>Se espera que IPv4 se siga soportando hasta por lo menos el 2025, dado que hay muchos dispositivos heredados que no se migrarán a IPv6 nunca y que seguirán siendo utilizados por mucho tiempo.</p>
+<p>IPv6 es la segunda versión del Protocolo de Internet que se ha adoptado para uso general. También hubo un IPv5, pero no fue un sucesor de IPv4; mejor dicho, fue un protocolo experimental orientado al flujo de streaming que intentaba soportar voz, video y audio.</p>
+<div class="section" id="direccionamiento-ipv6">
+<h3>3.2.4.1. Direccionamiento IPv6<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#direccionamiento-ipv6" title="Enlazar permanentemente con este título"></a></h3>
+<p>El cambio más drástico de IPv4 a IPv6 es la longitud de las direcciones de red. Las direcciones IPv6, definidas en el RFC 2373 y RFC 2374, son de <strong>128 bits</strong>; esto corresponde a 32 dígitos hexadecimales, que se utilizan normalmente para escribir las direcciones IPv6, como se describe en la siguiente sección.</p>
+<p>El número de direcciones IPv6 posibles es de 2<sup>128</sup> ≈ 3.4 x 10<sup>38</sup>. Este número puede también representarse como 1632, con 32 dígitos hexadecimales, cada uno de los cuales puede tomar 16 valores (véase combinatoria).</p>
+<p>En muchas ocasiones las direcciones IPv6 están compuestas por dos partes lógicas: un prefijo de 64 bits y otra parte de 64 bits que corresponde al identificador de interfaz, que casi siempre se genera automáticamente a partir de la dirección MAC de la interfaz a la que está asignada la dirección.</p>
+</div>
+<div class="section" id="notacion-para-las-direcciones-ipv6">
+<h3>3.2.4.2. Notación para las direcciones IPv6<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#notacion-para-las-direcciones-ipv6" title="Enlazar permanentemente con este título"></a></h3>
+<p>Las direcciones IPv6, de 128 bits de longitud, se escriben como ocho grupos de cuatro dígitos hexadecimales.</p>
+<p>Por ejemplo,</p>
+<p><code class="docutils literal notranslate"><span class="pre">2001:0db8:85a3:08d3:1319:8a2e:0370:7334</span></code></p>
+<p>es una dirección IPv6 válida.</p>
+<p>Si un grupo de cuatro dígitos es nulo (es decir, toma el valor «0000»), puede ser comprimido. Por ejemplo,</p>
+<p><code class="docutils literal notranslate"><span class="pre">2001:0db8:85a3:0000:1319:8a2e:0370:7344</span></code></p>
+<p>es la misma dirección que</p>
+<p><code class="docutils literal notranslate"><span class="pre">2001:0db8:85a3::1319:8a2e:0370:7344</span></code></p>
+<p>Siguiendo esta regla, si más de dos grupos consecutivos son nulos, pueden comprimirse como <code class="docutils literal notranslate"><span class="pre">::</span></code>. Si la dirección tiene más de una serie de grupos nulos consecutivos la compresión solo en uno de ellos. Así,</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">2001:0DB8:0000:0000:0000:0000:1428:57ab</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">2001:0DB8:0000:0000:0000::1428:57ab</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">2001:0DB8:0:0:0:0:1428:57ab</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">2001:0DB8:0::0:1428:57ab</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">2001:0DB8::1428:57ab</span></code></li>
+</ul>
+<p>son todas válidas y significan lo mismo, pero</p>
+<p><code class="docutils literal notranslate"><span class="pre">2001::25de::cade</span></code></p>
+<p>es inválido porque no queda claro cuantos grupos nulos hay en cada lado.</p>
+<p>Los ceros iniciales en un grupo pueden ser omitidos. Así,</p>
+<p><code class="docutils literal notranslate"><span class="pre">2001:0DB8:02de::0e13</span></code></p>
+<p>es lo mismo que</p>
+<p><code class="docutils literal notranslate"><span class="pre">2001:DB8:2de::e13</span></code></p>
+<p>Si la dirección es una dirección IPv4 camuflada, los últimos 32 bits pueden escribirse en base decimal; así,</p>
+<p><code class="docutils literal notranslate"><span class="pre">::ffff:192.168.89.9</span></code></p>
+<p>es lo mismo que</p>
+<p><code class="docutils literal notranslate"><span class="pre">::ffff:c0a8:5909</span></code></p>
+<p>pero no lo mismo que</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">::192.168.89.9</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">::c0a8:5909</span></code></li>
+</ul>
+<p>El formato <code class="docutils literal notranslate"><span class="pre">::ffff:1.2.3.4</span></code> se denomina dirección <strong>IPv4 mapeada</strong>, y el formato <code class="docutils literal notranslate"><span class="pre">::1.2.3.4</span></code> dirección <strong>IPv4 compatible</strong>.</p>
+<p>Las direcciones IPv4 pueden ser transformadas fácilmente al formato IPv6. Por ejemplo, si la dirección decimal IPv4 es <code class="docutils literal notranslate"><span class="pre">135.75.43.52</span></code> (en hexadecimal, <code class="docutils literal notranslate"><span class="pre">0x874B2B34</span></code>), puede ser convertida a <code class="docutils literal notranslate"><span class="pre">0000:0000:0000:0000:0000:0000:874B:2B34</span></code> o <code class="docutils literal notranslate"><span class="pre">::874B:2B34</span></code>. Entonces, uno puede usar la notación mixta dirección IPv4 compatible, en cuyo caso la dirección debería ser <code class="docutils literal notranslate"><span class="pre">::135.75.43.52</span></code>. Este tipo de dirección IPv4 compatible casi no está siendo utilizada en la práctica, aunque los estándares no la han declarado obsoleta.</p>
+</div>
+<div class="section" id="tipos-de-direcciones">
+<h3>3.2.4.3. Tipos de direcciones<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#tipos-de-direcciones" title="Enlazar permanentemente con este título"></a></h3>
+<p>IPv6 tiene tres tipos de direcciones, que se pueden clasificar según el tipo y alcance:</p>
+<ul class="simple">
+<li>Las direcciones <strong>UNICAST</strong>. Se envía un paquete a una interfaz.</li>
+<li>Las direcciones <strong>MULTICAST</strong> (multidifusión). Se envía un paquete de múltiples interfaces.</li>
+<li>Las direcciones <strong>ANYCAST</strong>. Se envía un paquete a la más cercana de múltiples interfaces (en términos de distancia de enrutamiento).</li>
+</ul>
+<p><strong>No hay direcciones de broadcast en IPv6</strong>. Las direcciones de multidifusión han reemplazado esta función.</p>
+<p>Las direcciones Unicast y Anycast en IPv6 tienen los siguientes ámbitos (para las direcciones multicast, el ámbito está integrado en la estructura de dirección):</p>
+<ul class="simple">
+<li>De enlace local. El ámbito es el enlace local (nodos de la misma subred).</li>
+<li>Global. El alcance es global (direcciones de Internet IPv6).</li>
+</ul>
+<p>Además, IPv6 tiene direcciones especiales como la dirección de bucle invertido. El ámbito de una dirección especial depende del tipo de dirección especial.</p>
+<p>Gran parte del espacio de direcciones IPv6 está sin asignar.</p>
+<p><strong>Tabla muy resumida de la asignación por tipo de dirección</strong>.</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="41%" /> <col width="33%" /> <col width="26%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Tipo de dirección</th>
+<th class="head">Prefijo binario</th>
+<th class="head">Notación IPv6</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>Sin especificar</td>
+<td>00 … 0 (128 bits)</td>
+<td>::/128</td>
+</tr>
+<tr class="row-odd">
+<td>Loopback</td>
+<td>00 … 1 (128 bits)</td>
+<td>::1/128</td>
+</tr>
+<tr class="row-even">
+<td>Multicast</td>
+<td>11111111 …</td>
+<td>FF00::/8</td>
+</tr>
+<tr class="row-odd">
+<td>Link-local unicast</td>
+<td>1111111010 …</td>
+<td>FE80::/10</td>
+</tr>
+<tr class="row-even">
+<td>Site-local unicast (obsoleto)</td>
+<td>1111111011 …</td>
+<td>FEC0::/10</td>
+</tr>
+<tr class="row-odd">
+<td>Local unicast</td>
+<td>1111110 …</td>
+<td>FC00::/7</td>
+</tr>
+<tr class="row-even">
+<td>Global unicast</td>
+<td>001 …</td>
+<td>2000::/3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="paquetes-ipv6">
+<h3>3.2.4.4. Paquetes IPv6<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#paquetes-ipv6" title="Enlazar permanentemente con este título"></a></h3>
+<div class="figure" id="id5"><img alt="../_images/tema08-048.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-048.png" />
+<p class="caption"><span class="caption-text">Estructura de la cabecera de un paquete IPv6.</span></p>
+</div>
+<p>Un paquete en IPv6 está compuesto principalmente de dos partes: la cabecera y los datos.</p>
+<p>La cabecera está en los primeros 40 bytes del paquete y contiene las direcciones de origen y destino (128 bits cada una), la versión de IP (4 bits), la clase de tráfico (8 bits, Prioridad del Paquete), etiqueta de flujo (20 bits, manejo de la Calidad de Servicio), longitud del campo de datos (16 bits), cabecera siguiente (8 bits), y límite de saltos (8 bits, Tiempo de Vida). Después viene el campo de datos, con los datos que transporta el paquete, que puede llegar a 64k de tamaño en el modo normal, o más con la opción «jumbo payload».</p>
+</div>
+<div class="section" id="despliegue-de-ipv6">
+<h3>3.2.4.5. Despliegue de IPv6<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#despliegue-de-ipv6" title="Enlazar permanentemente con este título"></a></h3>
+<p><strong>Mecanismos de transición a IPv6</strong></p>
+<p>El cambio de IPv4 a IPv6 ya ha comenzado. Durante 20 años se espera que convivan ambos protocolos y que la implantación de IPv6 sea paulatina. Existe una serie de mecanismos que permitirán la convivencia y la migración progresiva tanto de las redes como de los equipos de usuario. En general, los mecanismos de transición pueden clasificarse en tres grupos:</p>
+<ul class="simple">
+<li><strong>Pila dual</strong></li>
+<li><strong>Túneles</strong></li>
+<li><strong>Traducción</strong></li>
+</ul>
+<p><strong>Pila dual</strong></p>
+<p>La pila dual hace referencia a una solución de nivel IP con pila dual (RFC 2893), que implementa las pilas de ambos protocolos, IPv4 e IPv6, en cada nodo de la red. Cada nodo de pila dual en la red tendrá dos direcciones de red, una IPv4 y otra IPv6.</p>
+<ul class="simple">
+<li>Pros: Fácil de desplegar y extensamente soportado.</li>
+<li>Contras: La topología de red requiere dos tablas de encaminamiento y dos procesos de encaminamiento. Cada nodo en la red necesita tener actualizadas las dos pilas.</li>
+</ul>
+<p><strong>Túneles</strong></p>
+<p>Los túneles permiten conectarse a redes IPv6 «saltando» sobre redes IPv4. Estos túneles trabajan <strong>encapsulando los paquetes IPv6 en paquetes IPv4</strong> teniendo como siguiente capa IP el protocolo número 41, y de ahí el nombre proto-41. De esta manera, los paquetes IPv6 pueden ser enviados sobre una infraestructura IPv4. Hay muchas tecnologías de túneles disponibles. La principal diferencia está en el método que usan los nodos encapsuladores para determinar la dirección a la salida del túnel.</p>
+<p>Estas tecnologías incluyen túneles <strong>6to4, ISATAP, y Teredo</strong> que proporcionan la asignación de direcciones y túnel automático para el tráfico IPv6 Unicast host-to-host cuando los hosts de IPv6 deben atravesar redes IP4 para llegar a otras redes IPv6.</p>
+<p><strong>Teredo</strong> es una tecnología de transición que proporciona conectividad IPv6 a hosts que soportan IPv6 pero que se encuentran conectados a Internet mediante una red IPv4. Comparado con otros protocolos similares, la característica que lo distingue es que es capaz de realizar su función <strong>incluso detrás de dispositivos NAT, como los routers domésticos</strong>.</p>
+<p>Teredo opera usando un protocolo de túneles independiente de la plataforma diseñado para proporcionar conectividad IPv6 <strong>encapsulando los datagramas IPv6 dentro de datagramas UDP IPv4</strong>. Estos datagramas pueden ser encaminados en Internet IPv4 y a través de dispositivos NAT. Otros nodos Teredo, también llamados Teredo relays, que tienen acceso a la red IPv6, reciben los paquetes, los desencapsulan y los encaminan.</p>
+<p>Teredo está diseñado como una tecnología de transición con el objetivo de ser una medida temporal. En el largo plazo, todos los hosts IPv6 deberían usar la conectividad IPv6 nativa y desactivar Teredo cuando la conectividad IPv6 esté disponible.</p>
+<p>Teredo fue desarrollado por Christian Huitema en Microsoft y fue estandarizado por la IETF como RFC 4380. El servidor teredo escucha en el <strong>puerto UDP 3544</strong>.</p>
+<p>El protocolo de túneles IPv6 sobre IPv4 más común, 6to4, requiere que el final del túnel tenga una dirección IPv4 pública. Sin embargo, actualmente muchos hosts se conectan a Internet IPv4 a través de uno o varios dispositivos NAT, por lo general por el agotamiento de las direcciones IPv4. En esta situación, la única dirección IPv4 pública se asigna al dispositivo NAT y es necesario que el protocolo 6to4 esté implementado en este dispositivo. Muchos de los dispositivos NAT usados actualmente no pueden ser actualizados para implementar 6to4 por razones técnicas o económicas.</p>
+<p>Teredo soluciona este problema encapsulando paquetes IPv6 dentro de datagramas UDP IPv4, los cuales pueden ser reenviados correctamente por NATs. Por lo tanto los hosts IPv6 que se encuentran detrás de dispositivos NAT pueden usar los túneles Teredo incluso si no disponen de una dirección IPv4 pública. Un host que implemente Teredo puede tener conectividad IPv6 sin cooperación por parte de la red local o del dispositivo NAT.</p>
+<p>Teredo pretende ser una medida temporal. En el largo plazo todos los hosts deberían usar la conectividad nativa IPv6. El protocolo Teredo incluye una disposición para el proceso de extinción del protocolo: «Una implementación Teredo debería proporcionar una forma para dejar de usar la conectividad Teredo cuando IPv6 haya madurado y la conectividad esté disponible usando un mecanismo menos frágil».</p>
+<p><strong>Miredo</strong> es un cliente libre de túneles Teredo diseñado para permitir conectividad IPv6 a ordenadores que se encuentran en redes IPv4 y que no tienen acceso directo a una red IPv6.</p>
+<p><strong>Miredo está incluido en muchas distribuciones Linux y BSD y también está disponible para las versiones recientes de Mac OS X</strong>.</p>
+<p>Incluye implementaciones de los tres componentes de especificación Teredo: cliente, relay y servidor.</p>
+<p>Está liberado bajo los términos de la licencia GNU General Public License, Miredo es software libre.</p>
+<p><strong>Traducción</strong></p>
+<p>La traducción es necesaria cuando un nodo solo IPv4 intenta comunicar con un nodo solo IPv6.</p>
+<p>Actualmente el protocolo IPv6 está soportado en la mayoría de los sistemas operativos modernos, en algunos casos como una opción de instalación. Linux, Solaris, Mac OS, OpenBSD, FreeBSD, Windows (2k, CE) y Symbian (dispositivos móviles) son sólo algunos de los sistemas operativos que pueden funcionar con IPv6.</p>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="323_protocolo_icmp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="33_dispositivos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

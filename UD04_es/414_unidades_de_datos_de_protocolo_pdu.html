@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1.4. Unidades de Datos de Protocolo (PDU) </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD04. Arquitectura de red</a></li>
+   <li class="current-page-parent"><a href="41_arquitecturas_de_comunicaciones.html" class="current-page-parent daddy">4.1. Arquitecturas de comunicaciones</a>
+   <ul>
+      <li><a href="411_modelo_de_referencia_osi_y_arquitectura_tcpip.html" class="no-ch">4.1.1. Modelo de referencia OSI y arquitectura TCP/IP</a></li>
+      <li><a href="412_niveles_osi.html" class="no-ch">4.1.2. Niveles OSI</a></li>
+      <li><a href="413_arquitectura_tcpip.html" class="no-ch">4.1.3. Arquitectura TCP/IP</a></li>
+      <li id="active"><a href="414_unidades_de_datos_de_protocolo_pdu.html" class="active no-ch">4.1.4. Unidades de Datos de Protocolo (PDU)</a></li>
+   </ul>
+   </li>
+   <li><a href="42_componentes_de_una_red.html" class="daddy">4.2. Componentes de una red</a>
+   <ul class="other-section">
+      <li><a href="421_nubes.html" class="no-ch">4.2.1. Nubes</a></li>
+      <li><a href="422_dispositivos_terminales_capas_1_a_7.html" class="no-ch">4.2.2. Dispositivos terminales (Capas 1 a 7)</a></li>
+      <li><a href="423_dispositivos_intermedios_capas_1_2_y_3.html" class="no-ch">4.2.3. Dispositivos intermedios (Capas 1, 2 y 3)</a></li>
+   </ul>
+   </li>
+   <li><a href="43_uso_del_medio_en_redes.html" class="daddy">4.3. Uso del medio en redes</a>
+   <ul class="other-section">
+      <li><a href="431_conmutacin.html" class="no-ch">4.3.1. Conmutación</a></li>
+      <li><a href="432_difusin.html" class="no-ch">4.3.2. Difusión</a></li>
+   </ul>
+   </li>
+   <li><a href="44_esquemas_lan.html" class="daddy">4.4. Esquemas LAN</a>
+   <ul class="other-section">
+      <li><a href="441_red_local_simple.html" class="no-ch">4.4.1. Red local simple</a></li>
+      <li><a href="442_red_local_organizada_en_2_zonas.html" class="no-ch">4.4.2. Red local organizada en 2 zonas</a></li>
+      <li><a href="443_red_local_con_zona_de_usuarios_y_zona_desmilitarizada.html" class="no-ch">4.4.3. Red local con zona de usuarios y Zona DesMilitarizada</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="413_arquitectura_tcpip.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42_componentes_de_una_red.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4.1.4. Unidades de Datos de Protocolo (PDU)</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id4">
+<div class="iDevice emphasis0" >
+<div id="ta4_112_2" class="block iDevice_content">
+<div class="exe-text"><p>PDU es la abreviatura de <strong>Protocol Data Unit</strong> (unidad de datos del protocolo). Su función principal es establecer una comunicación de datos entre capas homologas. Esta forma de establecer conexiones recibe el nombre de comunicación par-a-par.</p>
+<p>La primera PDU corresponde a los datos que llegan a la capa de aplicación. Aquí se les añade una cabecera y la PDU pasa al nivel siguiente, el de presentación en el modelo OSI, el de transporte en la arquitectura TCP/IP.</p>
+<p>A partir de aquí, y en cada uno de los niveles subsiguientes, a la PDU recibida se le añadirá una cabecera y será enviada al nivel inferior, y así sucesivamente hasta llegar al nivel físico, donde los datos serán enviados como bits.</p>
+<div class="section" id="pdus-de-osi">
+<h3>4.1.4.1. PDUs de OSI<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#pdus-de-osi" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="../_images/tema02-004.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema02-004.png" /></div>
+<div class="section" id="pdus-de-tcp-ip">
+<h3>4.1.4.2. PDUs de TCP/IP<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#pdus-de-tcp-ip" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="../_images/tema02-005.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema02-005.png" />
+<p>En la arquitectura TCP/IP cada PDU recibe un nombre específico:</p>
+<ul class="simple">
+<li>Capa de aplicación: <strong>Datos</strong></li>
+<li>Capa de transporte: <strong>Segmentos</strong></li>
+<li>Capa de red: <strong>Datagramas</strong></li>
+<li>Capa de acceso a la red: <strong>Tramas</strong></li>
+<li>Capa física: Flujo de bits</li>
+</ul>
+</div>
+<div class="section" id="encapsulacion">
+<h3>4.1.4.3. Encapsulación<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#encapsulacion" title="Enlazar permanentemente con este título"></a></h3>
+<p>Como se observa en las PDUs, éstas están formadas por una cabecera propia de cada nivel y datos. La PDU (Cabecera y Datos) de una capa superior se trata como datos por la capa inmediatamente inferior. Esta capa inferior le añade su propia cabecera y pasa toda la información a la capa inferior.</p>
+<p>El resultado de todo esto es que los datos originales cada vez poseen más cabeceras (una por cada capa) a medida que descienden por la pila.</p>
+<p>En el equipo destino se irán quitando las cabeceras en orden inverso a como se añadieron. Cada capa leerá la cabecera que contiene los datos de control destinados a ella.</p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="413_arquitectura_tcpip.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="42_componentes_de_una_red.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.1. Protocolo IP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD03. La Capa de Red</a></li>
+   <li><a href="31_conceptos_generales.html" class="daddy">3.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="311_concepto_de_capa_de_red.html" class="no-ch">3.1.1. Concepto de capa de red</a></li>
+      <li><a href="312_direcciones_ip.html" class="no-ch">3.1.2. Direcciones IP</a></li>
+      <li><a href="313_mscara_de_red_y_subred.html" class="no-ch">3.1.3. Máscara de red y subred</a></li>
+      <li><a href="314_configuracin_de_clientes.html" class="no-ch">3.1.4. Configuración de clientes</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="32_estndares.html" class="current-page-parent daddy">3.2. Estándares</a>
+   <ul>
+      <li id="active"><a href="321_protocolo_ip.html" class="active no-ch">3.2.1. Protocolo IP</a></li>
+      <li><a href="322_protocolo_arp.html" class="no-ch">3.2.2. Protocolo ARP</a></li>
+      <li><a href="323_protocolo_icmp.html" class="no-ch">3.2.3. Protocolo ICMP</a></li>
+      <li><a href="324_ipv6.html" class="no-ch">3.2.4. IPv6</a></li>
+   </ul>
+   </li>
+   <li><a href="33_dispositivos.html" class="daddy">3.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="331_routers.html" class="no-ch">3.3.1. Routers</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="32_estndares.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322_protocolo_arp.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.2.1. Protocolo IP</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id5">
+<div class="iDevice emphasis0">
+<div id="ta5_85" class="block iDevice_content">
+<p>IP es el principal protocolo de la capa de red. Este protocolo define la unidad básica de transferencia de datos entre el origen y el destino, atravesando toda la red de redes. Además, el software IP es el encargado de elegir la ruta más adecuada por la que los datos serán enviados. Se trata de un sistema de entrega de paquetes (llamados <strong>datagramas IP</strong>) que tiene las siguientes características:</p>
+<ul class="simple">
+<li>Es <strong>no orientado a conexión</strong> debido a que cada uno de los paquetes puede seguir rutas distintas entre el origen y el destino. Entonces pueden llegar duplicados o desordenados.</li>
+<li>Es <strong>no fiable</strong> porque los paquetes pueden perderse, dañarse o llegar retrasados.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El protocolo IP está definido en la RFC 791</p>
+</div>
+<div class="section" id="formato-del-datagrama-ip">
+<h3>3.2.1.1. Formato del datagrama IP<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#formato-del-datagrama-ip" title="Enlazar permanentemente con este título"></a></h3>
+<p>El datagrama IP es la unidad básica de transferencia de datos entre el origen y el destino. Viaja en el campo de datos de las tramas físicas (recuérdese la trama Ethernet) de las distintas redes que va atravesando. Cada vez que un datagrama tiene que atravesar un router, el datagrama saldrá de la trama física de la red que abandona y se acomodará en el campo de datos de una trama física de la siguiente red. Este mecanismo permite que un mismo datagrama IP pueda atravesar redes distintas: enlaces punto a punto, redes ATM, redes Ethernet, redes Token Ring, etc. El propio datagrama IP tiene también un campo de datos: será aquí donde viajen los paquetes de las capas superiores.</p>
+<div class="figure"><img alt="../_images/tema08-020.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-020.png" /></div>
+<div class="figure"><img alt="../_images/tema08-021.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-021.png" /></div>
+<p><strong>Campos del datagrama IP</strong></p>
+<ul class="simple">
+<li><strong>VERS (4 bits)</strong>. Indica la versión del protocolo IP que se utilizó para crear el datagrama. Actualmente se utiliza la versión 4 (IPv4) aunque ya se están preparando las especificaciones de la siguiente versión, la 6 (IPv6).</li>
+<li><strong>HLEN (4 bits)</strong>. Longitud de la cabecera expresada en múltiplos de 32 bits. El valor mínimo es 5, correspondiente a 160 bits = 20 bytes.</li>
+<li><strong>Tipo de servicio (Type Of Service)</strong>. Los 8 bits de este campo se dividen a su vez en:
+<ul>
+<li><strong>Prioridad (3 bits)</strong>. Un valor de 0 indica baja prioridad y un valor de 7, prioridad máxima.</li>
+<li>Los siguientes tres bits indican cómo se prefiere que se transmita el mensaje, es decir, son sugerencias a los encaminadores que se encuentren a su paso los cuales pueden tenerlas en cuenta o no.
+<ul>
+<li><strong>Bit D</strong> (Delay). Solicita retardos cortos (enviar rápido).</li>
+<li><strong>Bit T</strong> (Throughput). Solicita un alto rendimiento (enviar mucho en el menor tiempo posible).</li>
+<li><strong>Bit R</strong> (Reliability). Solicita que se minimice la probabilidad de que el datagrama se pierda o resulte dañado (enviar bien).</li>
+</ul>
+</li>
+<li>Los siguiente dos bits no tienen uso.</li>
+</ul>
+</li>
+<li><strong>Longitud total (16 bits)</strong>. Indica la longitud total del datagrama expresada en bytes. Como el campo tiene 16 bits, la máxima longitud posible de un datagrama será de 65535 bytes.</li>
+<li>** Identificación (16 bits)**. Número de secuencia que junto a la dirección origen, dirección destino y el protocolo utilizado identifica de manera única un datagrama en toda la red. Si se trata de un datagrama fragmentado, llevará la misma identificación que el resto de fragmentos.</li>
+<li><strong>Banderas o indicadores (3 bits)</strong>. Sólo 2 bits de los 3 bits disponibles están actualmente utilizados. El bit de Más fragmentos (MF) indica que no es el último datagrama. Y el bit de No fragmentar (NF) prohíbe la fragmentación del datagrama. Si este bit está activado y en una determinada red se requiere fragmentar el datagrama, éste no se podrá transmitir y se descartará.</li>
+<li><strong>Desplazamiento de fragmentación (13 bits)</strong>. Indica el lugar en el cual se insertará el fragmento actual dentro del datagrama completo, medido en unidades de 64 bits. Por esta razón los campos de datos de todos los fragmentos menos el último tienen una longitud múltiplo de 64 bits. Si el paquete no está fragmentado, este campo tiene el valor de cero.</li>
+<li><strong>Tiempo de vida o TTL (8 bits)</strong>. Número máximo de segundos que puede estar un datagrama en la red de redes. Cada vez que el datagrama atraviesa un router se resta 1 a este número. Cuando llegue a cero, el datagrama se descarta y se devuelve un mensaje ICMP de tipo «tiempo excedido» para informar al origen de la incidencia.</li>
+<li><strong>Protocolo (8 bits)</strong>. Indica el protocolo utilizado en el campo de datos: 1 para ICMP, 2 para IGMP, 6 para TCP y 17 para UDP.</li>
+<li><strong>CRC cabecera (16 bits)</strong>. Contiene la suma de comprobación de errores sólo para la cabecera del datagrama. La verificación de errores de los datos corresponde a las capas superiores.</li>
+<li><strong>Dirección origen (32 bits)</strong>. Contiene la dirección IP del origen.</li>
+<li><strong>Dirección destino (32 bits)</strong>. Contiene la dirección IP del destino.</li>
+<li><strong>Opciones IP</strong>. Este campo no es obligatorio y especifica las distintas opciones solicitadas por el usuario que envía los datos (generalmente para pruebas de red y depuración).</li>
+<li><strong>Relleno</strong>. Si las opciones IP (en caso de existir) no ocupan un múltiplo de 32 bits, se completa con bits adicionales hasta alcanzar el siguiente múltiplo de 32 bits (recuérdese que la longitud de la cabecera tiene que ser múltiplo de 32 bits).</li>
+</ul>
+</div>
+<div class="section" id="fragmentacion">
+<h3>3.2.1.2. Fragmentación<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#fragmentacion" title="Enlazar permanentemente con este título"></a></h3>
+<p>Ya hemos visto que las tramas físicas tienen un campo de datos y que es aquí donde se transportan los datagramas IP. Sin embargo, este campo de datos no puede tener una longitud indefinida debido a que está limitado por el diseño de la red. <strong>El MTU de una red es la mayor cantidad de datos que puede transportar su trama física</strong>. El MTU de las redes Ethernet es 1500 bytes y el de las redes Token-Ring, 8192 bytes. Esto significa que una red Ethernet nunca podrá transportar un datagrama de más de 1500 bytes sin fragmentarlo.</p>
+<p>Un encaminador (router) fragmenta un datagrama en varios si el siguiente tramo de la red por el que tiene que viajar el datagrama tiene un MTU inferior a la longitud del datagrama. Veamos con el siguiente ejemplo cómo se produce la fragmentación de un datagrama.</p>
+<div class="figure"><img alt="../_images/tema08-022.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-022.png" /></div>
+<p>Supongamos que el host A envía un datagrama de 1400 bytes de datos (1420 bytes en total) al host B. El datagrama no tiene ningún problema en atravesar la red 1 ya que 1420 &lt; 1500. Sin embargo, no es capaz de atravesar la red 2 (1420 &gt;= 620). El router R1 fragmenta el datagrama en el menor número de fragmentos posibles que sean capaces de atravesar la red 2. Cada uno de estos fragmentos es un nuevo datagrama con la misma Identificación pero distinta información en el campo de Desplazamiento de fragmentación y el bit de Más fragmentos (MF). Veamos el resultado de la fragmentación:</p>
+<p><strong>Fragmento 1</strong>: Long. total = 620 bytes; Desp = 0; MF=1 (contiene los primeros 600 bytes de los datos del datagrama original)</p>
+<p><strong>Fragmento 2</strong>: Long. total = 620 bytes; Desp = 600; MF=1 (contiene los siguientes 600 bytes de los datos del datagrama original)</p>
+<p><strong>Fragmento 3</strong>: Long. total = 220 bytes; Desp = 1200; MF=0 (contiene los últimos 200 bytes de los datos del datagrama original)</p>
+<p>El router R2 recibirá los 3 datagramas IP (fragmentos) y los enviará a la red 3 sin reensamblarlos. Cuando el host B reciba los fragmentos, recompondrá el datagrama original. Los encaminadores intermedios no reensamblan los fragmentos debido a que esto supondría una carga de trabajo adicional, a parte de memorias temporales. Nótese que el ordenador destino puede recibir los fragmentos cambiados de orden pero esto no supondrá ningún problema para el reensamblado del datagrama original puesto que cada fragmento guarda suficiente información.</p>
+<p>Si el datagrama del ejemplo hubiera tenido su bit No fragmentar (NF) a 1, no hubiera conseguido atravesar el router R1 y, por tanto, no tendría forma de llegar hasta el host B. El encaminador R1 descartaría el datagrama.</p>
+</div>
+<div class="section" id="cidr-classless-inter-domain-routing">
+<h3>3.2.1.3. CIDR ( Classless Inter-Domain Routing)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#cidr-classless-inter-domain-routing" title="Enlazar permanentemente con este título"></a></h3>
+<p><strong>Encaminamiento Inter-Dominios sin Clases</strong></p>
+<p>Pronunciado como «cider» or «cedar», se introdujo en 1993 y representa la última mejora en el modo como se interpretan las direcciones IP. Su introducción permitió una mayor flexibilidad al dividir rangos de direcciones IP en redes separadas. De esta manera permitió:</p>
+<p>Un uso más eficiente de las cada vez más escasas direcciones IPv4. Un mayor uso de la jerarquía de direcciones (“agregación de prefijos de red”), disminuyendo la sobrecarga de los enrutadores principales de Internet para realizar el encaminamiento. Los bloques CIDR IPv4 se identifican usando una sintaxis similar a la de las direcciones IPv4: cuatro números decimales separados por puntos, seguidos de una barra de división y un número de 0 a 32; <strong>A.B.C.D/N</strong>. El número tras la barra es la <strong>longitud de prefijo</strong>, contando desde la izquierda, y representa el número de bits comunes a todas las direcciones incluidas en el bloque CIDR.</p>
+<p>Decimos que una dirección IP está incluida en un bloque CIDR, y que encaja con el prefijo CIDR, si los N bits iniciales de la dirección y el prefijo son iguales. Por tanto, para entender CIDR es necesario visualizar la dirección IP en binario. Dado que la longitud de una dirección IPv4 es fija, de 32 bits, un prefijo CIDR de N-bits deja 32 − N bits sin encajar, y hay 2<sup>(32 − N)</sup> combinaciones posibles con los bits restantes. Esto quiere decir que 2<sup>(32 − N)</sup> direcciones IPv4 encajan en un prefijo CIDR de N-bits.</p>
+<p>Nótese que los prefijos <strong>CIDR cortos</strong> (números cercanos a 0) permiten encajar un mayor número de direcciones IP, mientras que prefijos <strong>CIDR largos</strong> (números cercanos a 32) permiten encajar menos direcciones IP. CIDR también se usa con direcciones IPv6, en las que la longitud del prefijo varia desde 0 a 128, debido a la mayor longitud de bit en las direcciones, con respecto a IPv4. En el caso de IPv6 se usa una sintaxis similar a la comentada: el prefijo se escribe como una dirección IPv6, seguida de una barra y el número de bits significativos.</p>
+<p><strong>CIDR usa máscaras de subred de longitud variable (VLSM)</strong> para asignar direcciones IP a subredes de acuerdo a las necesidades de cada subred. De esta forma, la división red/host puede ocurrir en cualquier bit de los 32 que componen la dirección IP. Este proceso puede ser recursivo, dividiendo una parte del espacio de direcciones en porciones cada vez menores, usando máscaras que cubren un mayor número de bits.</p>
+<p>Las direcciones de red CIDR/VLSM se usan a lo largo y ancho de la Internet pública, y en muchas grandes redes privadas. El usuario normal no ve este uso puesto en práctica, al estar en una red en la que se usarán, por lo general, direcciones de red privadas recogidas en el RFC 1918. El término VLSM (<strong>Variable Lenght Subnet Mask - Máscara de Subred de Longitud Variable</strong>) se usa generalmente cuando se habla de redes privadas, mientras que CIDR se usa cuando se habla de Internet (red pública).</p>
+</div>
+<div class="section" id="tabla-de-conversion-de-prefijos-cidr">
+<h3>3.2.1.4. Tabla de conversión de prefijos CIDR<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#tabla-de-conversion-de-prefijos-cidr" title="Enlazar permanentemente con este título"></a></h3>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="11%" /> <col width="40%" /> <col width="25%" /> <col width="24%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">CIDR</th>
+<th class="head">Clase</th>
+<th class="head">Hosts <a class="footnote-reference" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#id2" id="id1">[1]</a></th>
+<th class="head">Máscara</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>/32</td>
+<td>1/256 C</td>
+<td>1</td>
+<td>255.255.255.255</td>
+</tr>
+<tr class="row-odd">
+<td>/31</td>
+<td>1/128 C</td>
+<td>2</td>
+<td>255.255.255.254</td>
+</tr>
+<tr class="row-even">
+<td>/30</td>
+<td>1/64 C</td>
+<td>4</td>
+<td>255.255.255.252</td>
+</tr>
+<tr class="row-odd">
+<td>/29</td>
+<td>1/32 C</td>
+<td>8</td>
+<td>255.255.255.248</td>
+</tr>
+<tr class="row-even">
+<td>/28</td>
+<td>1/16 C</td>
+<td>16</td>
+<td>255.255.255.240</td>
+</tr>
+<tr class="row-odd">
+<td>/27</td>
+<td>1/8 C</td>
+<td>32</td>
+<td>255.255.255.224</td>
+</tr>
+<tr class="row-even">
+<td>/26</td>
+<td>1/4 C</td>
+<td>64</td>
+<td>255.255.255.192</td>
+</tr>
+<tr class="row-odd">
+<td>/25</td>
+<td>1/2 C</td>
+<td>128</td>
+<td>255.255.255.128</td>
+</tr>
+<tr class="row-even">
+<td>/24</td>
+<td>1 C</td>
+<td>256</td>
+<td>255.255.255.000</td>
+</tr>
+<tr class="row-odd">
+<td>/23</td>
+<td>2 C</td>
+<td>512</td>
+<td>255.255.254.000</td>
+</tr>
+<tr class="row-even">
+<td>/22</td>
+<td>4 C</td>
+<td>1024</td>
+<td>255.255.252.000</td>
+</tr>
+<tr class="row-odd">
+<td>/21</td>
+<td>8 C</td>
+<td>2048</td>
+<td>255.255.248.000</td>
+</tr>
+<tr class="row-even">
+<td>/20</td>
+<td>16 C</td>
+<td>4096</td>
+<td>255.255.240.000</td>
+</tr>
+<tr class="row-odd">
+<td>/19</td>
+<td>32 C</td>
+<td>8192</td>
+<td>255.255.224.000</td>
+</tr>
+<tr class="row-even">
+<td>/18</td>
+<td>64 C</td>
+<td>16384</td>
+<td>255.255.192.000</td>
+</tr>
+<tr class="row-odd">
+<td>/17</td>
+<td>128 C</td>
+<td>32768</td>
+<td>255.255.128.000</td>
+</tr>
+<tr class="row-even">
+<td>/16</td>
+<td>256 C, 1 B</td>
+<td>65536</td>
+<td>255.255.000.000</td>
+</tr>
+<tr class="row-odd">
+<td>/15</td>
+<td>512 C, 2 B</td>
+<td>131072</td>
+<td>255.254.000.000</td>
+</tr>
+<tr class="row-even">
+<td>/14</td>
+<td>1024 C, 4 B</td>
+<td>262144</td>
+<td>255.252.000.000</td>
+</tr>
+<tr class="row-odd">
+<td>/13</td>
+<td>2048 C, 8 B</td>
+<td>524288</td>
+<td>255.248.000.000</td>
+</tr>
+<tr class="row-even">
+<td>/12</td>
+<td>4096 C, 16 B</td>
+<td>1048576</td>
+<td>255.240.000.000</td>
+</tr>
+<tr class="row-odd">
+<td>/11</td>
+<td>8192 C, 32 B</td>
+<td>2097152</td>
+<td>255.224.000.000</td>
+</tr>
+<tr class="row-even">
+<td>/10</td>
+<td>16384 C, 64 B</td>
+<td>4194304</td>
+<td>255.192.000.000</td>
+</tr>
+<tr class="row-odd">
+<td>/9</td>
+<td>32768 C, 128B</td>
+<td>8388608</td>
+<td>255.128.000.000</td>
+</tr>
+<tr class="row-even">
+<td>/8</td>
+<td>65536 C, 256B, 1 A</td>
+<td>16777216</td>
+<td>255.000.000.000</td>
+</tr>
+<tr class="row-odd">
+<td>/7</td>
+<td>131072 C, 512B, 2 A</td>
+<td>33554432</td>
+<td>254.000.000.000</td>
+</tr>
+<tr class="row-even">
+<td>/6</td>
+<td>262144 C, 1024 B, 4 A</td>
+<td>67108864</td>
+<td>252.000.000.000</td>
+</tr>
+<tr class="row-odd">
+<td>/5</td>
+<td>524288 C, 2048 B, 8 A</td>
+<td>134217728</td>
+<td>248.000.000.000</td>
+</tr>
+<tr class="row-even">
+<td>/4</td>
+<td>1048576 C, 4096 B, 16 A</td>
+<td>268435456</td>
+<td>240.000.000.000</td>
+</tr>
+<tr class="row-odd">
+<td>/3</td>
+<td>2097152 C, 8192 B, 32 A</td>
+<td>536870912</td>
+<td>224.000.000.000</td>
+</tr>
+<tr class="row-even">
+<td>/2</td>
+<td>4194304 C, 16384 B, 64 A</td>
+<td>1073741824</td>
+<td>192.000.000.000</td>
+</tr>
+<tr class="row-odd">
+<td>/1</td>
+<td>8388608 C, 32768 B, 128 A</td>
+<td>2147483648</td>
+<td>128.000.000.000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wy-table-responsive footnote">
+<table class="docutils footnote" frame="void" id="id2" rules="none"><colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr>
+<td class="label"><a class="fn-backref" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#id1">[1]</a></td>
+<td>En la práctica hay que restar 2 a este número. La dirección menor (más baja - todos los bits de host a 0) del bloque se usa para identificar a la propia red (toda la red), y la dirección mayor (la más alta - todos los bits de host a 1) se usa como dirección de broadcast. Por tanto, en un bloque CIDR /24 podríamos disponer de 2<sup>8</sup> − 2 = 254 direcciones IP para asignar a dispositivos.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Otro beneficio de CIDR es la posibilidad de <strong>agregar prefijos de encaminamiento</strong>, un proceso conocido como «<strong>supernetting</strong>». Una dirección IP puede encajar en varios prefijos CIDR de longitudes diferentes. Por ejemplo, dieciséis redes /24 contíguas pueden ser agregadas y publicadas en los enrutadores de Internet como una sola ruta /20 (si los primeros 20 bits de sus respectivas redes coinciden). Dos redes /20 contiguas pueden ser agregadas en una /19, etc…</p>
+<p>Esto permite una reducción significativa en el número de rutas que los enrutadores en Internet tienen que conocer (y una reducción de memoria, recursos, etc…) y previene una explosión de tablas de encaminamiento, que podría sobrecargar a los routers e impedir la expansión de Internet en el futuro.</p>
+</div>
+<div class="section" id="superredes">
+<h3>3.2.1.5. Superredes<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#superredes" title="Enlazar permanentemente con este título"></a></h3>
+<p>Para muchas organizaciones una dirección de red de clase C es poco.</p>
+<p>Solución: Agrupar direcciones consecutivas (tienen un prefijo común) de redes de clase C para asignarlas a una organización.</p>
+<p>Esto permite asignar espacio de direcciones a organizaciones con redes de tamaño medio, evitando utilizar direcciones de clase B.</p>
+<p>Ejemplo de agrupamiento:</p>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>193.40.128.0 = 11000001 00101000 1000 0000 00000000
+193.40.129.0 = 11000001 00101000 1000 0001 00000000
+.
+.
+.
+193.40.142.0 = 11000001 00101000 1000 1110 00000000
+193.40.143.0 = 11000001 00101000 1000 1111 00000000
+</pre>
+</div>
+</div>
+<p>La dirección de red/máscara sería 193.40.128.0/20 ( 255.255.240.0)</p>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>Máscara en binario: 11111111  11111111  11110000  00000000.
+</pre>
+</div>
+</div>
+<p>Existen 2<sup>12</sup>-2 (4096-2) direcciones IP para hosts</p>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="32_estndares.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="322_protocolo_arp.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

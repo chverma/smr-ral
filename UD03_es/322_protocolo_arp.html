@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.2. Protocolo ARP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-9"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD03. La Capa de Red</a></li>
+   <li><a href="31_conceptos_generales.html" class="daddy">3.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="311_concepto_de_capa_de_red.html" class="no-ch">3.1.1. Concepto de capa de red</a></li>
+      <li><a href="312_direcciones_ip.html" class="no-ch">3.1.2. Direcciones IP</a></li>
+      <li><a href="313_mscara_de_red_y_subred.html" class="no-ch">3.1.3. Máscara de red y subred</a></li>
+      <li><a href="314_configuracin_de_clientes.html" class="no-ch">3.1.4. Configuración de clientes</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="32_estndares.html" class="current-page-parent daddy">3.2. Estándares</a>
+   <ul>
+      <li><a href="321_protocolo_ip.html" class="no-ch">3.2.1. Protocolo IP</a></li>
+      <li id="active"><a href="322_protocolo_arp.html" class="active no-ch">3.2.2. Protocolo ARP</a></li>
+      <li><a href="323_protocolo_icmp.html" class="no-ch">3.2.3. Protocolo ICMP</a></li>
+      <li><a href="324_ipv6.html" class="no-ch">3.2.4. IPv6</a></li>
+   </ul>
+   </li>
+   <li><a href="33_dispositivos.html" class="daddy">3.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="331_routers.html" class="no-ch">3.3.1. Routers</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="321_protocolo_ip.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323_protocolo_icmp.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.2.2. Protocolo ARP</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_85" class="block iDevice_content">
+<p>Dentro de una misma red, las máquinas se comunican enviándose tramas físicas. Las tramas Ethernet contienen campos para las direcciones físicas de origen y destino (6 bytes cada una):</p>
+<div class="figure"><img alt="../_images/tema08-024.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-024.png" /></div>
+<p>8 bytes 6 bytes 6 bytes 2 bytes 64-1500 bytes 4 bytes Preámbulo Dirección físicadestino Dirección físicaorigen Tipo de trama Datos de la trama CRC El problema que se nos plantea es cómo podemos conocer la dirección física de la máquina destino. El único dato que se indica en los datagramas es la dirección IP de destino. ¿Cómo se pueden entregar entonces estos datagramas? Necesitamos obtener la dirección física de un ordenador a partir de su dirección IP. Esta es justamente la misión del protocolo ARP (Address Resolution Protocol, protocolo de resolución de direcciones).</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">ARP se utiliza en <strong>redes con mecanismos de difusión</strong> (Ethernet, FDDI, Token-Ring, etc.) El protocolo ARP está definido en RFC 826, RFC 1042 y RFC 1390</p>
+</div>
+<p>Vamos a retomar el ejemplo introductorio de este Capítulo. El host A envía un datagrama con origen 192.168.0.10 y destino 10.10.0.7 (B). Como el host B se encuentra en una red distinta al host A, el datagrama tiene que atravesar el router 192.168.0.1 (R1). Se necesita conocer la dirección física de R1.</p>
+<div class="figure"><img alt="../_images/tema08-000.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-000.png" /></div>
+<p>Es entonces cuando entra en funcionamiento el protocolo ARP: A envía un mensaje ARP a todas las máquinas de su red preguntando «¿Cuál es la dirección física de la máquina con dirección IP 192.168.0.1?». La máquina con dirección 192.168.0.1 (R1) advierte que la pregunta está dirigida a ella y responde a A con su dirección física (00-E0-4C-AB-9A-FF). Entonces A envía una trama física con origen 00-60-52-0B-B7-7D y destino 00-E0-4C-AB-9A-FF conteniendo el datagrama (origen 192.168.0.10 y destino 10.10.0.7). Al otro lado del router R2 se repite de nuevo el proceso para conocer la dirección física de B y entregar finalmente el datagrama a B. El mismo datagrama ha viajado en dos tramas físicas distintas, una para la red 1 y otra para la red 2.</p>
+<p>Observemos que las preguntas ARP son de difusión (se envían a todas las máquinas). Estas preguntas llevan además la dirección IP y dirección física de la máquina que pregunta. La respuesta se envía directamente a la máquina que formuló la pregunta.</p>
+<div class="section" id="tabla-arp-cache-arp">
+<h3>3.2.2.1. Tabla ARP (caché ARP)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#tabla-arp-cache-arp" title="Enlazar permanentemente con este título"></a></h3>
+<p>Cada ordenador almacena una tabla de direcciones IP y direcciones físicas. Cada vez que formula una pregunta ARP y le responden, inserta una nueva entrada en su tabla. La primera vez que C envíe un mensaje a D tendrá que difundir previamente una pregunta ARP, tal como hemos visto. Sin embargo, las siguientes veces que C envíe mensajes a D ya no será necesario realizar nuevas preguntas puesto que C habrá almacenado en su tabla la dirección física de D. Sin embargo, para evitar incongruencias en la red debido a posibles cambios de direcciones IP o adaptadores de red, se asigna un tiempo de vida de cierto número de segundos a cada entrada de la tabla. Cuando se agote el tiempo de vida de una entrada, ésta será eliminada de la tabla.</p>
+<p>Las tablas ARP reducen el tráfico de la red al evitar preguntas ARP innecesarias. Pensemos ahora en distintas maneras para mejorar el rendimiento de la red. Después de una pregunta ARP, el destino conoce las direcciones IP y física del origen. Por lo tanto, podría insertar la correspondiente entrada en su tabla. Pero no sólo eso, sino que todas las estaciones de la red escuchan la pregunta ARP: podrían insertar también las correspondientes entradas en sus tablas. Como es muy probable que otras máquinas se comuniquen en un futuro con la primera, habremos reducido así el tráfico de la red aumentando su rendimiento.</p>
+<p>Esto que hemos explicado es para comunicar dos máquinas conectadas a la misma red. Si la otra máquina no estuviese conectada a la misma red, sería necesario atravesar uno o más routers hasta llegar al host destino. La máquina origen, si no la tiene en su tabla, formularía una pregunta ARP solicitando la dirección física del router y le transferiría a éste el mensaje. Estos pasos se van repitiendo para cada red hasta llegar a la máquina destino.</p>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="321_protocolo_ip.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="323_protocolo_icmp.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

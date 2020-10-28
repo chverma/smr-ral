@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.4. Configuración de clientes </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD03. La Capa de Red</a></li>
+   <li class="current-page-parent"><a href="31_conceptos_generales.html" class="current-page-parent daddy">3.1. Conceptos generales</a>
+   <ul>
+      <li><a href="311_concepto_de_capa_de_red.html" class="no-ch">3.1.1. Concepto de capa de red</a></li>
+      <li><a href="312_direcciones_ip.html" class="no-ch">3.1.2. Direcciones IP</a></li>
+      <li><a href="313_mscara_de_red_y_subred.html" class="no-ch">3.1.3. Máscara de red y subred</a></li>
+      <li id="active"><a href="314_configuracin_de_clientes.html" class="active no-ch">3.1.4. Configuración de clientes</a></li>
+   </ul>
+   </li>
+   <li><a href="32_estndares.html" class="daddy">3.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="321_protocolo_ip.html" class="no-ch">3.2.1. Protocolo IP</a></li>
+      <li><a href="322_protocolo_arp.html" class="no-ch">3.2.2. Protocolo ARP</a></li>
+      <li><a href="323_protocolo_icmp.html" class="no-ch">3.2.3. Protocolo ICMP</a></li>
+      <li><a href="324_ipv6.html" class="no-ch">3.2.4. IPv6</a></li>
+   </ul>
+   </li>
+   <li><a href="33_dispositivos.html" class="daddy">3.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="331_routers.html" class="no-ch">3.3.1. Routers</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="313_mscara_de_red_y_subred.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_estndares.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.1.4. Configuración de clientes</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id4">
+<div class="iDevice emphasis0">
+<div id="ta4_85" class="block iDevice_content">
+<p>Supongamos que deseamos configurar el soporte de red para el equipo que viene en el siguiente esquema. Para ello debemos de establecer los siguientes parámetros:</p>
+<ul class="simple">
+<li>Dirección IP</li>
+<li>Máscara de red</li>
+<li><strong>Puerta de enlace</strong></li>
+<li>Servidores de resolución de nombres (DNS)</li>
+</ul>
+<p>Normalmente estos parámetros son configurados dinámicamente mediante DHCP por el Router de salida.</p>
+<p>No obstante también es posible su configuración de forma manual.</p>
+<div class="figure" id="id4"><img alt="../_images/tema08-011.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-011.png" />
+<p class="caption"><span class="caption-text">Esquema de referencia</span></p>
+</div>
+<div class="section" id="enrutamiento-en-el-cliente">
+<h3>3.1.4.1. Enrutamiento en el cliente<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#enrutamiento-en-el-cliente" title="Enlazar permanentemente con este título"></a></h3>
+<p>Un parámetro de importancia capital en una intranet es la configuración de la ruta por defecto en los clientes, que les permitirá salir a Internet. Para cada cliente deberemos establecer una <strong>puerta de enlace o gateway</strong> que es la dirección IP por la que el tráfico de red puede acceder a Internet. En el ejemplo anterior esta IP es <strong>192.168.1.1</strong>.</p>
+<p>Dicha IP suele ser la IP interna (a menudo privada) del router. Dicha dirección y la dirección de todos los equipos clientes deben hallarse dentro de la misma red (en este caso 192.168.1.0)</p>
+<p>Si la puerta de enlace no se halla configurada o está incorrectamente configurada en los clientes, es imposible que los equipos puedan comunicarse con Internet.</p>
+<p>A continuación mostramos como configurar, en el cliente, la puerta de enlace haciendo uso del terminal de texto. Tanto en Windows como en Linux se hace uso del comando <strong>route</strong> (aunque su sintaxis es ligeramente diferente en cada caso).</p>
+<p><strong>Ver puerta de enlace configurada</strong></p>
+<img alt="../_images/tema08-windows-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-windows-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">route print</span>
+</pre>
+</div>
+</div>
+<img alt="../_images/tema08-linux-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-linux-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">route</span>
+</pre>
+</div>
+</div>
+<p><strong>Borrar o añadir puerta de enlace</strong></p>
+<img alt="../_images/tema08-windows-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-windows-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">route delete 0.0.0.0 mask 0.0.0.0 192.168.1.1</span>
+<span class="go">route add    0.0.0.0 mask 0.0.0.0 192.168.1.1</span>
+</pre>
+</div>
+</div>
+<img alt="../_images/tema08-linux-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-linux-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">route del default gw 192.168.1.1</span>
+<span class="go">route add default gw 192.168.1.1</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="configuracion-del-soporte-basico-de-red">
+<h3>3.1.4.2. Configuración del soporte básico de red<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#configuracion-del-soporte-basico-de-red" title="Enlazar permanentemente con este título"></a></h3>
+<p><strong>Visualización de configuración actual</strong></p>
+<p>Podemos ver los parámetros de la red con los siguientes comandos:</p>
+<img alt="../_images/tema08-windows-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-windows-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">ipconfig /all            # (IP/Máscara, Puerta de enlace, DNS)</span>
+</pre>
+</div>
+</div>
+<img alt="../_images/tema08-linux-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-linux-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">ifconfig                 # (IP/Máscara)</span>
+<span class="go">route                    # (Puerta de enlace)</span>
+<span class="go">cat /etc/resolv.conf     # (DNS)</span>
+</pre>
+</div>
+</div>
+<p><strong>Configuración dinámica de IP/Máscara, Puerta de Enlace y servidores DNS</strong></p>
+<img alt="../_images/tema08-windows-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-windows-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">ipconfig /release        # (Liberamos)</span>
+<span class="go">ipconfig /renew          # (Renovamos)</span>
+</pre>
+</div>
+</div>
+<img alt="../_images/tema08-linux-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-linux-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">dhclient -r eth0         # (Liberamos)</span>
+<span class="go">dhclient eth0            # (Renovamos)</span>
+</pre>
+</div>
+</div>
+<p><strong>Configuración estática de IP/Máscara, Puerta de Enlace y servidores DNS</strong></p>
+<img alt="../_images/tema08-windows-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-windows-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">netsh</span>
+<span class="go">interface</span>
+<span class="go">ip</span>
+
+<span class="go">set address “Conexión de área local” static   \</span>
+<span class="go">        192.168.1.30                          \</span>
+<span class="go">        255.255.255.0                         \</span>
+<span class="go">        192.168.1.1                           \</span>
+<span class="go">        1</span>
+
+<span class="go">set dns “Conexión de área local” static       \</span>
+<span class="go">        8.8.8.8</span>
+
+<span class="go">commit</span>
+<span class="go">exit</span>
+</pre>
+</div>
+</div>
+<img alt="../_images/tema08-linux-logo.png" class="align-left" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-linux-logo.png" />
+<div class="highlight-console notranslate">
+<div class="highlight">
+<pre><span></span><span class="go">ifconfig  eth0  192.168.1.30  netmask  255.255.255.0</span>
+<span class="go">route  add  default  gw  192.168.1.1</span>
+<span class="go">echo  "nameserver  8.8.8.8"  &gt;&gt;  /etc/resolv.conf</span>
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="comprobacion-basica-windows-y-linux">
+<h3>3.1.4.3. Comprobación básica (Windows y Linux)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#comprobacion-basica-windows-y-linux" title="Enlazar permanentemente con este título"></a></h3>
+<p>Una vez configurado el soporte de red procederemos a comprobar su correcto funcionamiento. Para ello deben seguirse los siguientes pasos en el orden indicado. Si alguno de los pasos falla, deberemos de corregir el error antes de proseguir.</p>
+<ol class="arabic">
+<li>
+<p class="first">Comprobamos la pila TCP/IP del Sistema Operativo</p>
+<blockquote>
+<div>
+<p><code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">127.0.0.1</span></code></p>
+</div>
+</blockquote>
+</li>
+<li>
+<p class="first">Comprobamos la tarjeta de red</p>
+<blockquote>
+<div>
+<p><code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">192.168.1.30</span></code></p>
+</div>
+</blockquote>
+</li>
+<li>
+<p class="first">Comprobamos las tablas de rutas</p>
+<blockquote>
+<div>
+<p><code class="docutils literal notranslate"><span class="pre">route</span> <span class="pre">print</span></code> (Windows) <code class="docutils literal notranslate"><span class="pre">route</span></code> (Linux)</p>
+</div>
+</blockquote>
+</li>
+<li>
+<p class="first">Comprobamos el cable</p>
+<blockquote>
+<div>
+<p><code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">192.168.1.1</span></code></p>
+</div>
+</blockquote>
+</li>
+<li>
+<p class="first">Comprobamos la salida a Internet</p>
+<blockquote>
+<div>
+<p><code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">8.8.8.8</span></code></p>
+</div>
+</blockquote>
+</li>
+<li>
+<p class="first">Comprobamos la resolución de nombres</p>
+<blockquote>
+<div>
+<p><code class="docutils literal notranslate"><span class="pre">ping</span> <span class="pre">www.google.es</span></code></p>
+</div>
+</blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="utilidades-de-red-windows-y-linux">
+<h3>3.1.4.4. Utilidades de red (Windows y Linux)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#utilidades-de-red-windows-y-linux" title="Enlazar permanentemente con este título"></a></h3>
+<p>Para examinar equipos de la red</p>
+<ul class="simple">
+<li>ettercap</li>
+</ul>
+<p>Para examinar puertos abiertos de nuestro equipo</p>
+<ul class="simple">
+<li>netstat</li>
+</ul>
+<p>Para examinar puertos abiertos de otros equipos</p>
+<ul class="simple">
+<li>nmap</li>
+</ul>
+<p>Para examinar tráfico en una red de difusión</p>
+<ul class="simple">
+<li>wireshark</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="313_mscara_de_red_y_subred.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="32_estndares.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

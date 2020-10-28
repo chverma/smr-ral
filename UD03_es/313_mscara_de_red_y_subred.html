@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.3. Máscara de red y subred </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD03. La Capa de Red</a></li>
+   <li class="current-page-parent"><a href="31_conceptos_generales.html" class="current-page-parent daddy">3.1. Conceptos generales</a>
+   <ul>
+      <li><a href="311_concepto_de_capa_de_red.html" class="no-ch">3.1.1. Concepto de capa de red</a></li>
+      <li><a href="312_direcciones_ip.html" class="no-ch">3.1.2. Direcciones IP</a></li>
+      <li id="active"><a href="313_mscara_de_red_y_subred.html" class="active no-ch">3.1.3. Máscara de red y subred</a></li>
+      <li><a href="314_configuracin_de_clientes.html" class="no-ch">3.1.4. Configuración de clientes</a></li>
+   </ul>
+   </li>
+   <li><a href="32_estndares.html" class="daddy">3.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="321_protocolo_ip.html" class="no-ch">3.2.1. Protocolo IP</a></li>
+      <li><a href="322_protocolo_arp.html" class="no-ch">3.2.2. Protocolo ARP</a></li>
+      <li><a href="323_protocolo_icmp.html" class="no-ch">3.2.3. Protocolo ICMP</a></li>
+      <li><a href="324_ipv6.html" class="no-ch">3.2.4. IPv6</a></li>
+   </ul>
+   </li>
+   <li><a href="33_dispositivos.html" class="daddy">3.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="331_routers.html" class="no-ch">3.3.1. Routers</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="312_direcciones_ip.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="314_configuracin_de_clientes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.1.3. Máscara de red y subred</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id3">
+<div class="iDevice emphasis0">
+<div id="ta3_85" class="block iDevice_content">
+<p>Una máscara de subred es aquella dirección que enmascarando nuestra dirección IP, nos indica si otra dirección IP pertenece a nuestra subred o no.</p>
+<p>La siguiente tabla muestra las máscaras de subred correspondientes a cada clase:</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="28%" /> <col width="72%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Clase</th>
+<th class="head">Máscara de subred</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>A</td>
+<td>255.0.0.0</td>
+</tr>
+<tr class="row-odd">
+<td>B</td>
+<td>255.255.0.0</td>
+</tr>
+<tr class="row-even">
+<td>C</td>
+<td>255.255.255.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Si expresamos la máscara de subred de clase A en notación binaria, tenemos:</p>
+<p>11111111.00000000.00000000.00000000</p>
+<p>Los unos indican los bits de la dirección correspondientes a la red y los ceros, los correspondientes al host. Según la máscara anterior, el primer byte (8 bits) es la red y los tres siguientes (24 bits), el host. Por ejemplo, la dirección de clase A 35.120.73.5 pertenece a la red 35.0.0.0.</p>
+<p>Supongamos una subred con máscara 255.255.0.0, en la que tenemos un ordenador con dirección 148.120.33.110. Si expresamos esta dirección y la de la máscara de subred en binario, tenemos:</p>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>148.120.33.110     10010100.01111000.00100001.01101110 (dirección de una máquina)
+255.255.0.0        11111111.11111111.00000000.00000000 (dirección de su máscara de red)
+148.120.0.0        10010100.01111000.00000000.00000000 (dirección de su subred)
+                   &lt;-------RED-----&gt; &lt;-----HOST------&gt;
+</pre>
+</div>
+</div>
+<p>Al hacer el producto binario de las dos primeras direcciones (donde hay dos 1 en las mismas posiciones ponemos un 1 y en caso contrario, un 0) obtenemos la tercera.</p>
+<p>Si hacemos lo mismo con otro ordenador, por ejemplo el 148.120.33.89, obtenemos la misma dirección de subred. Esto significa que ambas máquinas se encuentran en la misma subred (la subred 148.120.0.0).</p>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>148.120.33.89    10010100.01111000.00100001.01011001 (dirección de una máquina)
+255.255.0.0      11111111.11111111.00000000.00000000 (dirección de su máscara de red)
+148.120.0.0      10010100.01111000.00000000.00000000 (dirección de su subred)
+</pre>
+</div>
+</div>
+<p>En cambio, si tomamos la 148.115.89.3, observamos que no pertenece a la misma subred que las anteriores.</p>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>148.115.89.3    10010100.01110011.01011001.00000011 (dirección de una máquina)
+255.255.0.0     11111111.11111111.00000000.00000000 (dirección de su máscara de red)
+148.115.0.0     10010100.01110011.00000000.00000000 (dirección de su subred)
+</pre>
+</div>
+</div>
+<p><strong>Cálculo de la dirección de difusión</strong>.– Ya hemos visto que el producto lógico binario (AND) de una IP y su máscara devuelve su dirección de red. Para calcular su dirección de difusión, hay que hacer la suma lógica en binario (OR) de la IP con el inverso (NOT) de su máscara.</p>
+<p>En una red de redes TCP/IP no puede haber hosts aislados: todos pertenecen a alguna red y todos tienen una dirección IP y una máscara de subred (si no se especifica se toma la máscara que corresponda a su clase). Mediante esta máscara un ordenador sabe si otro ordenador se encuentra en su misma subred o en otra distinta. Si pertenece a su misma subred, el mensaje se entregará directamente. En cambio, si los hosts están configurados en redes distintas, el mensaje se enviará a la puerta de salida o router de la red del host origen. Este router pasará el mensaje al siguiente de la cadena y así sucesivamente hasta que se alcance la red del host destino y se complete la entrega del mensaje.</p>
+<p><strong>EJEMPLO</strong></p>
+<p>Los proveedores de Internet habitualmente disponen de una o más redes públicas para dar acceso a los usuarios que se conectan por módem. El proveedor va cediendo estas direcciones públicas a sus clientes a medida que se conectan y liberándolas según se van desconectando (direcciones dinámicas). Supongamos que cierto <strong>ISP (proveedor de servicios de Internet)</strong> dispone de la red 63.81.0.0 con máscara 255.255.0.0. Para uso interno utiliza las direcciones que comienzan por 63.81.0 y para ofrecer acceso a Internet a sus usuarios, las direcciones comprendidas entre la 63.81.1.0 hasta la 63.81.1.254 (las direcciones 63.81.0.0 y 63.81.255.255 están reservadas).</p>
+<p>Si un usuario conectado a la red de este ISP tiene la dirección 63.81.1.1 y quiere transferir un archivo al usuario con IP 63.81.1.2, el primero advertirá que el destinatario se encuentra en su misma subred y el mensaje no saldrá de la red del proveedor (no atravesará el router).</p>
+<p><img alt="../_images/tema08-010.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-010.png" /></p>
+<p>Las máscaras 255.0.0.0 (clase A), 255.255.0.0 (clase B) y 255.255.255.0 (clase C) suelen ser suficientes para la mayoría de las redes privadas. Sin embargo, las redes más pequeñas que podemos formar con estas máscaras son de 254 hosts y para el caso de direcciones públicas, su contratación tiene un coste muy alto. Por esta razón suele ser habitual dividir las redes públicas de clase C en subredes más pequeñas. A continuación se muestran las posibles divisiones de una red de clase C. <strong>La división de una red en subredes se conoce como subnetting</strong>.</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="18%" /> <col width="7%" /> <col width="12%" /> <col width="19%" /> <col width="43%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Máscara de subred</th>
+<th class="head">Binario</th>
+<th class="head">Nº de subredes</th>
+<th class="head">Nº de hosts por subred</th>
+<th class="head">Ejemplos de subredes (x=a.b.c por ejemplo, 192.168.1)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>255.255.255.<strong>0</strong></td>
+<td>00000000</td>
+<td><strong>1</strong></td>
+<td>254</td>
+<td>x.0</td>
+</tr>
+<tr class="row-odd">
+<td>255.255.255.<strong>128</strong></td>
+<td>10000000</td>
+<td><strong>2</strong></td>
+<td>126</td>
+<td>x.0, x.128</td>
+</tr>
+<tr class="row-even">
+<td>255.255.255.<strong>192</strong></td>
+<td>11000000</td>
+<td><strong>4</strong></td>
+<td>62</td>
+<td>x.0, x.64, x.128, x.192</td>
+</tr>
+<tr class="row-odd">
+<td>255.255.255.<strong>223</strong></td>
+<td>11100000</td>
+<td><strong>8</strong></td>
+<td>30</td>
+<td>x.0, x.32, x.64, x.96, x.128, …</td>
+</tr>
+<tr class="row-even">
+<td>255.255.255.<strong>240</strong></td>
+<td>11110000</td>
+<td><strong>16</strong></td>
+<td>14</td>
+<td>x.0, x.16, x.32, x.48, x.64, …</td>
+</tr>
+<tr class="row-odd">
+<td>255.255.255.<strong>248</strong></td>
+<td>11111000</td>
+<td><strong>32</strong></td>
+<td>6</td>
+<td>x.0, x.8, x.16, x.24, x.32, x.40, …</td>
+</tr>
+<tr class="row-even">
+<td>255.255.255.<strong>252</strong></td>
+<td>11111100</td>
+<td><strong>64</strong></td>
+<td>2</td>
+<td>x.0, x.4, x.8, x.12, x.16, x.20, …</td>
+</tr>
+<tr class="row-odd">
+<td>255.255.255.<strong>254</strong></td>
+<td>11111110</td>
+<td>128</td>
+<td>0</td>
+<td>ninguna posible</td>
+</tr>
+<tr class="row-even">
+<td>255.255.255.<strong>255</strong></td>
+<td>11111111</td>
+<td>256</td>
+<td>0</td>
+<td>ninguna posible</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Obsérvese que en el caso práctico que explicamos un poco más arriba se utilizó la máscara 255.255.255.248 para crear una red pública con 6 direcciones de hosts válidas (la primera y última dirección de todas las redes se excluyen). Las máscaras con bytes distintos a 0 o 255 también se pueden utilizar para particionar redes de clase A o de clase B. Por ejemplo, la máscara 255.255.192.0 dividiría una red de clase B en 4 subredes de 16382 hosts (2 elevado a 14, menos 2) cada una.</p>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="312_direcciones_ip.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="314_configuracin_de_clientes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

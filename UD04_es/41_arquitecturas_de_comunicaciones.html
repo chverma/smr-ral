@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1. Arquitecturas de comunicaciones </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD04. Arquitectura de red</a></li>
+   <li id="active"><a href="41_arquitecturas_de_comunicaciones.html" class="active daddy">4.1. Arquitecturas de comunicaciones</a>
+   <ul>
+      <li><a href="411_modelo_de_referencia_osi_y_arquitectura_tcpip.html" class="no-ch">4.1.1. Modelo de referencia OSI y arquitectura TCP/IP</a></li>
+      <li><a href="412_niveles_osi.html" class="no-ch">4.1.2. Niveles OSI</a></li>
+      <li><a href="413_arquitectura_tcpip.html" class="no-ch">4.1.3. Arquitectura TCP/IP</a></li>
+      <li><a href="414_unidades_de_datos_de_protocolo_pdu.html" class="no-ch">4.1.4. Unidades de Datos de Protocolo (PDU)</a></li>
+   </ul>
+   </li>
+   <li><a href="42_componentes_de_una_red.html" class="daddy">4.2. Componentes de una red</a>
+   <ul class="other-section">
+      <li><a href="421_nubes.html" class="no-ch">4.2.1. Nubes</a></li>
+      <li><a href="422_dispositivos_terminales_capas_1_a_7.html" class="no-ch">4.2.2. Dispositivos terminales (Capas 1 a 7)</a></li>
+      <li><a href="423_dispositivos_intermedios_capas_1_2_y_3.html" class="no-ch">4.2.3. Dispositivos intermedios (Capas 1, 2 y 3)</a></li>
+   </ul>
+   </li>
+   <li><a href="43_uso_del_medio_en_redes.html" class="daddy">4.3. Uso del medio en redes</a>
+   <ul class="other-section">
+      <li><a href="431_conmutacin.html" class="no-ch">4.3.1. Conmutación</a></li>
+      <li><a href="432_difusin.html" class="no-ch">4.3.2. Difusión</a></li>
+   </ul>
+   </li>
+   <li><a href="44_esquemas_lan.html" class="daddy">4.4. Esquemas LAN</a>
+   <ul class="other-section">
+      <li><a href="441_red_local_simple.html" class="no-ch">4.4.1. Red local simple</a></li>
+      <li><a href="442_red_local_organizada_en_2_zonas.html" class="no-ch">4.4.2. Red local organizada en 2 zonas</a></li>
+      <li><a href="443_red_local_con_zona_de_usuarios_y_zona_desmilitarizada.html" class="no-ch">4.4.3. Red local con zona de usuarios y Zona DesMilitarizada</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="411_modelo_de_referencia_osi_y_arquitectura_tcpip.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4.1. Arquitecturas de comunicaciones</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id0">
+<div class="iDevice emphasis0" >
+<div id="ta0_108_2" class="block iDevice_content">
+<div class="exe-text"><p>Cuando se diseña una red de ordenadores, es necesario resolver una gran cantidad de problemas que aparecen: ¿hay que compartir un único medio de transmisión?; ¿cómo distinguimos unos ordenadores de otros?; ¿qué tipo de información se va a transmitir?; ¿se manejará información confidencial? Es evidente que una persona no debe enfrentarse directamente a todas estas cuestiones, sino que siempre es preferible tratarlas una a una y de forma aislada.</p>
+<p>La arquitectura de una red viene definida por tres características fundamentales, que dependen de la tecnología que se utilice en su construcción:</p>
+<ul class="simple">
+<li><strong>Topología</strong>: la topología de una red es la organización de su cableado, ya que define la configuración básica de la interconexión de estaciones y, en algunos casos, el camino de una transmisión de datos sobre el cable.</li>
+<li><strong>Método de acceso a la red</strong>: todas las redes que poseen un medio compartido para transmitir la información, necesitan ponerse de acuerdo a la hora de enviar información, ya que no pueden hacerlo a la vez. En este caso, si dos estaciones transmiten a la vez en la misma frecuencia, la señal recogida en los receptores será una mezcla de las dos. Para las redes que no posean un medio compartido, el método de acceso al cable es trivial y no es necesario llevar a cabo ningún control para transmitir.</li>
+<li><strong>Protocolos de comunicaciones</strong>: son las <strong>reglas y procedimientos utilizados en una red para realizar la comunicación</strong>. Esas reglas tienen en cuenta el método utilizado para corregir errores, establecer una comunicación, etc.</li>
+</ul>
+<p>Aunque a primera vista parezca que el diseño de un sistema de comunicación parece simple, cuando se aborda resulta mucho más complejo, ya que es necesario resolver una serie de problemas. Algunos de los problemas más importantes a los que se enfrentan los diseñadores de redes de comunicaciones son:</p>
+<ul class="simple">
+<li><strong>Encaminamiento</strong>: cuando existen diferentes rutas posibles entre el origen y el destino (si la red tiene una topología de malla o irregular), se debe elegir una de ellas (normalmente, la más corta o la que tenga un tráfico menor).</li>
+<li><strong>Direccionamiento</strong>: puesto que una red normalmente tiene muchos ordenadores conectados, se requiere un mecanismo para que un proceso (programa en ejecución) en una máquina especifique con quién quiere comunicarse. Como consecuencia de tener varios destinos, se necesita alguna forma de direccionamiento que permita determinar un destino específico.</li>
+<li><strong>Acceso al medio</strong>: en las redes donde existe un medio de comunicación de difusión, debe existir algún mecanismo que controle el orden de transmisión de los interlocutores. De no ser así, todas las transmisiones se interfieren y no es posible llevar a cabo una comunicación en óptimas condiciones. El control de acceso al medio en una red es muy similar a una comunicación mediante walkie-talkie, donde los dos interlocutores deben evitar hablar a la vez o se producirá una colisión. Esta situación es indeseable en las redes que usan un medio compartido, ya que los mensajes se mezclan y resulta imposible interpretarlos.</li>
+<li><strong>Saturación del receptor</strong>: esta cuestión suele plantearse en todos los niveles de la arquitectura y consiste en que un emisor rápido pueda saturar a un receptor lento. En determinadas condiciones, el proceso en el otro extremo necesita un tiempo para procesar la información que le llega. Si ese tiempo es demasiado grande en comparación con la velocidad con la que le llega la información, será posible que se pierdan datos. Una posible solución a este problema consiste en que el receptor envíe un mensaje al emisor indicándole que está listo para recibir más datos.</li>
+<li><strong>Mantenimiento del orden</strong>: algunas redes de transmisión de datos desordenan los mensajes que envían, de forma que, si los mensajes se envían en una secuencia determinada, no se asegura que lleguen en esa misma secuencia. Para solucionar esto, el protocolo debe incorporar un mecanismo que le permita volver a ordenar los mensajes en el destino. Este mecanismo puede ser la numeración de los fragmentos, por ejemplo.</li>
+<li><strong>Control de errores</strong>: todas las redes de comunicación de datos transmiten la información con una pequeña tasa de error, que en ningún caso es nula. Esto se debe a que los medios de transmisión son imperfectos. Tanto emisor como receptor deben ponerse de acuerdo a la hora de establecer qué mecanismos se van a utilizar para detectar y corregir errores, y si se va a notificar al emisor que los mensajes llegan correctamente.</li>
+<li><strong>Multiplexación</strong>: en determinadas condiciones, la red puede tener tramos en los que existe un único medio de transmisión que, por cuestiones económicas, debe ser compartido por diferentes comunicaciones que no tienen relación entre sí. Así, el protocolo deberá asegurar que todas las comunicaciones que comparten el mismo medio no se interfieran entre sí.</li>
+</ul>
+<p>Los primeros ingenieros de comunicaciones se dieron cuenta de que el proceso de comunicación entre computadoras se podía dividir en capas, y de que abordar cada una de estas capas por separado facilitaba enormemente la tarea de diseño de protocolos y estándares para redes.</p>
+<p>Al ocuparse cada una de las capas de ciertos aspectos concretos del proceso de comunicación, se libera de tales aspectos al resto de las capas, simplificando así el diseño de la red.</p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="411_modelo_de_referencia_osi_y_arquitectura_tcpip.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

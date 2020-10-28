@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.1.1. Modelo de referencia OSI y arquitectura TCP/IP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-2"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD04. Arquitectura de red</a></li>
+   <li class="current-page-parent"><a href="41_arquitecturas_de_comunicaciones.html" class="current-page-parent daddy">4.1. Arquitecturas de comunicaciones</a>
+   <ul>
+      <li id="active"><a href="411_modelo_de_referencia_osi_y_arquitectura_tcpip.html" class="active no-ch">4.1.1. Modelo de referencia OSI y arquitectura TCP/IP</a></li>
+      <li><a href="412_niveles_osi.html" class="no-ch">4.1.2. Niveles OSI</a></li>
+      <li><a href="413_arquitectura_tcpip.html" class="no-ch">4.1.3. Arquitectura TCP/IP</a></li>
+      <li><a href="414_unidades_de_datos_de_protocolo_pdu.html" class="no-ch">4.1.4. Unidades de Datos de Protocolo (PDU)</a></li>
+   </ul>
+   </li>
+   <li><a href="42_componentes_de_una_red.html" class="daddy">4.2. Componentes de una red</a>
+   <ul class="other-section">
+      <li><a href="421_nubes.html" class="no-ch">4.2.1. Nubes</a></li>
+      <li><a href="422_dispositivos_terminales_capas_1_a_7.html" class="no-ch">4.2.2. Dispositivos terminales (Capas 1 a 7)</a></li>
+      <li><a href="423_dispositivos_intermedios_capas_1_2_y_3.html" class="no-ch">4.2.3. Dispositivos intermedios (Capas 1, 2 y 3)</a></li>
+   </ul>
+   </li>
+   <li><a href="43_uso_del_medio_en_redes.html" class="daddy">4.3. Uso del medio en redes</a>
+   <ul class="other-section">
+      <li><a href="431_conmutacin.html" class="no-ch">4.3.1. Conmutación</a></li>
+      <li><a href="432_difusin.html" class="no-ch">4.3.2. Difusión</a></li>
+   </ul>
+   </li>
+   <li><a href="44_esquemas_lan.html" class="daddy">4.4. Esquemas LAN</a>
+   <ul class="other-section">
+      <li><a href="441_red_local_simple.html" class="no-ch">4.4.1. Red local simple</a></li>
+      <li><a href="442_red_local_organizada_en_2_zonas.html" class="no-ch">4.4.2. Red local organizada en 2 zonas</a></li>
+      <li><a href="443_red_local_con_zona_de_usuarios_y_zona_desmilitarizada.html" class="no-ch">4.4.3. Red local con zona de usuarios y Zona DesMilitarizada</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="41_arquitecturas_de_comunicaciones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="412_niveles_osi.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4.1.1. Modelo de referencia OSI y arquitectura TCP/IP</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id1">
+<div class="iDevice emphasis0" >
+<div id="ta1_109_2" class="block iDevice_content">
+<div class="exe-text"><div class="section" id="modelo-de-referencia-osi-y-arquitectura-tcp-ip">
+<div class="section" id="niveles-y-equivalencia">
+<h3>4.1.1.1. Niveles y equivalencia<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#niveles-y-equivalencia" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="../_images/tema02-000.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema02-000.png" />
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p>En realidad la arquitectura TCP/IP es una arquitectura de 4 capas:</p>
+<ul class="simple">
+<li>
+<ol class="first arabic" start="4">
+<li>Aplicación (capas 5,6 y 7 de OSI)</li>
+</ol>
+</li>
+<li>
+<ol class="first arabic" start="3">
+<li>Transporte (capa 4 de OSI)</li>
+</ol>
+</li>
+<li>
+<ol class="first arabic" start="2">
+<li>Internet (capa 3 de OSI)</li>
+</ol>
+</li>
+<li>
+<ol class="first arabic">
+<li>Acceso a la red (capas 1 y 2 de OSI)</li>
+</ol>
+</li>
+</ul>
+<p class="last">En estos apuntes usaremos la distribución de capas indicadas en la figura anterior por motivos didácticos al ser la numeración de niveles muy parecida al modelo OSI.</p>
+</div>
+<p>A mediados de los años setenta empezaron a aparecer los primeros estándares para redes. La <strong>ISO</strong> comenzó a elaborar un modelo arquitectónico de referencia al que llamaron modelo de interconexión de sistemas abiertos (OSI: Open Systems Interconnection). Surgió como un intento de unificar esfuerzos, conocimientos y técnicas para elaborar un modelo de arquitectura basado en capas que sirviera como referencia a los distintos fabricantes de la época para construir redes compatibles entre sí. La publicación final del modelo OSI no llegó hasta 1984 y el modelo obtenido resultó ser demasiado complejo y de difícil implementación.</p>
+<p>También durante la década de los setenta, <strong>DARPA</strong> evolucionó su red ARPANET y dio origen a la pila de protocolos TCP/IP, que, por su sencillez y su visión más práctica, empezó a ganar popularidad. TCP/IP acabó convirtiéndose en el estándar de facto de arquitectura en las redes de ordenadores, desbancando así al modelo OSI.</p>
+<p>El modelo OSI, sin embargo, continúa siendo de gran importancia, ya que nos permite describir y comprender fácilmente la base conceptual del resto de arquitecturas de red.</p>
+</div>
+</div>
+<div class="section" id="niveles-osi">
+<h2>4.1.2. Niveles OSI<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#niveles-osi" title="Enlazar permanentemente con este título"></a></h2>
+<div class="section" id="fisico">
+<h3>4.1.2.1. Físico<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#fisico" title="Enlazar permanentemente con este título"></a></h3>
+<p>La capa física abarca el interfaz físico entre los dispositivos y las reglas por las cuales se pasan los bits de uno en uno. Se encarga de proporcionar el <strong>soporte material para la transmisión de la información</strong>. La capa física tiene cuatro características importantes:</p>
+<ul class="simple">
+<li><strong>Mecánicas</strong>: normalmente, incluye la especificación de un conector que une una o más señales del conductor, llamadas circuitos.</li>
+<li><strong>Eléctricas</strong>: relaciona la representación de los bits y la tasa de transmisión de datos</li>
+<li><strong>Funcional</strong>: especifica las funciones realizadas por los circuitos individuales de la interfaz física entre un sistema y el medio de transmisión.</li>
+<li><strong>De procedimiento</strong>: especifica la secuencia de eventos por los que se intercambia un flujo de bits a través del medio físico.</li>
+</ul>
+</div>
+<div class="section" id="enlace-de-datos">
+<h3>4.1.4.1. Enlace de datos<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#enlace-de-datos" title="Enlazar permanentemente con este título"></a></h3>
+<p>Esta capa intenta hacer el enlace físico seguro y proporciona medios para activar, mantener y desactivar el enlace. El principal servicio proporcionado por la capa de enlace de datos a las capas superiores es el de <strong>detección de errores y control</strong>.</p>
+</div>
+<div class="section" id="red">
+<h3>4.1.2.3. Red<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#red" title="Enlazar permanentemente con este título"></a></h3>
+<p>Esta capa proporciona los medios para la <strong>transferencia de información</strong> entre sistemas finales a través de algún tipo de red de comunicación. Libera a las capas superiores de la necesidad de tener conocimiento sobre la transmisión de datos subyacente y las tecnologías de conmutación utilizadas para conectar los sistemas.</p>
+</div>
+<div class="section" id="transporte">
+<h3>4.1.2.4. Transporte<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#transporte" title="Enlazar permanentemente con este título"></a></h3>
+<p>Esta capa proporciona un mecanismo para intercambiar datos entre sistemas finales. El servicio de transporte orientado a conexión asegura que <strong>los datos se entregan libres de errores, en secuencia y sin pérdidas o duplicados</strong>.</p>
+</div>
+<div class="section" id="sesion">
+<h3>4.1.2.5. Sesión<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#sesion" title="Enlazar permanentemente con este título"></a></h3>
+<p>Esta capa proporciona los mecanismos para <strong>controlar el diálogo</strong> entre aplicaciones en sistemas finales. En muchos casos, habrá poca o ninguna necesidad de los servicios de la capa de sesión, pero para algunas aplicaciones, estos servicios se utilizan. Por ejemplo, definir la disciplina del diálogo: full-duplex o semi-duplex.</p>
+</div>
+<div class="section" id="presentacion">
+<h3>4.1.2.6. Presentación<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#presentacion" title="Enlazar permanentemente con este título"></a></h3>
+<p>Esta capa <strong>define el formato de los datos</strong> que se van a intercambiar entre las aplicaciones y ofrece a los programas de aplicación un conjunto de servicios de transformación de datos. Algunos ejemplos de los servicios específicos que se podrían realizar en esta capa son los de compresión y cifrado de datos.</p>
+</div>
+<div class="section" id="aplicacion">
+<h3>4.1.2.7. Aplicación<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#aplicacion" title="Enlazar permanentemente con este título"></a></h3>
+<p>Esta capa proporciona un medio a los programas de aplicación para que accedan al entorno OSI. Se considera que residen en esta capa las aplicaciones de uso general como transferencia de ficheros, correo electrónico y acceso terminal a computadores remotos. <strong>Proporciona un servicio al usuario final</strong>.</p>
+</div>
+</div>
+<div class="section" id="arquitectura-tcp-ip">
+<h2>4.1.3. Arquitectura TCP/IP<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#arquitectura-tcp-ip" title="Enlazar permanentemente con este título"></a></h2>
+<img alt="../_images/tema02-001.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema02-001.png" />
+<div class="section" id="algunos-de-los-protocolos-de-tcp-ip">
+<h3>4.1.3.1. Algunos de los protocolos de TCP/IP<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#algunos-de-los-protocolos-de-tcp-ip" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="../_images/tema02-002.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema02-002.png" /></div>
+</div>
+<div class="section" id="unidades-de-datos-de-protocolo-pdu">
+<h2>4.1.4. Unidades de Datos de Protocolo (PDU)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#unidades-de-datos-de-protocolo-pdu" title="Enlazar permanentemente con este título"></a></h2>
+<p>PDU es la abreviatura de <strong>Protocol Data Unit</strong> (unidad de datos del protocolo). Su función principal es establecer una comunicación de datos entre capas homologas. Esta forma de establecer conexiones recibe el nombre de comunicación par-a-par.</p>
+<p>La primera PDU corresponde a los datos que llegan a la capa de aplicación. Aquí se les añade una cabecera y la PDU pasa al nivel siguiente, el de presentación en el modelo OSI, el de transporte en la arquitectura TCP/IP.</p>
+<p>A partir de aquí, y en cada uno de los niveles subsiguientes, a la PDU recibida se le añadirá una cabecera y será enviada al nivel inferior, y así sucesivamente hasta llegar al nivel físico, donde los datos serán enviados como bits.</p>
+<div class="section" id="pdus-de-osi">
+<h3>4.1.4.1. PDUs de OSI<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#pdus-de-osi" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="../_images/tema02-004.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema02-004.png" /></div>
+<div class="section" id="pdus-de-tcp-ip">
+<h3>4.1.4.2. PDUs de TCP/IP<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#pdus-de-tcp-ip" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="../_images/tema02-005.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema02-005.png" />
+<p>En la arquitectura TCP/IP cada PDU recibe un nombre específico:</p>
+<ul class="simple">
+<li>Capa de aplicación: <strong>Datos</strong></li>
+<li>Capa de transporte: <strong>Segmentos</strong></li>
+<li>Capa de red: <strong>Datagramas</strong></li>
+<li>Capa de acceso a la red: <strong>Tramas</strong></li>
+<li>Capa física: Flujo de bits</li>
+</ul>
+</div>
+<div class="section" id="encapsulacion">
+<h3>4.1.4.3. Encapsulación<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#encapsulacion" title="Enlazar permanentemente con este título"></a></h3>
+<p>Como se observa en las PDUs, éstas están formadas por una cabecera propia de cada nivel y datos. La PDU (Cabecera y Datos) de una capa superior se trata como datos por la capa inmediatamente inferior. Esta capa inferior le añade su propia cabecera y pasa toda la información a la capa inferior.</p>
+<p>El resultado de todo esto es que los datos originales cada vez poseen más cabeceras (una por cada capa) a medida que descienden por la pila.</p>
+<p>En el equipo destino se irán quitando las cabeceras en orden inverso a como se añadieron. Cada capa leerá la cabecera que contiene los datos de control destinados a ella.</p>
+</div>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="41_arquitecturas_de_comunicaciones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="412_niveles_osi.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>

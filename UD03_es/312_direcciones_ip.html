@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.1.2. Direcciones IP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD03. La Capa de Red</a></li>
+   <li class="current-page-parent"><a href="31_conceptos_generales.html" class="current-page-parent daddy">3.1. Conceptos generales</a>
+   <ul>
+      <li><a href="311_concepto_de_capa_de_red.html" class="no-ch">3.1.1. Concepto de capa de red</a></li>
+      <li id="active"><a href="312_direcciones_ip.html" class="active no-ch">3.1.2. Direcciones IP</a></li>
+      <li><a href="313_mscara_de_red_y_subred.html" class="no-ch">3.1.3. Máscara de red y subred</a></li>
+      <li><a href="314_configuracin_de_clientes.html" class="no-ch">3.1.4. Configuración de clientes</a></li>
+   </ul>
+   </li>
+   <li><a href="32_estndares.html" class="daddy">3.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="321_protocolo_ip.html" class="no-ch">3.2.1. Protocolo IP</a></li>
+      <li><a href="322_protocolo_arp.html" class="no-ch">3.2.2. Protocolo ARP</a></li>
+      <li><a href="323_protocolo_icmp.html" class="no-ch">3.2.3. Protocolo ICMP</a></li>
+      <li><a href="324_ipv6.html" class="no-ch">3.2.4. IPv6</a></li>
+   </ul>
+   </li>
+   <li><a href="33_dispositivos.html" class="daddy">3.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="331_routers.html" class="no-ch">3.3.1. Routers</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="311_concepto_de_capa_de_red.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="313_mscara_de_red_y_subred.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.1.2. Direcciones IP</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id2">
+<div class="iDevice emphasis0">
+<div id="ta2_85" class="block iDevice_content">
+<div class="section" id="quien-reparte-las-direcciones-ip">
+<h3>3.1.2.1. ¿Quién reparte las direcciones IP?</h3>
+<p>En un principio se encargó de ello el IANA (Internet Assigned Numbers Authority). Actualmente tanto las direcciones como los nombres son administrados por la <strong>ICANN</strong>.</p>
+<img alt="../_images/tema08-001.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-001.png" />
+<p>La <strong>Corporación de Internet para la Asignación de Nombres y Números</strong> (en inglés: Internet Corporation for Assigned Names and Numbers; ICANN) es una organización sin fines de lucro creada el 18 de septiembre de 1998 con objeto de encargarse de cierto número de tareas realizadas con anterioridad a esa fecha por otra organización, la IANA. Su sede radica en California y está sujeta a las leyes de dicho Estado.</p>
+<p>ICANN es una organización que opera a nivel multinacional/internacional) y es la responsable de asignar las direcciones del protocolo IP, de los identificadores de protocolo, de las funciones de gestión del sistema de dominio y de la administración del sistema de servidores raíz.</p>
+<p>La ICANN (Corporación de Internet para la Asignación de Nombres y Números) delega los recursos de Internet a los <strong>RIRs</strong>, y a su vez los RIRs siguen sus políticas regionales para una posterior subdelegación de recursos a sus clientes, que incluyen Proveedores de servicios y organizaciones para uso propio.</p>
+<p>Un <strong>Registro Regional de Internet o Regional Internet Registry (RIR)</strong> es una organización que supervisa la asignación y el registro de recursos de números de Internet dentro de una región particular del mundo. Los recursos incluyen direcciones IP (tanto IPv4 como IPv6) y números de sistemas autónomos (para su uso en encaminamiento BGP).</p>
+<p>Hay actualmente 5 RIRs en funcionamiento:</p>
+<ul class="simple">
+<li>American Registry for Internet Numbers (<strong>ARIN</strong>) para América Anglosajona.</li>
+<li>RIPE Network Coordination Centre (<strong>RIPE NCC</strong>) para Europa, el Oriente Medio y Asia Central.</li>
+<li>Asia-Pacific Network Information Centre (<strong>APNIC</strong>) para Asia y la Región Pacífica.</li>
+<li>Latin American and Caribbean Internet Address Registry (<strong>LACNIC</strong>) para América Latina y el Caribe.</li>
+<li>African Network Information Centre (<strong>AfriNIC</strong>) para África</li>
+</ul>
+<img alt="../_images/tema08-003.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-003.png" /></div>
+<div class="section" id="como-se-reparten-las-direcciones-ipv4">
+<h3>3.1.2.2. ¿Cómo se reparten las direcciones IPv4?<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#como-se-reparten-las-direcciones-ipv4" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="../_images/tema08-005.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-005.png" />
+<p>Existen un total de 3<sup>32</sup> direcciones IP (4.294.967.296).</p>
+<ul class="simple">
+<li>La mitad (2.147.483.648) están destinadas a redes de clase A: (16.777.216 IPs por cada una de las 128 redes de clase A).</li>
+<li>Un cuarto (1.073.741.824) están destinadas a redes de clase B: (65.536 IPs por cada una de las 16.384 redes de clase B).</li>
+<li>Un octavo (536.870.912) están destinadas a redes de clase C: (256 IPs por cada una de las 2.097.152 redes de clase C)</li>
+<li>Un dieciseisavo (268.435.456) están destinadas la clase D (Multicast).</li>
+<li>Otro dieciseisavo (268.435.456) están destinadas a la clase E (Experimental).</li>
+</ul>
+<div class="figure" id="id3"><img alt="../_images/tema08-007.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-007.png" />
+<p class="caption"><span class="caption-text">Tamaño relativo de cada clase.</span></p>
+<div class="legend">Clase C: (<strong>256 IPs</strong>).Arriba Clase B: (<strong>65.536 IPs</strong>). En medio Clase A: (<strong>16.777.216 IPs</strong>). Abajo</div>
+</div>
+</div>
+<div class="section" id="clases">
+<h3>3.1.2.3. Clases<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#clases" title="Enlazar permanentemente con este título"></a></h3>
+<p>¿Cuántas direcciones IP existen? Si calculamos 2 elevado a 32 obtenemos más de 4000 millones de direcciones distintas. Sin embargo, no todas las direcciones son válidas para asignarlas a hosts. Las direcciones IP no se encuentran aisladas en Internet, sino que pertenecen siempre a alguna red. Todas las máquinas conectadas a una misma red se caracterizan en que los primeros bits de sus direcciones son iguales. De esta forma, las direcciones se dividen conceptualmente en dos partes:</p>
+<ul class="simple">
+<li>el identificador de red</li>
+<li>el identificador de host.</li>
+</ul>
+<p>Dependiendo del número de hosts que se necesiten para cada red, las direcciones de Internet se han dividido en las <strong>clases primarias A, B y C</strong>. La <strong>clase D</strong> está formada por direcciones que identifican no a un host, sino a un grupo de ellos. Las direcciones de <strong>clase E</strong> no se pueden utilizar (están reservadas).</p>
+<img alt="../_images/tema08-008.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-008.png" />
+<p>–</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="6%" /> <col width="21%" /> <col width="11%" /> <col width="18%" /> <col width="28%" /> <col width="17%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Clase</th>
+<th class="head">Formato(r=red, h=host)</th>
+<th class="head">Nº de redes</th>
+<th class="head">Nº de hosts por red</th>
+<th class="head">Rango de direcciones de redes</th>
+<th class="head">Máscara de subred</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>A</td>
+<td>r.h.h.h</td>
+<td>128</td>
+<td>16.777.214</td>
+<td>0.0.0.0 - 127.0.0.0</td>
+<td>255.0.0.0</td>
+</tr>
+<tr class="row-odd">
+<td>B</td>
+<td>r.r.h.h</td>
+<td>16.384</td>
+<td>65.534</td>
+<td>128.0.0.0 - 191.255.0.0</td>
+<td>255.255.0.0</td>
+</tr>
+<tr class="row-even">
+<td>C</td>
+<td>r.r.r.h</td>
+<td>2.097.152</td>
+<td>254</td>
+<td>192.0.0.0 - 223.255.255.0</td>
+<td>255.255.255.0</td>
+</tr>
+<tr class="row-odd">
+<td>D</td>
+<td>grupo</td>
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>224.0.0.0 - 239.255.255.255</td>
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even">
+<td>E</td>
+<td>no válidas</td>
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>240.0.0.0 - 255.255.255.255</td>
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Las direcciones usadas en Internet están definidas en la RFC 1166</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<dl class="last docutils">
+<dt><strong>Difusión (broadcast)</strong> y <strong>multidifusión (multicast)</strong></dt>
+<dd>El término difusión (broadcast) se refiere a todos los hosts de una red; multidifusión (multicast) se refiere a varios hosts (aquellos que se hayan suscrito dentro de un mismo grupo). Siguiendo esta misma terminología, en ocasiones se utiliza el término unidifusión para referirse a un único host.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="direcciones-ip-especiales-y-reservadas">
+<h3>3.1.2.4. Direcciones IP especiales y reservadas<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#direcciones-ip-especiales-y-reservadas" title="Enlazar permanentemente con este título"></a></h3>
+<p>No todas las direcciones comprendidas entre la 0.0.0.0 y la 223.255.255.255 son válidas para un host: algunas de ellas tienen significados especiales. Las <strong>principales direcciones especiales</strong> se resumen en la siguiente tabla. Su interpretación depende del host desde el que se utilicen.</p>
+<img alt="../_images/tema08-008b.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-008b.png" />
+<p>OBSERVACIONES:</p>
+<ul class="simple">
+<li>La red 0 y la red 127 (ambas de clase A) son especiales. Perdemos nada menos que 2*16.777.216 IPs que no pueden asignarse a ningún host concreto.</li>
+<li>En cada red existen 2 direcciones especiales: la primera del rango (dirección de red) y la última del rango (dirección de broadcast). Por tanto si tenemos la red 192.168.0.x con 256 IPs, sólo pueden destinarse a hosts 254 direcciones (192.168.0.0 es la dirección de red y 192.168.0.255 es la dirección de broadcast)</li>
+</ul>
+<p><strong>Difusión o broadcasting es el envío de un mensaje a todos los ordenadores que se encuentran en una red</strong>. La dirección de loopback (normalmente 127.0.0.1) se utiliza para comprobar que los protocolos TCP/IP están correctamente instalados en nuestro propio ordenador. Lo veremos más adelante, al estudiar el comando PING.</p>
+<p>Las direcciones de redes siguientes se encuentran <strong>reservadas para su uso en redes privadas (intranets)</strong>. Una dirección IP que pertenezca a una de estas redes se dice que es una dirección IP privada.</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="15%" /> <col width="85%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Clase</th>
+<th class="head">Rango de direcciones privadas de redes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>A</td>
+<td><strong>10</strong>.0.0.0</td>
+</tr>
+<tr class="row-odd">
+<td>B</td>
+<td><strong>172.16</strong>.0.0 - <strong>172.31</strong>.0.0</td>
+</tr>
+<tr class="row-even">
+<td>C</td>
+<td><strong>192.168.0</strong>.0 - <strong>192.168.255</strong>.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los anteriores rangos vienen especificados en el RFC 1918.</p>
+<p>Ademas según el RFC 3330, se reserva la red <strong>169.254</strong>.0.0 para el uso de link-local, más conocido como <strong>APIPA</strong> (Automatic Private Internet Protocol Addressing - Direccionamiento Privado Automático del Protocolo de Internet). Este sistema es usado por sistemas Windows cuando no detectan la presencia de ningún servidor DHCP.</p>
+<p>Por ejemplo, si estamos construyendo una red privada con un número de ordenadores no superior a 254 podemos utilizar una red reservada de clase C. Al primer ordenador le podemos asignar la dirección 192.168.23.1, al segundo 192.168.23.2 y así sucesivamente hasta la 192.168.23.254. Como estamos utilizando direcciones reservadas, tenemos la garantía de que no habrá ninguna máquina conectada directamente a Internet con alguna de nuestras direcciones. De esta manera, no se producirán conflictos y desde cualquiera de nuestros ordenadores podremos acceder a la totalidad de los servidores de Internet (si utilizásemos en un ordenador de nuestra red una dirección de un servidor de Internet, nunca podríamos acceder a ese servidor).</p>
+<p><strong>Definiciones</strong></p>
+<dl class="docutils">
+<dt><strong>Intranet</strong></dt>
+<dd>Red privada que utiliza los protocolos TCP/IP. Puede tener salida a Internet o no. En el caso de tener salida a Internet, el direccionamiento IP permite que los hosts con direcciones IP privadas puedan salir a Internet pero impide el acceso a los hosts internos desde Internet. Dentro de una intranet se pueden configurar todos los servicios típicos de Internet (web, correo, mensajería instantánea, etc.) mediante la instalación de los correspondientes servidores. La idea es que las intranets son como «internets» en miniatura o lo que es lo mismo, Internet es una intranet pública gigantesca.</dd>
+<dt><strong>Extranet</strong></dt>
+<dd>Unión de dos o más intranets. Esta unión puede realizarse mediante líneas dedicadas (RDSI, X.25, frame relay, punto a punto, etc.) o a través de Internet.</dd>
+<dt><strong>Internet</strong></dt>
+<dd>La mayor red pública de redes TCP/IP.</dd>
+</dl>
+<p><strong>CASO PRÁCTICO</strong></p>
+<p>Una empresa dispone de una línea frame relay con direcciones públicas contratadas desde la 194.143.17.8 hasta la 194.143.17.15 (la dirección de la red es 194.143.17.8, su dirección de broadcasting 194.143.17.15 y su máscara de red 255.255.255.248). La línea frame relay está conectada a un router. Diseñar la red para:</p>
+<ul class="simple">
+<li>3 servidores (de correo, web y proxy)</li>
+<li>20 puestos de trabajo</li>
+</ul>
+<p>Los 20 puestos de trabajo utilizan direcciones IP privadas y salen a Internet a través del Proxy. En la configuración de red de cada uno de estos 20 ordenadores se indicará la dirección «192.168.1.1» en el cuadro «Puerta de enlace». La puerta de enlace (puerta de salida o gateway) es el ordenador de nuestra red que nos permite salir a otras redes. El Proxy tiene dos direcciones IP, una de la red privada y otra de la red pública. Su misión es dar salida a Internet a la red privada, pero no permitir los accesos desde el exterior a la zona privada de la empresa.</p>
+<p>Los 3 servidores y el router utilizan direcciones IP públicas, para que sean accesibles desde cualquier host de Internet. La puerta de enlace de Proxy, Correo y Web es 194.143.17.9 (Router).</p>
+<p>Obsérvese que <strong>la primera y última dirección de todas las redes son direcciones IP especiales que no se pueden utilizar para asignarlas a hosts. La primera es la dirección de la red y la última, la dirección de difusión o broadcasting</strong>. La máscara de subred de cada ordenador se ha indicado dentro de su red después de una barra: PC1, PC2, … , PC20 y Proxy (para su IP 192.168.1.1) tienen la máscara 255.255.255.0 y Router, Web, Correo y Proxy (para su IP 194.143.17.10), la máscara 255.255.255.248. El concepto de máscara de subred se estudia a continuación.</p>
+<img alt="../_images/tema08-009.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-009.png" /></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="311_concepto_de_capa_de_red.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="313_mscara_de_red_y_subred.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

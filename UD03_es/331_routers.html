@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.3.1. Routers </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD03. La Capa de Red</a></li>
+   <li><a href="31_conceptos_generales.html" class="daddy">3.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="311_concepto_de_capa_de_red.html" class="no-ch">3.1.1. Concepto de capa de red</a></li>
+      <li><a href="312_direcciones_ip.html" class="no-ch">3.1.2. Direcciones IP</a></li>
+      <li><a href="313_mscara_de_red_y_subred.html" class="no-ch">3.1.3. Máscara de red y subred</a></li>
+      <li><a href="314_configuracin_de_clientes.html" class="no-ch">3.1.4. Configuración de clientes</a></li>
+   </ul>
+   </li>
+   <li><a href="32_estndares.html" class="daddy">3.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="321_protocolo_ip.html" class="no-ch">3.2.1. Protocolo IP</a></li>
+      <li><a href="322_protocolo_arp.html" class="no-ch">3.2.2. Protocolo ARP</a></li>
+      <li><a href="323_protocolo_icmp.html" class="no-ch">3.2.3. Protocolo ICMP</a></li>
+      <li><a href="324_ipv6.html" class="no-ch">3.2.4. IPv6</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="33_dispositivos.html" class="current-page-parent daddy">3.3. Dispositivos</a>
+   <ul>
+      <li id="active"><a href="331_routers.html" class="active no-ch">3.3.1. Routers</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="33_dispositivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.3.1. Routers</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id9">
+<div class="iDevice emphasis0">
+<div id="ta9_85" class="block iDevice_content">
+<div class="figure"><img alt="../_images/tema08-050.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-050.png" /></div>
+<p>Un router —también conocido <strong>enrutador o encaminador</strong> de paquetes— es un dispositivo que proporciona conectividad a <strong>nivel de red</strong> o nivel tres en el modelo OSI. Su función principal consiste en enviar o encaminar paquetes de datos de una red a otra, es decir, interconectar subredes, entendiendo por subred un conjunto de máquinas IP que se pueden comunicar sin la intervención de un encaminador.</p>
+<div class="figure"><img alt="../_images/tema08-051.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-051.png" /></div>
+<div class="section" id="conexiones">
+<h3>3.3.1.1. Conexiones<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#conexiones" title="Enlazar permanentemente con este título"></a></h3>
+<div class="figure"><img alt="../_images/tema08-052.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-052.png" /></div>
+<p>Los tres tipos básicos de conexiones de un router son:</p>
+<ul class="simple">
+<li><strong>interfaces LAN</strong></li>
+<li><strong>interfaces WAN</strong></li>
+<li><strong>puertos de gestión</strong></li>
+</ul>
+<p>Las interfaces LAN permiten que el router pueda conectarse a la red de área local. Esto es por lo general algún tipo de Ethernet. Sin embargo, podría haber alguna otra tecnología LAN tales como Token Ring o modo de transferencia asíncrono (ATM).</p>
+<p>Las conexiones de red de área amplia proporcionan conexiones a través de un proveedor de servicio a un sitio lejano o con Internet. Estos pueden ser conexiones en serie o cualquier número de otras interfaces WAN. Con algunos tipos de interfaces WAN, se requiere un dispositivo externo, para conectar el router a la conexión local del proveedor de servicios. Con otros tipos de conexiones WAN, el router puede estar conectado directamente al proveedor de servicios.</p>
+<p>La función de los puertos de gestión es diferente de las demás conexiones. Las conexiones LAN y WAN proporcionan conexiones de red a través del cual se transmiten los paquetes. El puerto de gestión proporciona una conexión basada en texto para la configuración y solución de problemas del enrutador. Las interfaces de administración comunes son la consola y el puerto auxiliar. Estos son puertos serie asíncronos EIA- 232. Se conectan a un puerto de comunicaciones en un ordenador. El equipo debe ejecutar un programa de emulación de terminal para proporcionar una sesión basada en texto con el router. A través de esta sesión el administrador de red puede administrar el dispositivo.</p>
+</div>
+<div class="section" id="almacenamiento">
+<h3>3.3.1.2. Almacenamiento<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#almacenamiento" title="Enlazar permanentemente con este título"></a></h3>
+<div class="figure"><img alt="../_images/tema08-053.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-053.png" /></div>
+<p><strong>ROM</strong></p>
+<blockquote>
+<div>La memoria de solo lectura (ROM) se utiliza para almacenar de forma permanente el código de diagnóstico de inicio (Monitor de ROM). Las tareas principales de la ROM son el diagnóstico del hardware durante el arranque del router y la carga del software IOS de Cisco desde la memoria flash a la RAM. Algunos routers también tienen una versión más básica del IOS que puede usarse como fuente alternativa de arranque. Las memorias ROM no se pueden borrar. Sólo pueden actualizarse reemplazando los chips de ROM.</div>
+</blockquote>
+<p><strong>RAM</strong></p>
+<blockquote>
+<div>La memoria de acceso aleatorio (RAM) se usa para la información de las tablas de enrutamiento, el caché de conmutación rápida, la configuración actual y las colas de paquetes. En la mayoría de los routers, la RAM proporciona espacio de tiempo de ejecución para el software IOS de Cisco y sus subsistemas. Por lo general, la RAM se divide de forma lógica en memoria del procesador principal y memoria compartida de entrada / salida (I/O). Las interfaces de almacenamiento temporal de los paquetes comparten la memoria de I/O compartida. El contenido de la RAM se pierde cuando se apaga la unidad. En general, la RAM es una memoria de acceso aleatorio dinámica (DRAM) y puede actualizarse agregando más módulos de memoria en línea doble (DIMM).</div>
+</blockquote>
+<p><strong>Memoria flash</strong></p>
+<blockquote>
+<div>La memoria flash se utiliza para almacenar una imagen completa del software IOS de Cisco. Normalmente el router adquiere el IOS por defecto de la memoria flash. Estas imágenes pueden actualizarse cargando una nueva imagen en la memoria flash. El IOS puede estar comprimido o no. En la mayoría de los routers, una copia ejecutable del IOS se transfiere a la RAM durante el proceso de arranque*. En otros routers, el IOS puede ejecutarse directamente desde la memoria flash. Agregando o reemplazando los módulos de memoria en línea simples flash (SIMMs) o las tarjetas PCMCIA se puede actualizar la cantidad de memoria flash.</div>
+</blockquote>
+<p><strong>NVRAM</strong></p>
+<blockquote>
+<div>La memoria de acceso aleatorio no volátil (NVRAM) se utiliza para guardar la configuración de inicio. En algunos dispositivos, la NVRAM se implementa utilizando distintas memorias de solo lectura programables, que se pueden borrar electrónicamente (EEPROM).En otros dispositivos, se implementa en el mismo dispositivo de memoria flash desde donde se argó el código de arranque. En cualquiera de los casos, estos dispositivos retienen sus contenidos cuando se apaga la unidad.</div>
+</blockquote>
+</div>
+<div class="section" id="proceso-de-arranque-de-un-router">
+<h3>3.3.1.3. Proceso de arranque de un router<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#proceso-de-arranque-de-un-router" title="Enlazar permanentemente con este título"></a></h3>
+<p>El proceso de arranque está conformado por cuatro etapas principales:</p>
+<ol class="arabic">
+<li>
+<p class="first"><strong>Ejecución de la POST</strong></p>
+<p>La prueba de autocomprobación de encendido (POST) es un proceso común que ocurre en casi todas las computadoras durante el arranque. El proceso de POST se utiliza para probar el hardware del router. Cuando se enciende el router, el software en el chip de la ROM ejecuta el POST. Durante esta autocomprobación, el router ejecuta diagnósticos desde la ROM a varios componentes de hardware, entre ellos la CPU, la RAM y la NVRAM. Después de completarse la POST, el router ejecuta el programa bootstrap.</p>
+</li>
+<li>
+<p class="first"><strong>Carga del programa bootstrap</strong></p>
+<p>Después de la POST, el programa bootstrap se copia de la ROM a la RAM. Una vez en la RAM, la CPU ejecuta las instrucciones del programa bootstrap. La tarea principal del programa bootstrap es ubicar al IOS y cargarlo en la RAM.</p>
+</li>
+<li>
+<p class="first"><strong>Ubicación y carga del IOS</strong></p>
+<p>El IOS normalmente se almacena en la memoria flash, pero también puede almacenarse en otros lugares como un servidor TFTP (Trivial File Transfer Protocol).</p>
+<p>Si no se puede encontrar una imagen IOS completa, se copia una versión más básica del IOS de la ROM a la RAM. Esta versión del IOS se usa para ayudar a diagnosticar cualquier problema y puede usarse para cargar una versión completa del IOS en la RAM.</p>
+<p>Algunos de los routers más antiguos ejecutan el IOS directamente desde la memoria flash, pero los modelos actuales copian el IOS en la RAM para que la CPU lo ejecute.</p>
+</li>
+<li>
+<p class="first"><strong>Ubicación y carga del archivo de configuración</strong></p>
+<p>Ubicación del archivo de configuración de inicio. Después de cargar el IOS, el programa bootstrap busca en la NVRAM el archivo de configuración de inicio, conocido como startup-config. El archivo contiene los parámetros y comandos de configuración previamente guardados, entre ellos:</p>
+<ul class="simple">
+<li>direcciones de interfaz</li>
+<li>información de enrutamiento</li>
+<li>contraseñas</li>
+<li>cualquier otra configuración guardada por el administrador de red</li>
+</ul>
+<p>Si el archivo de configuración de inicio, <strong>startup-config</strong>, se encuentra en la <strong>NVRAM</strong>, se copia en la RAM como el archivo de configuración en ejecución, <strong>running-config</strong>.</p>
+<p>A partir de aquí podemos conectar al router y según la plataforma y el IOS, el router podrá realizar diferentes tareas.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="33_dispositivos.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

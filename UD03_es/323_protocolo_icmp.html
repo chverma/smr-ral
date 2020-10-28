@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3.2.3. Protocolo ICMP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD03. La Capa de Red</a></li>
+   <li><a href="31_conceptos_generales.html" class="daddy">3.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="311_concepto_de_capa_de_red.html" class="no-ch">3.1.1. Concepto de capa de red</a></li>
+      <li><a href="312_direcciones_ip.html" class="no-ch">3.1.2. Direcciones IP</a></li>
+      <li><a href="313_mscara_de_red_y_subred.html" class="no-ch">3.1.3. Máscara de red y subred</a></li>
+      <li><a href="314_configuracin_de_clientes.html" class="no-ch">3.1.4. Configuración de clientes</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="32_estndares.html" class="current-page-parent daddy">3.2. Estándares</a>
+   <ul>
+      <li><a href="321_protocolo_ip.html" class="no-ch">3.2.1. Protocolo IP</a></li>
+      <li><a href="322_protocolo_arp.html" class="no-ch">3.2.2. Protocolo ARP</a></li>
+      <li id="active"><a href="323_protocolo_icmp.html" class="active no-ch">3.2.3. Protocolo ICMP</a></li>
+      <li><a href="324_ipv6.html" class="no-ch">3.2.4. IPv6</a></li>
+   </ul>
+   </li>
+   <li><a href="33_dispositivos.html" class="daddy">3.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="331_routers.html" class="no-ch">3.3.1. Routers</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="322_protocolo_arp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="324_ipv6.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3.2.3. Protocolo ICMP</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id7">
+<div class="iDevice emphasis0">
+<div id="ta7_85" class="block iDevice_content">
+<p>Debido a que el protocolo IP no es fiable, los datagramas pueden perderse o llegar defectuosos a su destino. El protocolo ICMP (Internet Control Message Protocol, protocolo de mensajes de control y error) se encarga de informar al origen si se ha producido algún error durante la entrega de su mensaje. Pero no sólo se encarga de notificar los errores, sino que también transporta distintos mensajes de control.</p>
+<p>El protocolo ICMP únicamente informa de incidencias en la red pero no toma ninguna decisión. Esto será responsabilidad de las capas superiores. Los mensajes ICMP viajan en el campo de datos de un datagrama IP, como se puede apreciar en el siguiente esquema:</p>
+<div class="figure"><img alt="../_images/tema08-025.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-025.png" /></div>
+<p>Debido a que el protocolo IP no es fiable puede darse el caso de que un mensaje ICMP se pierda o se dañe. Si esto llega a ocurrir no se creará un nuevo mensaje ICMP sino que el primero se descartará sin más.</p>
+<p>Los mensajes ICMP comienzan con un campo de 8 bits que contiene el tipo de mensaje, según se muestra en la tabla siguiente. El resto de campos son distintos para cada tipo de mensaje ICMP.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El formato y significado de cada mensaje ICMP está documentado en la RFC 792</p>
+</div>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="19%" /> <col width="81%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Campo de tipo</th>
+<th class="head">Tipo de mensaje ICMP</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>0</td>
+<td>Respuesta de eco (Echo Reply)</td>
+</tr>
+<tr class="row-odd">
+<td>3</td>
+<td>Destino inaccesible (Destination Unreachable)</td>
+</tr>
+<tr class="row-even">
+<td>4</td>
+<td>Disminución del tráfico desde el origen (Source Quench)</td>
+</tr>
+<tr class="row-odd">
+<td>5</td>
+<td>Redireccionar (cambio de ruta) (Redirect)</td>
+</tr>
+<tr class="row-even">
+<td>8</td>
+<td>Solicitud de eco (Echo)</td>
+</tr>
+<tr class="row-odd">
+<td>11</td>
+<td>Tiempo excedido para un datagrama (Time Exceeded)</td>
+</tr>
+<tr class="row-even">
+<td>12</td>
+<td>Problema de Parámetros (Parameter Problem)</td>
+</tr>
+<tr class="row-odd">
+<td>13</td>
+<td>Solicitud de marca de tiempo (Timestamp)</td>
+</tr>
+<tr class="row-even">
+<td>14</td>
+<td>Respuesta de marca de tiempo (Timestamp Reply)</td>
+</tr>
+<tr class="row-odd">
+<td>15</td>
+<td>Solicitud de información (obsoleto) (Information Request)</td>
+</tr>
+<tr class="row-even">
+<td>16</td>
+<td>Respuesta de información (obsoleto) (Information Reply)</td>
+</tr>
+<tr class="row-odd">
+<td>17</td>
+<td>Solicitud de máscara (Addressmask)</td>
+</tr>
+<tr class="row-even">
+<td>18</td>
+<td>Respuesta de máscara (Addressmask Reply)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="solicitud-y-respuesta-de-eco">
+<h3>3.2.3.1. Solicitud y respuesta de eco<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#solicitud-y-respuesta-de-eco" title="Enlazar permanentemente con este título"></a></h3>
+<p>Los mensajes de solicitud y respuesta de eco, tipos 8 y 0 respectivamente, se utilizan para comprobar si existe comunicación entre 2 hosts a nivel de la capa de red. Estos mensajes comprueban que las capas física (cableado), acceso al medio (tarjetas de red) y red (configuración IP) están correctas. Sin embargo, no dicen nada de las capas de transporte y de aplicación las cuales podrían estar mal configuradas; por ejemplo, la recepción de mensajes de correo electrónico puede fallar aunque exista comunicación IP con el servidor de correo.</p>
+<p>La orden <strong>PING</strong> envía mensajes de solicitud de eco a un host remoto e informa de las respuestas. Veamos su funcionamiento, en caso de no producirse incidencias en el camino.</p>
+<ol class="arabic simple">
+<li>A envía un mensaje ICMP de tipo 8 (Echo) a B</li>
+<li>B recibe el mensaje y devuelve un mensaje ICMP de tipo 0 (Echo Reply) a A</li>
+<li>A recibe el mensaje ICMP de B y muestra el resultado en pantalla</li>
+</ol>
+<div class="figure"><img alt="../_images/tema08-042.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-042.png" /></div>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>C:\&gt;ping 172.20.9.7 -n 1
+Haciendo ping a 172.20.9.7 con 32 bytes de datos:
+Respuesta desde 172.20.9.7: bytes=32 tiempo&lt;10ms TDV=128
+</pre>
+</div>
+</div>
+<p>En la orden anterior hemos utilizado el parámetro «-n 1» para que el host A únicamente envíe 1 mensaje de solicitud de eco. Si no se especifica este parámetro se enviarían 4 mensajes (y se recibirían 4 respuestas).</p>
+<p>Si el host de destino no existiese o no estuviera correctamente configurado recibiríamos un mensaje ICMP de tipo 11 (Time Exceeded).</p>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>C:\&gt;ping 192.168.0.6 -n 1
+Haciendo ping a 192.168.0.6 con 32 bytes de datos:
+Tiempo de espera agotado.
+</pre>
+</div>
+</div>
+<p>Si tratamos de acceder a un host de una red distinta a la nuestra y no existe un camino para llegar hasta él, es decir, los routers no están correctamente configurados o estamos intentando acceder a una red aislada o inexistente, recibiríamos un mensaje ICMP de tipo 3 (Destination Unreachable).</p>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>C:\&gt;ping 1.1.1.1 -n 1
+Haciendo ping a 1.1.1.1 con 32 bytes de datos:
+Respuesta desde 192.168.0.1: Host de destino inaccesible.
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="utilizacion-de-ping-para-diagnosticar-errores-en-una-red-aislada">
+<h3>3.2.3.2. Utilización de PING para diagnosticar errores en una red aislada<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#utilizacion-de-ping-para-diagnosticar-errores-en-una-red-aislada" title="Enlazar permanentemente con este título"></a></h3>
+<div class="figure"><img alt="../_images/tema08-043.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-043.png" /></div>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>C:\&gt;ping 192.168.1.12
+</pre>
+</div>
+</div>
+<ul class="simple">
+<li>Respuesta. El cableado entre A y B, las tarjetas de red de A y B, y la configuración IP de A y B están correctos.</li>
+<li>Tiempo de espera agotado. Comprobar el host B y el cableado entre A y B.</li>
+<li>Host de destino inaccesible. Comprobar las direcciones IP y máscaras de subred de A y B porque no pertenecen a la misma red.</li>
+<li>Error. Probablemente estén mal instalados los protocolos TCP/IP del host A. Probar C:&gt;ping 127.0.0.1 para asegurarse.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El comando ping 127.0.0.1 informa de si están correctamente instalados los protocolos TCP/IP en nuestro host. No informa de si la tarjeta de red de nuestro host está correcta.</p>
+</div>
+</div>
+<div class="section" id="utilizacion-de-ping-para-diagnosticar-errores-en-una-red-de-redes">
+<h3>3.2.3.3. Utilización de PING para diagnosticar errores en una red de redes<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#utilizacion-de-ping-para-diagnosticar-errores-en-una-red-de-redes" title="Enlazar permanentemente con este título"></a></h3>
+<p>A continuación veremos un ejemplo para una red de redes formada por dos redes (1 solo router). La idea es la misma para un mayor número de redes y routers.</p>
+<div class="figure"><img alt="../_images/tema08-044.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-044.png" /></div>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>C:\&gt;ping 10.100.5.1
+</pre>
+</div>
+</div>
+<ul class="simple">
+<li>Respuesta. El cableado entre A y B, las tarjetas de red de A, R1 y B, y la configuración IP de A, R1 y B están correctos. El router R1 permite el tráfico de datagramas IP en los dos sentidos.</li>
+<li>Tiempo de espera agotado. Comprobar el host B y el cableado entre R1 y B. Para asegurarnos que el router R1 está funcionando correctamente haremos C:&gt;ping 192.168.1.1</li>
+<li>Host de destino inaccesible. Comprobar el router R1 y la configuración IP de A (probablemente la puerta de salida no sea 192.168.1.1). Recordemos que la puerta de salida (gateway) de una red es un host de su propia red que se utiliza para salir a otras redes.</li>
+<li>Error. Probablemente estén mal instalados los protocolos TCP/IP del host A. Probar C:&gt;ping 127.0.0.1 para asegurarse.</li>
+</ul>
+<p>En el caso producirse errores de comunicación en una red de redes con más de un router (Internet es el mejor ejemplo), se suele utilizar el comando PING para ir diagnosticando los distintos routers desde el destino hasta el origen y descubrir así si el fallo es responsabilidad de la red de destino, de una red intermedia o de nuestra red.</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Algunos hosts en Internet tienen deshabilitadas las respuestas de eco (mensajes ICMP tipo 0) como medida de seguridad. En estos casos hay que utilizar otros mecanismos para detectar si responde (por ejemplo, la apertura de conexión a un puerto)</p>
+</div>
+</div>
+<div class="section" id="mensajes-icmp-de-tiempo-excedido">
+<h3>3.2.3.4. Mensajes ICMP de tiempo excedido<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema08/Teoria.html#mensajes-icmp-de-tiempo-excedido" title="Enlazar permanentemente con este título"></a></h3>
+<p>Los datagramas IP tienen un campo TTL (tiempo de vida) que impide que un mensaje esté dando vueltas indefinidamente por la red de redes. El número contenido en este campo disminuye en una unidad cada vez que el datagrama atraviesa un router. Cuando el TTL de un datagrama llega a 0, éste se descarta y se envía un mensaje ICMP de tipo 11 (Time Exceeded) para informar al origen.</p>
+<p>Los mensajes ICMP de tipo 11 se pueden utilizar para hacer una traza del camino que siguen los datagramas hasta llegar a su destino. ¿Cómo? Enviando una secuencia de datagramas con TTL=1, TTL=2, TTL=3, TTL=4, etc… hasta alcanzar el host o superar el límite de saltos (30 si no se indica lo contrario). El primer datagrama caducará al atravesar el primer router y se devolverá un mensaje ICMP de tipo 11 informando al origen del router que descartó el datagrama. El segundo datagrama hará lo propio con el segundo router y así sucesivamente. Los mensajes ICMP recibidos permiten definir la traza.</p>
+<p>La orden <strong>TRACERT</strong> (<strong>traceroute</strong> en entornos Unix) hace una traza a un determinado host. TRACERT funciona enviando mensajes ICMP de solicitud de eco con distintos TTL; traceroute, en cambio, envía mensajes UDP. Si la comunicación extremo a extremo no es posible, la traza nos indicará en qué punto se ha producido la incidencia. Existen algunas utilidades en Internet, como Visual Route, que conocen la localización geográfica de los principales routers de Internet. Esto permite dibujar en un mapamundi el recorrido que siguen los datagramas hasta llegar a un host.</p>
+<div class="highlight-none notranslate">
+<div class="highlight">
+<pre><span></span>C:\&gt;tracert 130.206.1.2
+
+Traza a la dirección sun.rediris.es [130.206.1.2]
+sobre un máximo de 30 saltos:
+
+ 1   1 ms   1 ms   1 ms PROXY [192.168.0.1]
+ 2 122 ms 118 ms 128 ms MADR-X27.red.retevision.es [62.81.1.102]
+ 3 143 ms 232 ms 147 ms MADR-R2.red.retevision.es [62.81.1.92]
+ 4 130 ms 124 ms 246 ms MADR-R16.red.retevision.es [62.81.3.8]
+ 5 590 ms 589 ms 431 ms MADR-R12.red.retevision.es [62.81.4.101]
+ 6 612 ms 640 ms 124 ms MADR-R10.red.retevision.es [62.81.8.130]
+ 7 259 ms 242 ms 309 ms 193.149.1.28
+ 8 627 ms 752 ms 643 ms 213.0.251.42
+ 9 137 ms 117 ms 118 ms 213.0.251.142
+10 109 ms 105 ms 110 ms A1-2-1.EB-Madrid00.red.rediris.es [130.206.224.81]
+11 137 ms 119 ms 122 ms A0-0-0-1.EB-Madrid3.red.rediris.es [130.206.224.86]
+12 109 ms 135 ms 115 ms sun.rediris.es [130.206.1.2]
+
+Traza completa.
+</pre>
+</div>
+</div>
+<p>Ejemplo de Visual Route a una dirección IP de Taiwan (203.69.112.12):</p>
+<div class="figure"><img alt="../_images/tema08-045.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema08-045.png" /></div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="322_protocolo_arp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="324_ipv6.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="my_js.js"></script></body></html>

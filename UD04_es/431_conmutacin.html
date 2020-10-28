@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>4.3.1. Conmutación </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning  - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">UD04. Arquitectura de red</a></li>
+   <li><a href="41_arquitecturas_de_comunicaciones.html" class="daddy">4.1. Arquitecturas de comunicaciones</a>
+   <ul class="other-section">
+      <li><a href="411_modelo_de_referencia_osi_y_arquitectura_tcpip.html" class="no-ch">4.1.1. Modelo de referencia OSI y arquitectura TCP/IP</a></li>
+      <li><a href="412_niveles_osi.html" class="no-ch">4.1.2. Niveles OSI</a></li>
+      <li><a href="413_arquitectura_tcpip.html" class="no-ch">4.1.3. Arquitectura TCP/IP</a></li>
+      <li><a href="414_unidades_de_datos_de_protocolo_pdu.html" class="no-ch">4.1.4. Unidades de Datos de Protocolo (PDU)</a></li>
+   </ul>
+   </li>
+   <li><a href="42_componentes_de_una_red.html" class="daddy">4.2. Componentes de una red</a>
+   <ul class="other-section">
+      <li><a href="421_nubes.html" class="no-ch">4.2.1. Nubes</a></li>
+      <li><a href="422_dispositivos_terminales_capas_1_a_7.html" class="no-ch">4.2.2. Dispositivos terminales (Capas 1 a 7)</a></li>
+      <li><a href="423_dispositivos_intermedios_capas_1_2_y_3.html" class="no-ch">4.2.3. Dispositivos intermedios (Capas 1, 2 y 3)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="43_uso_del_medio_en_redes.html" class="current-page-parent daddy">4.3. Uso del medio en redes</a>
+   <ul>
+      <li id="active"><a href="431_conmutacin.html" class="active no-ch">4.3.1. Conmutación</a></li>
+      <li><a href="432_difusin.html" class="no-ch">4.3.2. Difusión</a></li>
+   </ul>
+   </li>
+   <li><a href="44_esquemas_lan.html" class="daddy">4.4. Esquemas LAN</a>
+   <ul class="other-section">
+      <li><a href="441_red_local_simple.html" class="no-ch">4.4.1. Red local simple</a></li>
+      <li><a href="442_red_local_organizada_en_2_zonas.html" class="no-ch">4.4.2. Red local organizada en 2 zonas</a></li>
+      <li><a href="443_red_local_con_zona_de_usuarios_y_zona_desmilitarizada.html" class="no-ch">4.4.3. Red local con zona de usuarios y Zona DesMilitarizada</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="43_uso_del_medio_en_redes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="432_difusin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">4.3.1. Conmutación</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id10">
+<div class="iDevice emphasis0" >
+<div id="ta10_118_2" class="block iDevice_content">
+<div class="exe-text"><p>Consisten en un conjunto de nodos interconectados entre sí, a través de medios de transmisión (cables), formando la mayoría de las veces una topología mallada o estrella, donde la información se transfiere encaminándola del nodo de origen al nodo destino mediante conmutación entre nodos intermedios.</p>
+<p>Es típica de las WAN. Existe una línea dedicada para cada dos nodos. La conmutación a su vez puede ser de circuitos o de paquetes.</p>
+<div class="section" id="conmutacion-de-circuitos">
+<h3>4.3.1.1. Conmutación de circuitos<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#conmutacion-de-circuitos" title="Enlazar permanentemente con este título"></a></h3>
+<p>Se establece un único camino entre el origen y el destino para toda la comunicación.</p>
+<p>Cuando un emisor quiere enviar un mensaje a un receptor a través de una red de conmutación de circuitos, lo primero que debe hacerse es el <strong>establecimiento</strong> del canal, es decir la conexión entre emisor y receptor, que se hace eligiendo un camino concreto de entre todos los posibles que existen. La ruta que sigue la información se establece al inicio de la comunicación y <strong>se mantiene durante todo el proceso que dure la comunicación</strong>, aunque existan algunos tramos de esa ruta que se comparten con otras rutas diferentes. Al finalizar la transmisión se produce la <strong>liberación</strong> del canal. La <strong>red telefónica clásica</strong> es un ejemplo de conmutación de circuitos.</p>
+</div>
+<div class="section" id="conmutacion-de-paquetes">
+<h3>4.3.1.2. Conmutación de paquetes<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema02/Teoria.html#conmutacion-de-paquetes" title="Enlazar permanentemente con este título"></a></h3>
+<p>Se trata del procedimiento mediante el cual, cuando un nodo quiere enviar un mensaje a otro, lo divide en paquetes. Cada paquete es enviado por el medio con información de cabecera. En cada nodo intermedio por el que pasa el paquete se detiene el tiempo necesario para procesarlo y decidir el siguiente nodo al cual enviarlo. Así sucesivamente hasta el destino. Los paquetes pueden perderse o llegar en distinto orden.</p>
+<p>Los distintos paquetes de un mismo mensaje pueden seguir caminos distintos hasta su destino. <strong>Internet</strong> es un ejemplo de conmutación de paquetes.</p>
+<img alt="../_images/tema02-021.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema02-021.png" />
+<p>Ejemplo de red conmutada, cuyos equipos finales son ordenadores personales y los equipos intermedios son routers.</p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="43_uso_del_medio_en_redes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="432_difusin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_style_js.js"></script></body></html>
