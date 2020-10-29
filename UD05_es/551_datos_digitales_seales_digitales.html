@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>5.5.1. Datos digitales, señales digitales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">5. La capa física</a></li>
+   <li><a href="51_concepto_de_capa_fsica.html" class="no-ch">5.1. Concepto de capa física</a></li>
+   <li><a href="52_perturbaciones_en_la_transmisin.html" class="daddy">5.2. Perturbaciones en la transmisión</a>
+   <ul class="other-section">
+      <li><a href="521_atenuacin.html" class="no-ch">5.2.1. Atenuación</a></li>
+      <li><a href="522_distorsin_de_retardo.html" class="no-ch">5.2.2. Distorsión de retardo</a></li>
+      <li><a href="523_ruido.html" class="no-ch">5.2.3. Ruido</a></li>
+   </ul>
+   </li>
+   <li><a href="53_medios_cableados.html" class="daddy">5.3. Medios cableados</a>
+   <ul class="other-section">
+      <li><a href="531_pares_trenzados.html" class="no-ch">5.3.1. Pares trenzados</a></li>
+      <li><a href="532_cable_coaxial.html" class="no-ch">5.3.2. Cable coaxial</a></li>
+      <li><a href="533_fibra_ptica.html" class="no-ch">5.3.3. Fibra óptica</a></li>
+   </ul>
+   </li>
+   <li><a href="54_medios_inalmbricos.html" class="daddy">5.4. Medios inalámbricos</a>
+   <ul class="other-section">
+      <li><a href="541_espectro_electromagntico.html" class="no-ch">5.4.1. Espectro electromagnético</a></li>
+      <li><a href="542_microondas.html" class="no-ch">5.4.2. Microondas</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="55_datos_y_codificaciones.html" class="current-page-parent daddy">5.5. Datos y codificaciones</a>
+   <ul>
+      <li id="active"><a href="551_datos_digitales_seales_digitales.html" class="active no-ch">5.5.1. Datos digitales, señales digitales</a></li>
+      <li><a href="552_datos_digitales_seales_analgicas.html" class="no-ch">5.5.2. Datos digitales, señales analógicas</a></li>
+      <li><a href="553_datos_analgicos_seales_digitales.html" class="no-ch">5.5.3. Datos analógicos, señales digitales</a></li>
+      <li><a href="554_datos_analgicos_seales_analgicas.html" class="no-ch">5.5.4. Datos analógicos, señales analógicas</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="55_datos_y_codificaciones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="552_datos_digitales_seales_analgicas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">5.5.1. Datos digitales, señales digitales</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id13">
+<div class="iDevice emphasis0" >
+<div id="ta13_121_2" class="block iDevice_content">
+<div class="exe-text"><div class="figure" id="id15"><img alt="../_images/tema03-037.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema03-037.png" />
+<p class="caption"><span class="caption-text">Datos digitales -&gt; Señales digitales</span></p>
+</div>
+<p>La forma más frecuente y fácil de transmitir señales digitales es mediante la utilización de un nivel diferente de tensión para cada uno de los dos dígitos binarios. Los códigos que siguen esta estrategia comparten la propiedad de que el nivel de tensión se mantiene constante durante la duración del bit; es decir, no hay transiciones (no hay retorno al nivel cero de tensión). Por ejemplo, la ausencia de tensión se puede usar para representar un 0 binario, mientras que un nivel constante y positivo de tensión puede representar al 1. Este código se denomina no retorno a cero (NRZ, Non-return to Zero). Sin embargo, es más habitual usar un nivel negativo para representar un valor binario y una tensión positiva para representar al otro. Este último código se denomina <strong>código no retorno a nivel cero</strong> (NRZ-L, Nonreturn to Zero-Level). <strong>NRZ-L</strong> se usa generalmente para generar o interpretar los datos binarios en terminales y otros dispositivos.</p>
+<p>Una variante del NRZ se denomina <strong>NRZI (Noreturn to Zero, invert on ones)</strong>. Al igual que NRZ-L, NRZI mantiene constante el nivel de tensión durante la duración de un bit. Los datos se codifican mediante la presencia o ausencia de una transición de la señal al principio del intervalo de duración del bit. Un 1 se codifica mediante la transición (bajo a alto o alto a bajo) al principio del intervalo de señalización, mientras que un cero se representa por la ausencia de transición.</p>
+<p>Sus limitaciones (tanto NRZ-L como NRZI) hacen que estos códigos no sean atractivos para aplicaciones de transmisión de señales.</p>
+<p>En el caso del esquema <strong>bipolar-AMI</strong>, un 0 binario se representa por ausencia de señal y 1 binario se representa como un pulso positivo o negativo. Los pulsos correspondientes a los deben tener una polaridad alternante. Este tipo de esquema tiene las siguientes ventajas. En primer lugar, no habrá problemas de sincronización en el caso de que haya una cadena larga de unos. Cada 1 fuerza una transición, por lo que el receptor se puede sincronizar en dicha transición. Una cadena larga de ceros sigue siendo un problema.</p>
+<p>Los comentarios del párrafo anterior son también trasladables al código <strong>pseudoternario</strong>. En este caso, el bit 1 se representa por la ausencia de señal y el 0 mediante pulsos de polaridad alternante. No hay ninguna ventaja particular de esta codificación respecto de la anterior, siendo base de muchas aplicaciones.</p>
+<p>La <strong>codificación Manchester</strong> es un método de codificación eléctrica de una señal binaria en el que en cada tiempo de bit hay una transición entre dos niveles de señal. Siempre hay una transición en mitad del intervalo de duración del bit. Esta transición en la mitad del bit sirve como procedimiento de sincronización, a la vez que sirve para transmitir los datos: una transición de bajo a alto representa un 1 y una transición de alto a bajo representa un 0.</p>
+<p>En <strong>Manchester diferencial</strong>, la transición a mitad del intervalo se utiliza tan sólo para proporcionar sincronización. La codificación de un 0 se representa por la presencia de una transición al principio del intervalo del bit, y un 1 se representa mediante la ausencia de una transición al principio del intervalo. El código Manchester diferencial tiene como ventajas adicionales las derivadas de la utilización de una aproximación diferencial.</p>
+<p>Estos dos códigos se usan con frecuencia en los esquemas de transmisión de datos. Uno de los más conocidos es el código Manchester, elegido como parte de la especificación de la norma <strong>IEEE 802.3 (Ethernet)</strong> para la transmisión en redes LAN de cable coaxial en banda base o par trenzado con bus CSMA/CD. El Manchester diferencial se ha elegido en la norma <strong>IEEE 802.5</strong> para redes <strong>LAN en anillo con paso de testigo</strong>, en las que se usan pares trenzados apantallados.</p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="55_datos_y_codificaciones.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="552_datos_digitales_seales_analgicas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

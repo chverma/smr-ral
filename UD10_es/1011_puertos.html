@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>10.1.1. Puertos </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">10. La capa de transporte</a></li>
+   <li class="current-page-parent"><a href="101_conceptos_generales.html" class="current-page-parent daddy">10.1. Conceptos generales</a>
+   <ul>
+      <li id="active"><a href="1011_puertos.html" class="active no-ch">10.1.1. Puertos</a></li>
+   </ul>
+   </li>
+   <li><a href="102_estndares.html" class="daddy">10.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="1021_protocolo_udp.html" class="no-ch">10.2.1. Protocolo UDP</a></li>
+      <li><a href="1022_protocolo_tcp.html" class="no-ch">10.2.2. Protocolo TCP</a></li>
+   </ul>
+   </li>
+   <li><a href="103_tcnicas.html" class="daddy">10.3. Técnicas</a>
+   <ul class="other-section">
+      <li><a href="1031_nat_network_address_translation.html" class="no-ch">10.3.1. NAT (Network Address Translation)</a></li>
+   </ul>
+   </li>
+   <li><a href="104_herramientas.html" class="daddy">10.4. Herramientas</a>
+   <ul class="other-section">
+      <li><a href="1041_netstat.html" class="no-ch">10.4.1. netstat</a></li>
+      <li><a href="1042_nmap.html" class="no-ch">10.4.2. nmap</a></li>
+      <li><a href="1043_cortafuegos.html" class="no-ch">10.4.3. Cortafuegos</a></li>
+      <li><a href="1044_proxycach.html" class="no-ch">10.4.4. Proxy-caché</a></li>
+      <li><a href="1045_cortafuegos_y_proxycach_en_un_slo_equipo.html" class="no-ch">10.4.5. Cortafuegos y Proxy-caché en un sólo equipo</a></li>
+      <li><a href="1046_balanceadores_de_carga_de_red.html" class="no-ch">10.4.6. Balanceadores de carga de red</a></li>
+      <li><a href="1047_vpn.html" class="no-ch">10.4.7. VPN</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="101_conceptos_generales.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="102_estndares.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">10.1.1. Puertos</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id2">
+<div class="iDevice emphasis0" >
+<div id="ta2_167_2" class="block iDevice_content">
+<div class="exe-text"><p>Un ordenador puede estar conectado con distintos servidores a la vez; por ejemplo, con un servidor de noticias y un servidor de correo. Para distinguir las distintas conexiones dentro de un mismo ordenador se utilizan los puertos.</p>
+<p>Un puerto es un número de 16 bits, por lo que existen 65536 puertos en cada ordenador. Las aplicaciones utilizan estos puertos para recibir y transmitir mensajes.</p>
+<p>La asignación de puertos puede obtenerse desde el IANA</p>
+<p>Se pueden clasificar en:</p>
+<ul class="simple">
+<li><strong>Puertos bien conocidos</strong> (Known Ports: <strong>0 hasta 1023</strong>).</li>
+<li><strong>Puertos registrados</strong> (Registered Ports: <strong>2024 hasta 49151</strong>)</li>
+<li><strong>Puertos dinámicos y/o privados</strong> (Dynamic and/or Private Ports: <strong>49152 hasta 65535</strong>)</li>
+</ul>
+<p>A continuación se muestra una lista de los <strong>puertos más importantes</strong>.</p>
+<div class="section" id="puertos-bien-conocidos">
+<h3>10.1.1.1. Puertos bien conocidos<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#puertos-bien-conocidos" title="Enlazar permanentemente con este título"></a></h3>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="17%" /> <col width="83%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Puerto/Protocolo</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>0/udp</td>
+<td>Reservado</td>
+</tr>
+<tr class="row-odd">
+<td>20/tcp</td>
+<td>FTP File Transfer Protocol (Protocolo de Transferencia de Ficheros) - datos</td>
+</tr>
+<tr class="row-even">
+<td>21/tcp</td>
+<td>FTP File Transfer Protocol (Protocolo de Transferencia de Ficheros) - control</td>
+</tr>
+<tr class="row-odd">
+<td>22/tcp</td>
+<td>SSH, scp, SFTP</td>
+</tr>
+<tr class="row-even">
+<td>23/tcp</td>
+<td>Telnet manejo remoto de equipo, inseguro</td>
+</tr>
+<tr class="row-odd">
+<td>25/tcp</td>
+<td>SMTP Simple Mail Transfer Protocol (Protocolo Simple de Transferencia de Correo)</td>
+</tr>
+<tr class="row-even">
+<td>53/tcp</td>
+<td>DNS Domain Name System (Sistema de Nombres de Dominio)</td>
+</tr>
+<tr class="row-odd">
+<td>53/udp</td>
+<td>DNS Domain Name System (Sistema de Nombres de Dominio)</td>
+</tr>
+<tr class="row-even">
+<td>67/udp</td>
+<td>BOOTP BootStrap Protocol (Server), también usado por DHCP</td>
+</tr>
+<tr class="row-odd">
+<td>68/udp</td>
+<td>BOOTP BootStrap Protocol (Client), también usado por DHCP</td>
+</tr>
+<tr class="row-even">
+<td>69/udp</td>
+<td>TFTP Trivial File Transfer Protocol (Protocolo Trivial de Transferencia de Ficheros)</td>
+</tr>
+<tr class="row-odd">
+<td>80/tcp</td>
+<td>HTTP HyperText Transfer Protocol (Protocolo de Transferencia de HiperTexto) (WWW)</td>
+</tr>
+<tr class="row-even">
+<td>88/tcp</td>
+<td>Kerberos Agente de autenticación</td>
+</tr>
+<tr class="row-odd">
+<td>110/tcp</td>
+<td>POP3 Post Office Protocol (E-mail)</td>
+</tr>
+<tr class="row-even">
+<td>123/udp</td>
+<td>NTP Protocolo de sincronización de tiempo</td>
+</tr>
+<tr class="row-odd">
+<td>123/tcp</td>
+<td>NTP Protocolo de sincronización de tiempo</td>
+</tr>
+<tr class="row-even">
+<td>137/tcp</td>
+<td>NetBIOS Servicio de nombres</td>
+</tr>
+<tr class="row-odd">
+<td>137/udp</td>
+<td>NetBIOS Servicio de nombres</td>
+</tr>
+<tr class="row-even">
+<td>138/tcp</td>
+<td>NetBIOS Servicio de envío de datagramas</td>
+</tr>
+<tr class="row-odd">
+<td>138/udp</td>
+<td>NetBIOS Servicio de envío de datagramas</td>
+</tr>
+<tr class="row-even">
+<td>139/tcp</td>
+<td>NetBIOS Servicio de sesiones</td>
+</tr>
+<tr class="row-odd">
+<td>139/udp</td>
+<td>NetBIOS Servicio de sesiones</td>
+</tr>
+<tr class="row-even">
+<td>143/tcp</td>
+<td>IMAP4 Internet Message Access Protocol (E-mail)</td>
+</tr>
+<tr class="row-odd">
+<td>161/tcp</td>
+<td>SNMP Simple Network Management Protocol</td>
+</tr>
+<tr class="row-even">
+<td>161/udp</td>
+<td>SNMP Simple Network Management Protocol</td>
+</tr>
+<tr class="row-odd">
+<td>389/tcp</td>
+<td>LDAP Protocolo de acceso ligero a Bases de Datos</td>
+</tr>
+<tr class="row-even">
+<td>389/udp</td>
+<td>LDAP Protocolo de acceso ligero a Bases de Datos</td>
+</tr>
+<tr class="row-odd">
+<td>443/tcp</td>
+<td>HTTPS/SSL para la transferencia segura de páginas web</td>
+</tr>
+<tr class="row-even">
+<td>445/tcp</td>
+<td>Microsoft-DS (Active Directory, compartición en Windows, gusano Sasser, Agobot)</td>
+</tr>
+<tr class="row-odd">
+<td>445/udp</td>
+<td>Microsoft-DS compartición de ficheros</td>
+</tr>
+<tr class="row-even">
+<td>465/tcp</td>
+<td>SMTP Sobre SSL. Envío de correo electrónico (E-mail)</td>
+</tr>
+<tr class="row-odd">
+<td>631/tcp</td>
+<td>CUPS sistema de impresión de Unix</td>
+</tr>
+<tr class="row-even">
+<td>993/tcp</td>
+<td>IMAP4 sobre SSL (E-mail)</td>
+</tr>
+<tr class="row-odd">
+<td>995/tcp</td>
+<td>POP3 sobre SSL (E-mail)</td>
+</tr>
+<tr class="row-even">
+<td>1023/tcp</td>
+<td>Reservado</td>
+</tr>
+<tr class="row-odd">
+<td>1023/udp</td>
+<td>Reservado</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="puertos-registrados">
+<h3>10.1.1.2. Puertos registrados<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#puertos-registrados" title="Enlazar permanentemente con este título"></a></h3>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="16%" /> <col width="84%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Puerto/Protocolo</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>1024/tcp</td>
+<td>Reservado</td>
+</tr>
+<tr class="row-odd">
+<td>1024/udp</td>
+<td>Reservado</td>
+</tr>
+<tr class="row-even">
+<td>1433/tcp</td>
+<td>Microsoft-SQL-Server</td>
+</tr>
+<tr class="row-odd">
+<td>1512/tcp</td>
+<td>WINS Windows Internet Naming Service</td>
+</tr>
+<tr class="row-even">
+<td>2049/tcp</td>
+<td>NFS Archivos del sistema de red</td>
+</tr>
+<tr class="row-odd">
+<td>3128/tcp</td>
+<td>HTTP web cache y por defecto en Squid cache</td>
+</tr>
+<tr class="row-even">
+<td>3306/tcp</td>
+<td>MySQL sistema de gestión de bases de datos</td>
+</tr>
+<tr class="row-odd">
+<td>3389/tcp</td>
+<td>RDP (Remote Desktop Protocol) Terminal Server</td>
+</tr>
+<tr class="row-even">
+<td>4662/tcp</td>
+<td>eMule (aplicación de compartición de ficheros)</td>
+</tr>
+<tr class="row-odd">
+<td>4672/udp</td>
+<td>eMule (aplicación de compartición de ficheros)</td>
+</tr>
+<tr class="row-even">
+<td>4899/tcp</td>
+<td>RAdmin (Remote Administrator), herramienta de administración remota (normalmente troyanos)</td>
+</tr>
+<tr class="row-odd">
+<td>5432/tcp</td>
+<td>PostgreSQL sistema de gestión de bases de datos</td>
+</tr>
+<tr class="row-even">
+<td>5631/tcp</td>
+<td>PC-Anywhere protocolo de escritorio remoto</td>
+</tr>
+<tr class="row-odd">
+<td>5632/udp</td>
+<td>PC-Anywhere protocolo de escritorio remoto</td>
+</tr>
+<tr class="row-even">
+<td>5400/tcp</td>
+<td>VNC protocolo de escritorio remoto (usado sobre HTTP)</td>
+</tr>
+<tr class="row-odd">
+<td>5500/tcp</td>
+<td>VNC protocolo de escritorio remoto (usado sobre HTTP)</td>
+</tr>
+<tr class="row-even">
+<td>5600/tcp</td>
+<td>VNC protocolo de escritorio remoto (usado sobre HTTP)</td>
+</tr>
+<tr class="row-odd">
+<td>5700/tcp</td>
+<td>VNC protocolo de escritorio remoto (usado sobre HTTP)</td>
+</tr>
+<tr class="row-even">
+<td>5800/tcp</td>
+<td>VNC protocolo de escritorio remoto (usado sobre HTTP)</td>
+</tr>
+<tr class="row-odd">
+<td>5900/tcp</td>
+<td>VNC protocolo de escritorio remoto (conexión normal)</td>
+</tr>
+<tr class="row-even">
+<td>6881/tcp</td>
+<td>BitTorrent puerto por defecto</td>
+</tr>
+<tr class="row-odd">
+<td>6969/tcp</td>
+<td>BitTorrent puerto de tracker</td>
+</tr>
+<tr class="row-even">
+<td>8080/tcp</td>
+<td>HTTP alternativo. Proxy Web el servidor de almacenamiento en caché. Tomcat.</td>
+</tr>
+<tr class="row-odd">
+<td>8118/tcp</td>
+<td>privoxy</td>
+</tr>
+<tr class="row-even">
+<td>10000/tcp</td>
+<td>Webmin (Administración remota web)</td>
+</tr>
+<tr class="row-odd">
+<td>31337/tcp</td>
+<td>Back Orifice herramienta de administración remota (por lo general troyanos)</td>
+</tr>
+<tr class="row-even">
+<td>49151/tcp</td>
+<td>Reservado</td>
+</tr>
+<tr class="row-odd">
+<td>49151/udp</td>
+<td>Reservado</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Puede encontrarse las lista completa con el servicio asociado en <a class="reference external" href="http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml</a></p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="101_conceptos_generales.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="102_estndares.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

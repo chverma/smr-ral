@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.3. Uso del medio compartido </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">6. La capa de enlace</a></li>
+   <li class="current-page-parent"><a href="61_conceptos_generales.html" class="current-page-parent daddy">6.1. Conceptos generales</a>
+   <ul>
+      <li><a href="611_delimitacin_de_trama.html" class="no-ch">6.1.1. Delimitación de trama</a></li>
+      <li><a href="612_segmentacin_y_bloque.html" class="no-ch">6.1.2. Segmentación y bloque</a></li>
+      <li id="active"><a href="613_uso_del_medio_compartido.html" class="active no-ch">6.1.3. Uso del medio compartido</a></li>
+      <li><a href="614_control_de_flujo.html" class="no-ch">6.1.4. Control de flujo</a></li>
+      <li><a href="615_control_de_errores.html" class="no-ch">6.1.5. Control de errores</a></li>
+   </ul>
+   </li>
+   <li><a href="62_estndares.html" class="daddy">6.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="621_ethernet_ieee_8023.html" class="no-ch">6.2.1. Ethernet (IEEE 802.3)</a></li>
+      <li><a href="622_poe_power_over_ethernet.html" class="no-ch">6.2.2. PoE (Power over Ethernet)</a></li>
+      <li><a href="623_punto_a_punto.html" class="no-ch">6.2.3. Punto a punto</a></li>
+   </ul>
+   </li>
+   <li><a href="63_dispositivos.html" class="daddy">6.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="631_dominios.html" class="no-ch">6.3.1. Dominios</a></li>
+      <li><a href="632_adaptadores_de_red.html" class="no-ch">6.3.2. Adaptadores de red</a></li>
+      <li><a href="633_puentes.html" class="no-ch">6.3.3. Puentes</a></li>
+      <li><a href="634_switches.html" class="no-ch">6.3.4. Switches</a></li>
+      <li><a href="635_distribucin.html" class="no-ch">6.3.5. Distribución</a></li>
+      <li><a href="636_cableado_entre_dispositivos.html" class="no-ch">6.3.6. Cableado entre dispositivos</a></li>
+      <li><a href="637_otras_caractersticas_de_los_switches.html" class="no-ch">6.3.7. Otras características de los switches</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="612_segmentacin_y_bloque.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="614_control_de_flujo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.1.3. Uso del medio compartido</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id3">
+<div class="iDevice emphasis0" >
+<div id="ta3_122_2" class="block iDevice_content">
+<div class="exe-text"><ul class="simple">
+<li>División estática del canal
+<ul>
+<li>Técnicas de multiplexación (TDM, FDM o WDM, SDM, CDM)</li>
+</ul>
+</li>
+<li>División dinámica del canal
+<ul>
+<li>Técnicas de contención (CSMA/CD)</li>
+<li>Protocolos libres de colisión (Paso de testigo, reserva)</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="division-estatica-multiplexacion">
+<h3>6.1.3.1. División estática: Multiplexación<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#division-estatica-multiplexacion" title="Enlazar permanentemente con este título"></a></h3>
+<p>La multiplexación es la combinación de dos o más canales de información en un solo medio de transmisión usando un dispositivo llamado multiplexor. El proceso inverso se conoce como demultiplexación. Un concepto muy similar es el de control de acceso al medio.</p>
+<div class="figure"><img alt="../_images/tema06-005.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-005.png" /></div>
+<p>Una aplicación usual de la multiplexación son las comunicaciones de larga distancia. Los enlaces de las redes de larga distancia son líneas de alta capacidad de fibra, de cable coaxial o de microondas, de modo que pueden transportar simultáneamente varias transmisiones de voz y de datos haciendo uso de las técnicas de multiplexación.</p>
+<p>Una analogía posible para el problema del acceso múltiple sería una habitación (que representaría el canal) en la que varias personas desean hablar al mismo tiempo. Si varias personas hablan a la vez, se producirán interferencias y se hará difícil la comprensión. Para evitar o reducir el problema, podrían hablar por turnos (estrategia de división por tiempo - TDMA), hablar unos en tonos más agudos y otros más graves de forma que sus voces se distinguieran (división por frecuencia - FDMA), dirigir sus voces en distintas direcciones de la habitación (división espacial - SDMA) o hablar en idiomas distintos (división por código – CDMA), sólo las personas que conocen el código (es decir, el «idioma») pueden entenderlo.</p>
+<div class="section" id="tdma-acceso-multiple-por-division-de-tiempo">
+<h4>6.1.3.1.1. TDMA (Acceso Múltiple por División de Tiempo)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#tdma-acceso-multiple-por-division-de-tiempo" title="Enlazar permanentemente con este título"></a></h4>
+<p>Hace uso de multiplexación por división de tiempo o TDM (Time Division Multiplexing). En ella, el ancho de banda total del medio de transmisión es asignado a cada canal durante una fracción del tiempo total (intervalo de tiempo). Es decir se divide un único canal de frecuencia de radio en varias ranuras de tiempo. A cada persona que hace una llamada se le asigna una ranura de tiempo específica para la transmisión, lo que hace posible que varios usuarios utilicen un mismo canal simultáneamente sin interferir entre sí.</p>
+<div class="figure"><img alt="../_images/tema06-006.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-006.png" /></div>
+<p>Existen varios estándares digitales basados en TDMA, tal como TDMA D-<strong>AMPS</strong> (Digital-Advanced Mobile Phone System), TDMA D-AMPS-1900, PCS-1900 (Personal Communication Services), <strong>GSM</strong> (Global System for Mobile Communication, en el que se emplea junto con saltos en frecuencia o frequency hopping ), DCS-1800 (Digital Communications System) y PDC (Personal Digital Cellular).</p>
+</div>
+<div class="section" id="fdma-acceso-multiple-por-division-de-frecuencia">
+<h4>6.1.3.1.2. FDMA (Acceso Múltiple por División de Frecuencia)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#fdma-acceso-multiple-por-division-de-frecuencia" title="Enlazar permanentemente con este título"></a></h4>
+<p>Hace uso de multiplexación por división de frecuencia o FDM (Frequency Division Multiplexing) y su equivalente para medios ópticos, por división de longitud de onda o WDM (Wavelength Division Multiplexing).</p>
+<div class="figure"><img alt="../_images/tema06-007.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-007.png" /></div>
+<p>FDM es un tipo de multiplexación utilizada generalmente en sistemas de transmisión analógicos. La forma de funcionamiento es la siguiente: se convierte cada fuente de varias que originalmente ocupaban el mismo espectro de frecuencias, a una banda distinta de frecuencias, y se transmite en forma simultánea por un solo medio de transmisión. Así se pueden transmitir muchos canales de banda relativamente angosta por un solo sistema de transmisión de banda ancha.</p>
+<div class="figure"><img alt="../_images/tema06-008.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-008.png" /></div>
+<p>Hay muchas aplicaciones de FDM, por ejemplo, la <strong>radio FM</strong> comercial y las emisoras de <strong>televisión analógica</strong>, así como los sistemas de telecomunicaciones de alto volumen.</p>
+<p>Una variante de FDM es la utilizada en fibra óptica, donde se multiplexan señales, que pueden ser analógicas o digitales, y se transmiten mediante portadoras ópticas de diferente longitud de onda, dando lugar a la denominada multiplexación por división de longitud de onda, o <strong>WDM</strong> del inglés Wavelength Division Multiplexing.</p>
+</div>
+<div class="section" id="sdma-acceso-multiple-por-division-de-espacio">
+<h4>6.1.3.1.3. SDMA (Acceso Múltiple por División de Espacio)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#sdma-acceso-multiple-por-division-de-espacio" title="Enlazar permanentemente con este título"></a></h4>
+<p>Hace uso de multiplexación por división de espacio o SDM (Space Division Multiplexing).</p>
+<p>El Acceso múltiple por división de espacio es una tecnología que segmenta el espacio en sectores utilizando antenas unidireccionales. Se utiliza generalmente en <strong>comunicaciones por satélite</strong>, pero también en redes celulares para reducir el número de estaciones base.</p>
+</div>
+<div class="section" id="cdma-acceso-multiple-por-division-de-codigo">
+<h4>6.1.3.1.4. CDMA (Acceso Múltiple por División de Código)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#cdma-acceso-multiple-por-division-de-codigo" title="Enlazar permanentemente con este título"></a></h4>
+<p>Hace uso de multiplexación por división en código o CDM (Code Division Multiplexing).</p>
+<p>La división por código se emplea en múltiples sistemas de comunicación por radiofrecuencia, tanto de <strong>telefonía móvil</strong> (como IS-95, CDMA2000, FOMA o UMTS), transmisión de datos (<strong>WiFi</strong>) o navegación por satélite (<strong>GPS</strong>).</p>
+</div>
+</div>
+<div class="section" id="division-dinamica-diversas-tecnicas">
+<h3>6.1.3.2. División dinámica: diversas técnicas<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#division-dinamica-diversas-tecnicas" title="Enlazar permanentemente con este título"></a></h3>
+<div class="section" id="csma-cd-acceso-multiple-con-escucha-de-portadora-y-deteccion-de-colisiones">
+<h4>6.1.3.2.1. CSMA/CD (Acceso Múltiple con Escucha de Portadora y Detección de Colisiones)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#csma-cd-acceso-multiple-con-escucha-de-portadora-y-deteccion-de-colisiones" title="Enlazar permanentemente con este título"></a></h4>
+<p><strong>CSMA/CD (del inglés Carrier Sense Multiple Access with Collision Detection)</strong> o, en español, acceso múltiple con escucha de portadora y detección de colisiones, es un protocolo de acceso al medio compartido. Su uso está especialmente extendido en <strong>redes Ethernet</strong> donde es empleado para mejorar sus prestaciones. En CSMA/CD, los dispositivos de red escuchan el medio antes de transmitir, es decir, es necesario determinar si el canal y sus recursos se encuentran disponibles para realizar una transmisión. Además, mejora el rendimiento de CSMA finalizando el envío cuando se ha detectado una <strong>colisión</strong>.</p>
+<p>En CSMA/CD, cada estación que desea transmitir debe realizar una escucha del medio – escucha de portadora- para comprobar si éste se encuentra libre, es decir, para comprobar que ninguna otra estación está en ese instante transmitiendo un mensaje. Si el medio se encuentra libre entonces tiene lugar dicha transmisión. Aun así, puede ocurrir que varias estaciones tengan mensajes para enviar y que comiencen a transmitir una trama en el mismo instante. Cuando esto se sucede, se dice que ha ocurrido una colisión en la red. La estación que ha detectado la colisión procederá a enviar un mensaje de jam de 32 bits al resto de estaciones para notificar dicho evento. Una vez que todas las estaciones han sido notificadas, automáticamente se paran todas las transmisiones y se ejecuta un algoritmo de backoff (o de postergación) que consiste en esperar un tiempo aleatorio (backoff) antes de volver a intentar la transmisión.</p>
+</div>
+<div class="section" id="token-ring-paso-de-testigo">
+<h4>6.1.3.2.2. Token Ring (Paso de testigo)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#token-ring-paso-de-testigo" title="Enlazar permanentemente con este título"></a></h4>
+<p>Esta técnica se basa en una pequeña <strong>trama o testigo</strong> que circula a lo largo del <strong>anillo</strong>. Un bit indica el estado del anillo (libre u ocupado) y cuando ninguna estación está transmitiendo, el testigo simplemente circula por el anillo pasando de una estación a la siguiente. Cuando una estación desea transmitir, espera a recibir el testigo modificando el bit de estado del anillo de libre a ocupado e inserta a continuación la información a enviar junto con su propia dirección y la de la estación destino. El paquete de datos circula por el anillo hasta llegar a la estación receptora que copia su contenido y lo vuelve a poner en circulación incluyendo una marca de recepción, de tal forma que, cuando vuelve a llegar a la estación emisora, ésta lo retira de la red y genera un nuevo testigo libre.</p>
+<p>Este sistema es poco eficiente para cargas bajas, pero para cargas altas el sistema se comporta de manera muy eficiente y equitativo. Una desventaja seria es que se pierda el testigo, en cuyo caso toda la red se bloquearía. Los bits que se modifican en el anillo indican si la trama que acompaña al anillo ha llegado a su destino, si no ha llegado o si ha llegado pero no se ha copiado. Esta información de control es muy importante para el funcionamiento del sistema.</p>
+<p>Token Ring fue desarrollada por IBM en los años 1970 con topología física en anillo y técnica de acceso de paso de testigo, usando un frame de 3 bytes llamado token que viaja alrededor del anillo. Token Ring se recoge en el estándar IEEE 802.5. En desuso por la popularización de Ethernet.</p>
+<p>Las características más destacadas de esta arquitectura son:</p>
+<ul class="simple">
+<li>Utiliza una topología lógica en anillo, aunque por medio de una unidad de acceso de estación múltiple (MSAU o <strong>MAU</strong> - Multistation access unit), la red puede verse como si fuera una estrella. Tiene <strong>topología física estrella y topología lógica en anillo</strong>.</li>
+<li>Cada equipo conectado a la red dispone de una interfaz de unidad adjunta (<strong>AUI</strong> - Attachment Unit Interface) que permite la conexión a la MAU.</li>
+<li>Utiliza cable especial apantallado, aunque el cableado también puede ser par trenzado.</li>
+<li>La longitud total de la red no puede superar los 366 metros.</li>
+<li>La distancia entre una computadora y el MAU no puede ser mayor que 100 metros (por la degradación de la señal después de esta distancia en un cable de par trenzado).</li>
+<li>A cada MAU se pueden conectar ocho computadoras.</li>
+<li>Estas redes alcanzan una velocidad máxima de transmisión que oscila entre los 4 y los 16 Mbps.</li>
+<li>Posteriormente el High Speed Token Ring (HSTR) elevó la velocidad a 110 Mbps pero la mayoría de redes no la soportan.</li>
+</ul>
+</div>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="612_segmentacin_y_bloque.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="614_control_de_flujo.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

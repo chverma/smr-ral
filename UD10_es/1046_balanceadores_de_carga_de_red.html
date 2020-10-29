@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>10.4.6. Balanceadores de carga de red </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-14"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">10. La capa de transporte</a></li>
+   <li><a href="101_conceptos_generales.html" class="daddy">10.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="1011_puertos.html" class="no-ch">10.1.1. Puertos</a></li>
+   </ul>
+   </li>
+   <li><a href="102_estndares.html" class="daddy">10.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="1021_protocolo_udp.html" class="no-ch">10.2.1. Protocolo UDP</a></li>
+      <li><a href="1022_protocolo_tcp.html" class="no-ch">10.2.2. Protocolo TCP</a></li>
+   </ul>
+   </li>
+   <li><a href="103_tcnicas.html" class="daddy">10.3. Técnicas</a>
+   <ul class="other-section">
+      <li><a href="1031_nat_network_address_translation.html" class="no-ch">10.3.1. NAT (Network Address Translation)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="104_herramientas.html" class="current-page-parent daddy">10.4. Herramientas</a>
+   <ul>
+      <li><a href="1041_netstat.html" class="no-ch">10.4.1. netstat</a></li>
+      <li><a href="1042_nmap.html" class="no-ch">10.4.2. nmap</a></li>
+      <li><a href="1043_cortafuegos.html" class="no-ch">10.4.3. Cortafuegos</a></li>
+      <li><a href="1044_proxycach.html" class="no-ch">10.4.4. Proxy-caché</a></li>
+      <li><a href="1045_cortafuegos_y_proxycach_en_un_slo_equipo.html" class="no-ch">10.4.5. Cortafuegos y Proxy-caché en un sólo equipo</a></li>
+      <li id="active"><a href="1046_balanceadores_de_carga_de_red.html" class="active no-ch">10.4.6. Balanceadores de carga de red</a></li>
+      <li><a href="1047_vpn.html" class="no-ch">10.4.7. VPN</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1045_cortafuegos_y_proxycach_en_un_slo_equipo.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1047_vpn.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">10.4.6. Balanceadores de carga de red</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id11">
+<div class="iDevice emphasis0" >
+<div id="ta11_176_2" class="block iDevice_content">
+<div class="exe-text"><p>En informática, el balanceo de carga distribuye las cargas de trabajo a través de múltiples recursos informáticos, como procesadores (balanceo de cómputo), enlaces de red (balanceo de red), ordenadores, cluster de ordenadores o unidades de disco. El balanceo de carga tiene como objetivo optimizar el uso de recursos, maximizar el rendimiento, minimizar el tiempo de respuesta y evitar la sobrecarga de cualquier recurso individual. El uso de varios componentes con el equilibrio de carga en lugar de un solo componente puede aumentar la confiabilidad mediante redundancia. El equilibrio de carga por lo general implica software o hardware dedicado, tal como un switch multicapa o un proceso DNS .</p>
+<p>El balanceo de carga difiere del channel bonding en que el primero se realiza en la capa 4 del modelo OSI, mientras que el channel bonding hace la división del tráfico en un nivel inferior, ya en la capa 3 del modelo OSI o en el enlace de datos capa 2 del modelo OSI).</p>
+<p>Existen distintos tipos de balanceo de carga según el elemento equilibrado siendo los más frecuentes:</p>
+<ul class="simple">
+<li>Balanceo de carga entre procesadores (Operaciones de cómputo)</li>
+<li>Balanceo de carga entre líneas de red (Tráfico de red)</li>
+</ul>
+<p>Aquí se tratará el balanceo de carga de red y en concreto los dos tipos existentes:</p>
+<ul class="simple">
+<li>Balanceo de carga en el lado cliente</li>
+<li>Balanceo de carga en el lado servidor</li>
+</ul>
+<div class="section" id="balanceo-en-el-lado-cliente-multihoming">
+<h3>10.4.6.1. Balanceo en el lado cliente (Multihoming)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#balanceo-en-el-lado-cliente-multihoming" title="Enlazar permanentemente con este título"></a></h3>
+<p>El Multihoming (comúnmente conocido como ruta de doble WAN) es la capacidad de equilibrar el tráfico a través de dos o más enlaces WAN sin necesidad de utilizar protocolos de enrutamiento complejos como BGP.</p>
+<p>Esta técnica equilibra sesiones de red como web, correo electrónico, etc a través de múltiples conexiones con el fin de extender la cantidad de ancho de banda utilizado por los usuarios de la LAN, lo que aumenta la cantidad total de ancho de banda disponible. Por ejemplo, un usuario tiene una única conexión a la WAN a 10 Mbit/s. Desea añadir una segunda línea de banda ancha (cable, DSL, inalámbrico, etc.) a 20 Mbit/s. Esto les proporcionará un total de 30 Mbits/s de ancho de banda para balancear sesiones.</p>
+<p>El balanceo de sesión no sólo eso, equilibra sesiones a través de cada enlace WAN. Cuando los navegadores Web se conectan a Internet, que comúnmente se abren varias sesiones, una para el texto, otra para una imagen, otro por alguna otra imagen, etc. Cada una de estas sesiones pueden ser equilibradas a través de las conexiones disponibles. Una aplicación FTP sólo utiliza una sola sesión por lo que no está equilibrada; sin embargo, si se realiza una conexión FTP secundaria, entonces puede ser equilibrada por lo que, en conjunto, el tráfico se distribuye uniformemente a través de las diversas conexiones y por lo tanto proporciona un aumento global en el rendimiento.</p>
+<p>A continuación se muestra un esquema de red donde se puede realizar “balanceo de carga” con 2 líneas de salida a internet.</p>
+<div class="figure"><img alt="../_images/tema11-033.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-033.png" /></div>
+</div>
+<div class="section" id="balanceo-de-carga-en-el-lado-servidor">
+<h3>10.4.6.2. Balanceo de carga en el lado servidor<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#balanceo-de-carga-en-el-lado-servidor" title="Enlazar permanentemente con este título"></a></h3>
+<p>El problema a solucionar es la sobrecarga de los servidores. Se puede balancear cualquier protocolo, pero dado que este sitio se centra en las tecnologías web, el artículo trata exclusivamente de <strong>balancear servidores HTTP</strong>.</p>
+<p>Al mismo tiempo, si el balanceador detecta la caída de uno de los servidores web, puede optar por no enviarle más peticiones. De esta forma, si uno de los servidores web se cae, las peticiones del cliente no se dirigen al servidor caído.</p>
+<p>Vemos que el balance de carga también contribuye a una infraestructura redundante y de alta disponibilidad (aunque no la asegura, el balance de carga por sí mismo no alcanza para tener HA1 ). En este punto creo conveniente introducir los conceptos básicos que se manejarán a lo largo del artículo:</p>
+<ul class="simple">
+<li><strong>Balanceador</strong>: es un sistema, software o hardware, que distribuye las peticiones de los clientes de forma equitativa entre distintos servidores de “backend”.</li>
+<li><strong>Servidor de backend</strong>: es un servidor (web en este caso), que responde la petición del usuario.</li>
+</ul>
+<p>Así el balanceador distribuye las peticiones y son los servidores de backend, quienes arman la respuesta efectiva al cliente. Para balancear la carga entre varios servidores es deseable que el mismo balanceador sea justo (fair), y que detecte servidores sobrecargados para dejar de enviarle peticiones hasta que no baje su carga. Este mismo mecanismo sirve para que un balanceador no envíe peticiones a un servidor caído.</p>
+<div class="figure"><img alt="../_images/tema11-034.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-034.png" /></div>
+</div>
+<div class="section" id="balanceo-mediante-dns">
+<h3>10.4.6.3. Balanceo mediante DNS<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#balanceo-mediante-dns" title="Enlazar permanentemente con este título"></a></h3>
+<p>La forma más elemental de balancear la carga entre varios servidores esa utilizando el DNS. Por ejemplo, buscando la IP de <strong>yahoo.com</strong> con el comando dig he obtenido el siguiente resultado. En este caso responden 3 servidores: 206.190.36.45, 98.139.183.24 y 98.138.253.109.</p>
+<div class="figure" id="id13"><img alt="../_images/tema11-035.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-035.png" />
+<p class="caption"><span class="caption-text">Balanceo mediante DNS</span></p>
+</div>
+<p>Este es el tipo de balanceo más elemental que se puede hacer, y tiene una ventaja muy importante: <strong>simplicidad y eficiencia</strong>; ya que en principio lo único que se necesitan son varios servidores con distintas IPs, por lo que es barato, simple y fácil de mantener. Sin embargo, el balance de carga por DNS tiene algunos inconvenientes:</p>
+<ul class="simple">
+<li>El balanceo mediante DNS no tiene en cuenta la carga de cada servidor.</li>
+<li>El balanceo mediante DNS no detecta si un servidor ha caído.</li>
+</ul>
+</div>
+<div class="section" id="balanceo-mediante-balanceador">
+<h3>10.4.6.4. Balanceo mediante balanceador<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#balanceo-mediante-balanceador" title="Enlazar permanentemente con este título"></a></h3>
+<p>Una solución menos simple pero más adecuada es utilizar un hardware o software balanceador de carga. Debemos tener en cuenta que un balanceador de este tipo es por definición un proxy inverso. Actualmente un software muy utilizado es HAProxy.</p>
+<p>Los balanceadores de carga tienen varias ventajas sobre el balanceado mediante DNS:</p>
+<ul class="simple">
+<li>Un balanceador puede tener en cuenta la carga de cada equipo y distribuir las peticiones según esas cargas.</li>
+<li>Si un servidor queda fuera de línea, el balanceador de carga lo detecta y redirige las peticiones web a los otros servidores..</li>
+<li>Por último, la mayoría de los balanceadores pueden mantener las sesiones de los usuarios, de forma que un usuario que inicia sesión en el servidor “<strong>A</strong>” siempre sea dirigido por el balanceador al mismo servidor “<strong>A</strong>” (de no hacerlo el usuario perdería la sesión). Sin embargo, el balance de carga por DNS es del tipo “<strong>Round Robin</strong>”, por lo que es casi seguro que el usuario pierda la sesión.</li>
+</ul>
+<div class="figure"><img alt="../_images/tema11-036.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-036.png" /></div>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1045_cortafuegos_y_proxycach_en_un_slo_equipo.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1047_vpn.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

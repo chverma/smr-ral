@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>10.2.2. Protocolo TCP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">10. La capa de transporte</a></li>
+   <li><a href="101_conceptos_generales.html" class="daddy">10.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="1011_puertos.html" class="no-ch">10.1.1. Puertos</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="102_estndares.html" class="current-page-parent daddy">10.2. Estándares</a>
+   <ul>
+      <li><a href="1021_protocolo_udp.html" class="no-ch">10.2.1. Protocolo UDP</a></li>
+      <li id="active"><a href="1022_protocolo_tcp.html" class="active no-ch">10.2.2. Protocolo TCP</a></li>
+   </ul>
+   </li>
+   <li><a href="103_tcnicas.html" class="daddy">10.3. Técnicas</a>
+   <ul class="other-section">
+      <li><a href="1031_nat_network_address_translation.html" class="no-ch">10.3.1. NAT (Network Address Translation)</a></li>
+   </ul>
+   </li>
+   <li><a href="104_herramientas.html" class="daddy">10.4. Herramientas</a>
+   <ul class="other-section">
+      <li><a href="1041_netstat.html" class="no-ch">10.4.1. netstat</a></li>
+      <li><a href="1042_nmap.html" class="no-ch">10.4.2. nmap</a></li>
+      <li><a href="1043_cortafuegos.html" class="no-ch">10.4.3. Cortafuegos</a></li>
+      <li><a href="1044_proxycach.html" class="no-ch">10.4.4. Proxy-caché</a></li>
+      <li><a href="1045_cortafuegos_y_proxycach_en_un_slo_equipo.html" class="no-ch">10.4.5. Cortafuegos y Proxy-caché en un sólo equipo</a></li>
+      <li><a href="1046_balanceadores_de_carga_de_red.html" class="no-ch">10.4.6. Balanceadores de carga de red</a></li>
+      <li><a href="1047_vpn.html" class="no-ch">10.4.7. VPN</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1021_protocolo_udp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="103_tcnicas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">10.2.2. Protocolo TCP</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id4">
+<div class="iDevice emphasis0" >
+<div id="ta4_169_2" class="block iDevice_content">
+<div class="exe-text"><p>El protocolo TCP (Transmission Control Protocol, protocolo de control de transmisión) está basado en IP que es no fiable y no orientado a conexión, y sin embargo es:</p>
+<ul class="simple">
+<li><strong>Orientado a conexión</strong>. Es necesario establecer una conexión previa entre las dos máquinas antes de poder transmitir ningún dato. A través de esta conexión los datos llegarán siempre a la aplicación destino de forma ordenada y sin duplicados. Finalmente, es necesario cerrar la conexión.</li>
+<li><strong>Fiable</strong>. La información que envía el emisor llega de forma correcta al destino.</li>
+</ul>
+<p>El protocolo TCP permite una comunicación fiable entre dos aplicaciones. De esta forma, las aplicaciones que lo utilicen no tienen que preocuparse de la integridad de la información: dan por hecho que todo lo que reciben es correcto.</p>
+<p>El flujo de datos entre una aplicación y otra viajan por un circuito virtual. Sabemos que los datagramas IP pueden seguir rutas distintas, dependiendo del estado de los encaminadores intermedios, para llegar a un mismo sitio. Esto significa que los datagramas IP que transportan los mensajes siguen rutas diferentes aunque el protocolo TCP logré la ilusión de que existe un único circuito por el que viajan todos los bytes uno detrás de otro (algo así como una tubería entre el origen y el destino). Para que esta comunicación pueda ser posible es necesario abrir previamente una conexión. Esta conexión garantiza que los todos los datos lleguen correctamente de forma ordenada y sin duplicados. La unidad de datos del protocolo es el byte, de tal forma que la aplicación origen envía bytes y la aplicación destino recibe estos bytes.</p>
+<p>Sin embargo, cada byte no se envía inmediatamente después de ser generado por la aplicación, sino que se espera a que haya una cierta cantidad de bytes, se agrupan en un segmento y se envía el segmento completo. Para ello son necesarias unas memorias intermedias o buffers. Cada uno de estos segmentos viaja en el campo de datos de un datagrama IP. Si el segmento es muy grande será necesario fragmentar el datagrama, con la consiguiente pérdida de rendimiento; y si es muy pequeño, se estarán enviando más cabeceras que datos. Por consiguiente, es importante elegir el mayor tamaño de segmento posible que no provoque fragmentación.</p>
+<p><img alt="../_images/tema11-005.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-005.png" /></p>
+<p>El protocolo TCP envía un flujo de información no estructurado. Esto significa que los datos no tienen ningún formato, son únicamente los bytes que una aplicación envía a otra. Ambas aplicaciones deberán ponerse de acuerdo para comprender la información que se están enviando.</p>
+<p>Cada vez que se abre una conexión, se crea un canal de comunicación bidireccional en el que ambas aplicaciones pueden enviar y recibir información, es decir, una conexión es full-dúplex.</p>
+<div class="section" id="formato-del-segmento-tcp">
+<h3>10.2.2.1. Formato del segmento TCP<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#formato-del-segmento-tcp" title="Enlazar permanentemente con este título"></a></h3>
+<p>Ya hemos comentado que el flujo de bytes que produce una determinada aplicación se divide en uno o más segmentos TCP para su transmisión. Cada uno de estos segmentos viaja en el campo de datos de un datagrama IP. Para facilitar el control de flujo de la información los bytes de la aplicación se numeran. De esta manera, cada segmento indica en su cabecera el primer byte que transporta. Las confirmaciones o acuses de recibo (ACK) representan el siguiente byte que se espera recibir (y no el número de segmento recibido, ya que éste no existe).</p>
+<img alt="../_images/tema11-006.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-006.png" />
+<ul class="simple">
+<li><strong>Puerto fuente</strong> (16 bits). Puerto de la máquina origen. Al igual que el puerto destino es necesario para identificar la conexión actual.</li>
+<li><strong>Puerto destino</strong> (16 bits). Puerto de la máquina destino.</li>
+<li><strong>Número de secuencia</strong> (32 bits). Indica el número de secuencia del primer byte que trasporta el segmento.</li>
+<li><strong>Número de acuse de recibo</strong> (32 bits). Indica el número de secuencia del siguiente byte que se espera recibir. Con este campo se indica al otro extremo de la conexión que los bytes anteriores se han recibido correctamente.</li>
+<li><strong>HLEN</strong> (4 bits). Longitud de la cabecera medida en múltiplos de 32 bits (4 bytes). El valor mínimo de este campo es 5, que corresponde a un segmento sin datos (20 bytes).</li>
+<li><strong>Reservado</strong> (6 bits). Bits reservados para un posible uso futuro.</li>
+<li><strong>Bits de código o indicadores</strong> (6 bits). Los bits de código determinan el propósito y contenido del segmento. A continuación se explica el significado de cada uno de estos bits (mostrados de izquierda a derecha) si está a 1.
+<ul>
+<li><strong>URG</strong>. El campo Puntero de urgencia contiene información válida.</li>
+<li><strong>ACK</strong>. El campo Número de acuse de recibo contiene información válida, es decir, el segmento actual lleva un ACK. Observemos que un mismo segmento puede transportar los datos de un sentido y las confirmaciones del otro sentido de la comunicación.</li>
+<li><strong>PSH</strong>. La aplicación ha solicitado una operación push (enviar los datos existentes en la memoria temporal sin esperar a completar el segmento).</li>
+<li><strong>RST</strong>. Interrupción de la conexión actual.</li>
+<li><strong>SYN</strong>. Sincronización de los números de secuencia. Se utiliza al crear una conexión para indicar al otro extremo cual va a ser el primer número de secuencia con el que va a comenzar a transmitir (veremos que no tiene porqué ser el cero).</li>
+<li><strong>FIN</strong>. Indica al otro extremo que la aplicación ya no tiene más datos para enviar. Se utiliza para solicitar el cierre de la conexión actual.</li>
+</ul>
+</li>
+<li><strong>Ventana</strong> (16 bits). Número de bytes que el emisor del segmento está dispuesto a aceptar por parte del destino.</li>
+<li><strong>Suma de verificación</strong> (24 bits). Suma de comprobación de errores del segmento actual. Para su cálculo se utiliza una pseudo-cabecera que también incluye las direcciones IP origen y destino.</li>
+<li><strong>Puntero de urgencia</strong> (8 bits). Se utiliza cuando se están enviando datos urgentes que tienen preferencia sobre todos los demás e indica el siguiente byte del campo Datos que sigue a los datos urgentes. Esto le permite al destino identificar donde terminan los datos urgentes. Nótese que un mismo segmento puede contener tanto datos urgentes (al principio) como normales (después de los urgentes).</li>
+<li><strong>Opciones</strong> (variable). Si está presente únicamente se define una opción: el tamaño máximo de segmento que será aceptado.</li>
+<li><strong>Relleno</strong>. Se utiliza para que la longitud de la cabecera sea múltiplo de 32 bits.</li>
+<li><strong>Datos</strong>. Información que envía la aplicación.</li>
+</ul>
+</div>
+<div class="section" id="fiabilidad">
+<h3>10.2.2.2. Fiabilidad<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#fiabilidad" title="Enlazar permanentemente con este título"></a></h3>
+<p>¿Cómo es posible enviar información fiable basándose en un protocolo no fiable? Es decir, si los datagramas que transportan los segmentos TCP se pueden perder, ¿cómo pueden llegar los datos de las aplicaciones de forma correcta al destino?</p>
+<p>La respuesta a esta pregunta es sencilla: cada vez que llega un mensaje se devuelve una confirmación (acknowledgement) para que el emisor sepa que ha llegado correctamente. Si no le llega esta confirmación pasado un cierto tiempo, el emisor reenvía el mensaje.</p>
+<p>Veamos a continuación la manera más sencilla (aunque ineficiente) de proporcionar una comunicación fiable. El emisor envía un dato, arranca su temporizador y espera su confirmación (ACK). Si recibe su ACK antes de agotar el temporizador, envía el siguiente dato. Si se agota el temporizador antes de recibir el ACK, reenvía el mensaje. Los siguientes esquemas representan este comportamiento:</p>
+<div class="figure" id="id1"><img alt="../_images/tema11-007.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-007.png" />
+<p class="caption"><span class="caption-text">TCP - Confirmaciones positivas (ACK)</span></p>
+</div>
+<div class="figure" id="id2"><img alt="../_images/tema11-008.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-008.png" />
+<p class="caption"><span class="caption-text">TCP - Temporizador</span></p>
+</div>
+<p>Este esquema es perfectamente válido aunque muy ineficiente debido a que sólo se utiliza un sentido de la comunicación a la vez y el canal está desaprovechado la mayor parte del tiempo. Para solucionar este problema se utiliza un protocolo de ventana deslizante, que se resume en el siguiente esquema. Los mensajes y las confirmaciones van numerados y el emisor puede enviar más de un mensaje antes de haber recibido todas las confirmaciones anteriores.</p>
+<div class="figure" id="id3"><img alt="../_images/tema11-009.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-009.png" />
+<p class="caption"><span class="caption-text">TCP - Ventana deslizante</span></p>
+</div>
+</div>
+<div class="section" id="conexiones">
+<h3>10.2.2.3. Conexiones<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#conexiones" title="Enlazar permanentemente con este título"></a></h3>
+<p>Una conexión son dos pares dirección IP:puerto. No puede haber dos conexiones iguales en un mismo instante en toda la Red. Aunque bien es posible que un mismo ordenador tenga dos conexiones distintas y simultáneas utilizando un mismo puerto. El protocolo TCP utiliza el concepto de conexión para identificar las transmisiones. En el siguiente ejemplo se han creado tres conexiones. Las dos primeras son al mismo servidor Web (puerto 80) y la tercera a un servidor de FTP (puerto 21).</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="50%" /> <col width="50%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Host 1</th>
+<th class="head">Host 2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>194.35.133.5:1256</td>
+<td>135.22.8.165:80</td>
+</tr>
+<tr class="row-odd">
+<td>184.42.15.16:1305</td>
+<td>135.22.8.165:80</td>
+</tr>
+<tr class="row-even">
+<td>184.42.15.16:1323</td>
+<td>135.22.10.15:21</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="figure"><img alt="../_images/tema11-010.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-010.png" /></div>
+<p>Para que se pueda crear una conexión, el extremo del servidor debe hacer una apertura pasiva del puerto (escuchar su puerto y quedar a la espera de conexiones) y el cliente, una apertura activa en el puerto del servidor (conectarse con el puerto de un determinado servidor).</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">El comando <strong>NetStat</strong> muestra las conexiones abiertas en un ordenador, así como estadísticas de los distintos protocolos de Internet.</p>
+</div>
+</div>
+<div class="section" id="establecimiento-de-una-conexion">
+<h3>10.2.2.4. Establecimiento de una conexión<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#establecimiento-de-una-conexion" title="Enlazar permanentemente con este título"></a></h3>
+<p>Antes de transmitir cualquier información utilizando el protocolo TCP es necesario abrir una conexión. Un extremo hace una apertura pasiva y el otro, una apertura activa. El mecanismo utilizado para establecer una conexión consta de tres vías.</p>
+<div class="figure" id="id4"><img alt="../_images/tema11-011.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-011.png" />
+<p class="caption"><span class="caption-text">TCP - Establecimiento de una conexión</span></p>
+</div>
+<ol class="arabic simple">
+<li>La máquina que quiere iniciar la conexión hace una apertura activa enviando al otro extremo un mensaje que tenga el bit SYN activado. Le informa además del primer número de secuencia que utilizará para enviar sus mensajes.</li>
+<li>La máquina receptora (un servidor generalmente) recibe el segmento con el bit SYN activado y devuelve la correspondiente confirmación. Si desea abrir la conexión, activa el bit SYN del segmento e informa de su primer número de secuencia. Deja abierta la conexión por su extremo.</li>
+<li>La primera máquina recibe el segmento y envía su confirmación. A partir de este momento puede enviar datos al otro extremo. Abre la conexión por su extremo.</li>
+<li>La máquina receptora recibe la confirmación y entiende que el otro extremo ha abierto ya su conexión. A partir de este momento puede enviar ella también datos. La conexión ha quedado abierta en los dos sentidos.</li>
+</ol>
+<p>Observamos que son necesarios 3 segmentos para que ambas máquinas abran sus conexiones y sepan que la otra también está preparada.</p>
+<div class="admonition-numeros-de-secuencia admonition">
+<p class="first admonition-title">Números de secuencia</p>
+<p class="last">Se utilizan números de secuencia distintos para cada sentido de la comunicación. Como hemos visto el primer número para cada sentido se acuerda al establecer la comunicación. Cada extremo se inventa un número aleatorio y envía éste como inicio de secuencia. Observamos que los números de secuencia no comienzan entonces en el cero. ¿Por qué se procede así? Uno de los motivos es para evitar conflictos: supongamos que la conexión en un ordenador se interrumpe nada más empezar y se crea una nueva. Si ambas han empezado en el cero es posible que el receptor entienda que la segunda conexión es una continuación de la primera (si utilizan los mismos puertos).</p>
+</div>
+</div>
+<div class="section" id="cierre-de-una-conexion">
+<h3>10.2.2.5. Cierre de una conexión<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#cierre-de-una-conexion" title="Enlazar permanentemente con este título"></a></h3>
+<p>Cuando una aplicación ya no tiene más datos que transferir, el procedimiento normal es cerrar la conexión utilizando una variación del mecanismo de 3 vías explicado anteriormente.</p>
+<p>El mecanismo de cierre es algo más complicado que el de establecimiento de conexión debido a que las conexiones son full-duplex y es necesario cerrar cada uno de los dos sentidos de forma independiente.</p>
+<div class="figure" id="id5"><img alt="../_images/tema11-011b.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-011b.png" />
+<p class="caption"><span class="caption-text">TCP - Cierre de una conexión</span></p>
+</div>
+<ol class="arabic simple">
+<li>La máquina que ya no tiene más datos que transferir, envía un segmento con el bit FIN activado y cierra el sentido de envío. Sin embargo, el sentido de recepción de la conexión sigue todavía abierto.</li>
+<li>La máquina receptora recibe el segmento con el bit FIN activado y devuelve la correspondiente confirmación. Pero no cierra inmediatamente el otro sentido de la conexión sino que informa a la aplicación de la petición de cierre. Aquí se produce un lapso de tiempo hasta que la aplicación decide cerrar el otro sentido de la conexión.</li>
+<li>La primera máquina recibe el segmento ACK.</li>
+<li>Cuando la máquina receptora toma la decisión de cerrar el otro sentido de la comunicación, envía un segmento con el bit FIN activado y cierra la conexión.</li>
+<li>La primera máquina recibe el segmento FIN y envía el correspondiente ACK. Observemos que aunque haya cerrado su sentido de la conexión sigue devolviendo las confirmaciones.</li>
+<li>La máquina receptora recibe el segmento ACK.</li>
+</ol>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1021_protocolo_udp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="103_tcnicas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.2.1. En función del procedimiento. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-6"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">9. Encaminamiento</a></li>
+   <li><a href="91_introduccin.html" class="no-ch">9.1. Introducción</a></li>
+   <li class="current-page-parent"><a href="92_clasificacin.html" class="current-page-parent daddy">9.2. Clasificación</a>
+   <ul>
+      <li id="active"><a href="921_en_funcin_del_procedimiento.html" class="active no-ch">9.2.1. En función del procedimiento.</a></li>
+      <li><a href="922_en_funcin_de_las_tablas_de_encaminamiento_empleadas.html" class="no-ch">9.2.2. En función de las tablas de encaminamiento empleadas.</a></li>
+   </ul>
+   </li>
+   <li><a href="93_aplicacin_prctica.html" class="daddy">9.3. Aplicación práctica</a>
+   <ul class="other-section">
+      <li><a href="931_gestin_del_encaminamiento_ip.html" class="no-ch">9.3.1. Gestión del encaminamiento IP</a></li>
+      <li><a href="932_sistemas_participantes.html" class="no-ch">9.3.2. Sistemas participantes</a></li>
+      <li><a href="933_tablas_de_encaminamiento.html" class="no-ch">9.3.3. Tablas de encaminamiento</a></li>
+      <li><a href="934_mtricas.html" class="no-ch">9.3.4. Métricas</a></li>
+      <li><a href="935_distancia_administrativa.html" class="no-ch">9.3.5. Distancia administrativa</a></li>
+      <li><a href="936_protocolos_de_enrutamiento_con_clase_y_sin_clase.html" class="no-ch">9.3.6. Protocolos de enrutamiento con clase y sin clase</a></li>
+      <li><a href="937_resumen_de_rutas.html" class="no-ch">9.3.7. Resumen de rutas</a></li>
+   </ul>
+   </li>
+   <li><a href="94_protocolos_interiores_y_exteriores.html" class="daddy">9.4. Protocolos interiores y exteriores</a>
+   <ul class="other-section">
+      <li><a href="941_protocolos_interiores_igp.html" class="no-ch">9.4.1. Protocolos interiores (IGP)</a></li>
+      <li><a href="942_protocolos_exteriores_egp.html" class="no-ch">9.4.2. Protocolos exteriores (EGP)</a></li>
+   </ul>
+   </li>
+   <li><a href="95_estructura_jerrquica_de_internet.html" class="no-ch">9.5. Estructura jerárquica de internet</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="92_clasificacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="922_en_funcin_de_las_tablas_de_encaminamiento_empleadas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">9.2.1. En función del procedimiento.</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id2">
+<div class="iDevice emphasis0" >
+<div id="ta2_150_2" class="block iDevice_content">
+<div class="exe-text"><p>Los procedimientos de encaminamiento pueden ser:</p>
+<div class="section" id="deterministicos-o-estaticos">
+<h3>9.2.1.1. Determinísticos o Estáticos<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema10/Teoria.html#deterministicos-o-estaticos" title="Enlazar permanentemente con este título"></a></h3>
+<p>En los encaminamientos estático y cuasi-estático <strong>la información necesaria se recoge y envía mediante gestión (al crear la red y en operaciones de mantenimiento)</strong>.</p>
+<dl class="docutils">
+<dt><strong>Estático</strong></dt>
+<dd>
+<p class="first">Las tablas de encaminamiento de los nodos se configuran de forma manual y permanecen inalterables hasta que no se vuelve a actuar sobre ellas. La adaptación a cambios es nula. Tanto la recogida como la distribución de información se realiza por gestión (se realiza de manera externa a la red), sin ocupar capacidad de red. El calculo de ruta se realiza off-line (en una maquina especifica),y las rutas pueden ser las óptimas al no estar sometido al requisito de tiempo real.</p>
+<p class="last">Este tipo de encaminamiento es el óptimo para topologías en los que solo hay una posibilidad de encaminamiento (topología en estrella).</p>
+</dd>
+<dt><strong>Cuasiestático</strong></dt>
+<dd>
+<p class="first">Este encaminamiento, es igual que el estático pero en vez de dar una sola ruta fija, se dan además varias alternativas en caso de que la principal no funcione, de ahí que tenga una adaptabilidad reducida.</p>
+<p class="last">Este tipo de encaminamiento puede dar lugar a situaciones incoherentes, ya que no se enteran todos los nodos de los problemas de la red, sino sólo los adyacentes a los problemas.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="adaptativos-o-dinamicos">
+<h3>9.2.1.2. Adaptativos o Dinámicos<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema10/Teoria.html#adaptativos-o-dinamicos" title="Enlazar permanentemente con este título"></a></h3>
+<p>En este tipo de procedimientos de encaminamiento <strong>la información se recoge y envía de forma periódica con el fin de detectar cambios en la red</strong>.</p>
+<dl class="docutils">
+<dt><strong>Centralizado</strong></dt>
+<dd>En este tipo de encaminamiento, todos los nodos son iguales salvo el nodo central, que recoge la información de control de todos los nodos y calcula la FIB (tabla de encaminamiento) para cada nodo, es decir, el nodo central decide la tabla de encaminamiento de cada nodo en función de la información de control que éstos le mandan. El inconveniente de este método es que consumimos recursos de la red, y se harían necesaria rutas alternativas para comunicarse con el nodo central. La adaptación a cambios es perfecta siempre y cuando las notificaciones de los cambios lleguen antes de iniciar los cálculos de las rutas.</dd>
+<dt><strong>Aislado</strong></dt>
+<dd>Se basa en que cada vez que un nodo recibe un paquete que tiene que reenviar (porque no es para él) lo reenvía por todos los enlaces salvo por el que le llegó.</dd>
+<dt><strong>Distribuido</strong></dt>
+<dd>En este tipo de encaminamiento todos los nodos son iguales, todos envían y reciben información de control y todos calculan, a partir de su RIB (base de información de encaminamiento) sus tablas de encaminamiento. La adaptación a cambios es optima siempre y cuando estos sean notificados.</dd>
+</dl>
+<p>Hay <strong>dos familias de procedimientos distribuidos</strong>:</p>
+<ol class="arabic simple">
+<li><strong>Vector de distancias</strong></li>
+</ol>
+<p>Cada nodo informa a sus nodos vecinos de todas las distancias conocidas por él, mediante vectores de distancias (de longitud variable según los nodos conocidos). El vector de distancias es un vector de longitud variable que contiene un par (nodo:distancia al nodo) por cada nodo conocido por el nodo que lo envía, por ejemplo (A:0;B:1;D:1) que dice que el nodo que lo manda dista «0» de A,»1» de B y «1» de D, y de los demás no sabe nada (ésta es la forma en la que un nodo dice lo que sabe en cada momento). El nodo solo conoce la distancia a los distintos nodos de la red pero no conoce la topología.</p>
+<p>Con todos los vectores recibidos, cada nodo monta su tabla de encaminamiento ya que al final conoce qué nodo vecino tiene la menor distancia al destino del paquete, pues se lo han dicho con el vector de distancias.</p>
+<ol class="arabic simple" start="2">
+<li><strong>Estado de enlaces</strong></li>
+</ol>
+<p>Cada nodo difunde a todos los demás nodos de la red sus distancias con sus enlaces vecinos, es decir, cada nodo comunica su entorno local a todos los nodos. Así cada nodo es capaz de conocer la topología de la red. La clave y dificultad de este método es la difusión.</p>
+<p>A continuación se muestra una tabla comparativa de todos los tipos de encaminamiento vistos.</p>
+</div>
+<div class="section" id="clasificacion-de-los-metodos-de-encaminamiento">
+<h3>9.2.1.3. Clasificación de los métodos de encaminamiento<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema10/Teoria.html#clasificacion-de-los-metodos-de-encaminamiento" title="Enlazar permanentemente con este título"></a></h3>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="17%" /> <col width="25%" /> <col width="22%" /> <col width="19%" /> <col width="17%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Tipos de encaminamiento</th>
+<th class="head">Recepción de información de control</th>
+<th class="head">Envío de información de control</th>
+<th class="head">Decisión de encaminamiento</th>
+<th class="head">Adaptación a los cambios</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>Estático</td>
+<td>NO</td>
+<td>NO</td>
+<td>OFF-LINE</td>
+<td>NO</td>
+</tr>
+<tr class="row-odd">
+<td>Cuasi - estático</td>
+<td>NO</td>
+<td>NO</td>
+<td>OFF-LINE</td>
+<td>Reducida</td>
+</tr>
+<tr class="row-even">
+<td>Centralizado</td>
+<td>Nodos-Nodo central</td>
+<td>Nodo central-Nodos</td>
+<td>Nodo central</td>
+<td>SI</td>
+</tr>
+<tr class="row-odd">
+<td>Aislado</td>
+<td>NO</td>
+<td>NO</td>
+<td>Inundación, por ejemplo</td>
+<td>SI</td>
+</tr>
+<tr class="row-even">
+<td>Distribuido</td>
+<td>Todos los nodos</td>
+<td>Todos los nodos</td>
+<td>Todos los nodos</td>
+<td>SI</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="comparacion-vector-de-distancias-estado-del-enlaces">
+<h3>9.2.1.4. Comparación Vector de distancias – Estado del Enlaces<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema10/Teoria.html#comparacion-vector-de-distancias-estado-del-enlaces" title="Enlazar permanentemente con este título"></a></h3>
+<p>Haremos una comparación entre los algortitmos de vector de distancias y de estado de enlaces, ambos del tipo distribuido:</p>
+<ul>
+<li>
+<p class="first">Consumo de capacidad.</p>
+<p>Lo ideal es que el tráfico de control sea lo más pequeño posible. Con vectores de distancia se transmiten vectores cuyo tamaño es del orden del número de nodos de la red pues cada nodo comunica a su vecino todas las distancias que conoce; con procedimientos de estado de enlace, el tamaño del tráfico enviado es siempre el mismo independientemente del tamaño de la red. En consecuencia, <strong>consume más capacidad un vector de distancias</strong>.</p>
+</li>
+<li>
+<p class="first">Consumo de memoria</p>
+<p>El encaminamiento basado en estado de enlace hace que cada nodo almacene toda la topología de la red, sin embargo con vectores de distancias sólo ha de almacenar distancias con el resto de los nodos. Luego <strong>consume más memoria en los nodos un procedimiento basado en estado de enlace</strong>.</p>
+</li>
+<li>
+<p class="first">Adaptabilidad a los cambios</p>
+<p>El método de vector de distancia es más sencillo, pero se adapta peor a los cambios que el de estado de enlace. Esto es porque mientras que este último tiene información de toda la red, el primero sólo sabe a quién tiene que reenviar un paquete, pero no tiene información de la topología. Luego <strong>se adapta mejor un encaminamiento de estado de enlaces</strong>.</p>
+</li>
+</ul>
+<p>No obstante, el encaminamiento basado en vector de distancias es mucho menos complejo que el de estado de enlaces, cosa que en algunos casos prácticos puede llegar a ser muy importante.</p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="92_clasificacin.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="922_en_funcin_de_las_tablas_de_encaminamiento_empleadas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

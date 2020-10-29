@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.2.2. En función de las tablas de encaminamiento empleadas. </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-7"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">9. Encaminamiento</a></li>
+   <li><a href="91_introduccin.html" class="no-ch">9.1. Introducción</a></li>
+   <li class="current-page-parent"><a href="92_clasificacin.html" class="current-page-parent daddy">9.2. Clasificación</a>
+   <ul>
+      <li><a href="921_en_funcin_del_procedimiento.html" class="no-ch">9.2.1. En función del procedimiento.</a></li>
+      <li id="active"><a href="922_en_funcin_de_las_tablas_de_encaminamiento_empleadas.html" class="active no-ch">9.2.2. En función de las tablas de encaminamiento empleadas.</a></li>
+   </ul>
+   </li>
+   <li><a href="93_aplicacin_prctica.html" class="daddy">9.3. Aplicación práctica</a>
+   <ul class="other-section">
+      <li><a href="931_gestin_del_encaminamiento_ip.html" class="no-ch">9.3.1. Gestión del encaminamiento IP</a></li>
+      <li><a href="932_sistemas_participantes.html" class="no-ch">9.3.2. Sistemas participantes</a></li>
+      <li><a href="933_tablas_de_encaminamiento.html" class="no-ch">9.3.3. Tablas de encaminamiento</a></li>
+      <li><a href="934_mtricas.html" class="no-ch">9.3.4. Métricas</a></li>
+      <li><a href="935_distancia_administrativa.html" class="no-ch">9.3.5. Distancia administrativa</a></li>
+      <li><a href="936_protocolos_de_enrutamiento_con_clase_y_sin_clase.html" class="no-ch">9.3.6. Protocolos de enrutamiento con clase y sin clase</a></li>
+      <li><a href="937_resumen_de_rutas.html" class="no-ch">9.3.7. Resumen de rutas</a></li>
+   </ul>
+   </li>
+   <li><a href="94_protocolos_interiores_y_exteriores.html" class="daddy">9.4. Protocolos interiores y exteriores</a>
+   <ul class="other-section">
+      <li><a href="941_protocolos_interiores_igp.html" class="no-ch">9.4.1. Protocolos interiores (IGP)</a></li>
+      <li><a href="942_protocolos_exteriores_egp.html" class="no-ch">9.4.2. Protocolos exteriores (EGP)</a></li>
+   </ul>
+   </li>
+   <li><a href="95_estructura_jerrquica_de_internet.html" class="no-ch">9.5. Estructura jerárquica de internet</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="921_en_funcin_del_procedimiento.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="93_aplicacin_prctica.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">9.2.2. En función de las tablas de encaminamiento empleadas.</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id3">
+<div class="iDevice emphasis0" >
+<div id="ta3_151_2" class="block iDevice_content">
+<div class="exe-text"><p>Los nodos manejan <strong>tablas de encaminamiento</strong>, en las que aparece la ruta que deben seguir los paquetes con destino a un nodo determinado de la red.</p>
+<p>Podemos distinguir entre encaminamiento salto a salto y encaminamiento fijado en origen. Nosotros veremos con detalle sólo el primer tipo (salto a salto).</p>
+<div class="section" id="encaminamiento-salto-a-salto">
+<h3>9.2.2.1. Encaminamiento salto a salto<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema10/Teoria.html#encaminamiento-salto-a-salto" title="Enlazar permanentemente con este título"></a></h3>
+<p>En la literatura inglesa, este tipo de encaminamiento se denomina como hop by hop. Se basa en que cada nodo no tiene que conocer la ruta completa hasta el destino, sino que sólo debe saber cuál es el siguiente nodo al que tiene que mandar el paquete: las tablas dan el nodo siguiente en función del destino. Como ejemplo, tomemos la siguiente red:</p>
+<div class="figure" id="id1"><img alt="../_images/tema10-003.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema10-003.png" />
+<p class="caption"><span class="caption-text">Red de ejemplo</span></p>
+</div>
+<p>Las tablas de encaminamiento de los nodos A y B serán:</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="24%" /> <col width="27%" /> <col width="24%" /> <col width="25%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head" colspan="2">Tabla de encaminamiento del nodo A</th>
+<th class="head" colspan="2">Tabla de encaminamiento del nodo B</th>
+</tr>
+<tr class="row-even">
+<th class="head">Destino</th>
+<th class="head">Siguiente nodo</th>
+<th class="head">Destino</th>
+<th class="head">Siguiente nodo</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd">
+<td>B</td>
+<td>B</td>
+<td>A</td>
+<td>A</td>
+</tr>
+<tr class="row-even">
+<td>C</td>
+<td>B</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr class="row-odd">
+<td>D</td>
+<td>B</td>
+<td>D</td>
+<td>C</td>
+</tr>
+<tr class="row-even">
+<td>E</td>
+<td>H</td>
+<td>E</td>
+<td>C</td>
+</tr>
+<tr class="row-odd">
+<td>F</td>
+<td>H</td>
+<td>F</td>
+<td>C</td>
+</tr>
+<tr class="row-even">
+<td>G</td>
+<td>H</td>
+<td>G</td>
+<td>G</td>
+</tr>
+<tr class="row-odd">
+<td>H</td>
+<td>H</td>
+<td>H</td>
+<td>A</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>En la tabla de encaminamiento de cada nodo deberá aparecer una entrada en el campo destino por cada nodo que se pueda alcanzar desde el citado nodo, y en el campo siguiente nodo aparecerá el nodo vecino al que se deberá enviar los datos para alcanzar el citado nodo destino. Las soluciones propuestas no son únicas, pudiendo elegir otros caminos que minimicen el tiempo de retardo, el número de saltos, etc. La única condición que se impone es que debe haber consistencia: si, por ejemplo, para ir de A a B pasamos por C, entonces para ir de B a C no podremos pasar por A, porque entonces se formaría un bucle y el paquete mandado estaría continuamente viajando entre los nodos B y A, como puede comprobarse fácilmente.</p>
+</div>
+<div class="section" id="encaminamiento-fijado-en-origen">
+<h3>9.2.2.2. Encaminamiento fijado en origen<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema10/Teoria.html#encaminamiento-fijado-en-origen" title="Enlazar permanentemente con este título"></a></h3>
+<p>En inglés este encaminamiento se llama source routing. En él, son los sistemas finales los que fijan la ruta que ha de seguir cada paquete. Para ello, cada paquete lleva un campo que especifica su ruta(campo RI: Routing Information), y los nodos sólo se dedican a reenviar los paquetes por esas rutas ya especificadas. Así pues, son los sistemas finales los que tienen las tablas de encaminamiento y no se hace necesaria la consulta o existencia de tablas de encaminamiento en los nodos intermedios. Este tipo de encaminamiento suele ser típico de las redes de IBM.</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="24%" /> <col width="27%" /> <col width="24%" /> <col width="25%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head" colspan="2">Tabla de encaminamiento del nodo A</th>
+<th class="head" colspan="2">Tabla de encaminamiento del nodo B</th>
+</tr>
+<tr class="row-even">
+<th class="head">Destino</th>
+<th class="head">Ruta a seguir</th>
+<th class="head">Destino</th>
+<th class="head">Ruta a seguir</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd">
+<td>B</td>
+<td>B</td>
+<td>A</td>
+<td>A</td>
+</tr>
+<tr class="row-even">
+<td>C</td>
+<td>B-C</td>
+<td>C</td>
+<td>C</td>
+</tr>
+<tr class="row-odd">
+<td>D</td>
+<td>B-C-D</td>
+<td>D</td>
+<td>C-D</td>
+</tr>
+<tr class="row-even">
+<td>E</td>
+<td>H-G-E</td>
+<td>E</td>
+<td>C-F-E</td>
+</tr>
+<tr class="row-odd">
+<td>F</td>
+<td>H-G-F</td>
+<td>F</td>
+<td>C-F</td>
+</tr>
+<tr class="row-even">
+<td>G</td>
+<td>H-G</td>
+<td>G</td>
+<td>G</td>
+</tr>
+<tr class="row-odd">
+<td>H</td>
+<td>H</td>
+<td>H</td>
+<td>A-H</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="comparacion-entre-ambos-tipos-de-encaminamiento">
+<h3>9.2.2.3. Comparación entre ambos tipos de encaminamiento<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema10/Teoria.html#comparacion-entre-ambos-tipos-de-encaminamiento" title="Enlazar permanentemente con este título"></a></h3>
+<p>Lo veremos por medio de la siguiente tabla:</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="10%" /> <col width="36%" /> <col width="54%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">
+<ul class="first last simple">
+<li></li>
+</ul>
+</th>
+<th class="head">Fijado en Origen</th>
+<th class="head">Salto a Salto</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>Conocimiento</td>
+<td>Los sistemas finales han de tener un conocimiento completo de la red</td>
+<td>SIMPLICIDAD: Los nodos han de tener un conocimiento parcial de la red (saber qué rutas son las mejores)</td>
+</tr>
+<tr class="row-odd">
+<td>Complejidad</td>
+<td>Recae toda en los sistemas finales</td>
+<td>En los sistemas intermedios ya que son los que tienen que encaminar</td>
+</tr>
+<tr class="row-even">
+<td>Problemas de Bucles</td>
+<td>No hay bucles: el sistema final fija la ruta (ROBUSTEZ)</td>
+<td>Sí pueden ocurrir: no se tiene una visión completa de la red (INCONSISTENCIA)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los <strong>bucles</strong> (situación que se da cuando los paquetes pasan más de una vez por un nodo) ocurren porque los criterios de los nodos no son coherentes, generalmente debido a que los criterios de encaminamiento o no han convergido después de un cambio en la ruta de un paquete; cuando por cualquier causa un paquete sufre un cambio de encaminamiento, la red tarda en adaptarse a ese cambio pues la noticia del cambio tiene que llegar a todos los nodos. Es en ese transitorio cuando se pueden dar los bucles, ya que unos nodos se han adaptado y otros no. El objetivo de los algoritmos de encaminamiento es detener el curso de los paquetes antes de que se produzcan bucles. Esto es importante sobre todo cuando se envían los paquete s por varias rutas simultáneamente (técnicas de inundación, etc…).</p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="921_en_funcin_del_procedimiento.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="93_aplicacin_prctica.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>8.3.2. VTP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">8. Redes locales virtuales</a></li>
+   <li><a href="81_introduccin.html" class="daddy">8.1. Introducción</a>
+   <ul class="other-section">
+      <li><a href="811_tipos_de_vlan.html" class="no-ch">8.1.1. Tipos de VLAN</a></li>
+      <li><a href="812_caractersticas.html" class="no-ch">8.1.2. Características</a></li>
+      <li><a href="813_ventajas.html" class="no-ch">8.1.3. Ventajas</a></li>
+   </ul>
+   </li>
+   <li><a href="82_conceptos_generales.html" class="daddy">8.2. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="821_tipos_de_puertos.html" class="no-ch">8.2.1. Tipos de puertos</a></li>
+      <li><a href="822_enlaces_troncales_trunk.html" class="no-ch">8.2.2. Enlaces troncales (trunk)</a></li>
+      <li><a href="823_etiquetado.html" class="no-ch">8.2.3. Etiquetado</a></li>
+      <li><a href="824_vlan_nativa.html" class="no-ch">8.2.4. VLAN nativa</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="83_protocolos.html" class="current-page-parent daddy">8.3. Protocolos</a>
+   <ul>
+      <li><a href="831_dtp.html" class="no-ch">8.3.1. DTP</a></li>
+      <li id="active"><a href="832_vtp.html" class="active no-ch">8.3.2. VTP</a></li>
+   </ul>
+   </li>
+   <li><a href="84_caso_prctico.html" class="daddy">8.4. Caso práctico</a>
+   <ul class="other-section">
+      <li><a href="841_uso_del_mdulo_hwic4esw_4_puertos_de_switch.html" class="no-ch">8.4.1. Uso del módulo HWIC-4ESW (4 puertos de switch)</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="831_dtp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="84_caso_prctico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">8.3.2. VTP</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id9">
+<div class="iDevice emphasis0" >
+<div id="ta9_146_2" class="block iDevice_content">
+<div class="exe-text"><p>VTP son las siglas de <strong>VLAN Trunking Protocol</strong>, un protocolo de mensajes de nivel 2 usado para configurar y administrar VLANs en equipos Cisco. Permite <strong>centralizar y simplificar la administración en un domino de VLANs</strong>, pudiendo crear, borrar y renombrar las mismas, reduciendo así la necesidad de configurar la misma VLAN en todos los nodos. El protocolo VTP nace como una herramienta de administración para redes de cierto tamaño, donde la gestión manual se vuelve inabordable.</p>
+<p>VTP opera en 3 modos distintos:</p>
+<ul class="simple">
+<li>Servidor</li>
+<li>Cliente</li>
+<li>Transparente</li>
+</ul>
+<p><strong>Servidor</strong></p>
+<blockquote>
+<div>Es el modo por defecto. Desde él se pueden crear, eliminar o modificar VLANs. <strong>Su cometido es anunciar su configuración al resto de switches del mismo dominio VTP</strong> y sincronizar dicha configuración con la de otros servidores, basándose en los mensajes VTP recibidos a través de sus enlaces <strong>trunk</strong>. Debe haber al menos un servidor. Se recomienda autenticación MD5.</div>
+</blockquote>
+<p><strong>Cliente</strong></p>
+<blockquote>
+<div>En este modo no se pueden crear, eliminar o modificar VLANs, tan sólo sincronizar esta información basándose en los mensajes VTP recibidos de servidores en el propio dominio. Un cliente VTP sólo guarda la información de la VLAN para el dominio completo mientras el switch está activado. Un reinicio del switch borra la información de la VLAN.</div>
+</blockquote>
+<p><strong>Transparente</strong></p>
+<blockquote>
+<div>Desde este modo tampoco se pueden crear, eliminar o modificar VLANs que afecten a los demás switches. La información VLAN en los switches que trabajen en este modo sólo se puede modificar localmente. Su nombre se debe a que no procesa las actualizaciones VTP recibidas, tan sólo las reenvía a los switches del mismo dominio.</div>
+</blockquote>
+<p>Los administradores cambian la configuración de las VLANs en el switch en modo servidor. Después de realizar cambios, estos son distribuidos a todos los demás dispositivos en el dominio VTP a través de los enlaces permitidos en el trunk (VLAN 1, por defecto), lo que minimiza los problemas causados por las configuraciones incorrectas y las inconsistencias. Los dispositivos que operen en modo cliente, automáticamente aplicarán la configuración que reciban del dominio VTP. En este modo no se podrán crear VLANs, sino que sólo se podrá aplicar la información que reciba de las publicaciones VTP.</p>
+<p>El modo por defecto de los swicthes es el de servidor VTP. Se recomienda el uso de este modo para redes de pequeña escala en las que la información de las VLANs es pequeña y por tanto de fácil almacenamiento en las NVRAMs de los switches.</p>
+<p>En redes de mayor tamaño, el administrador debe elegir qué switches actúan como servidores, basándose en las capacidades de éstos (los mejor equipados serán servidores y los demás, clientes).</p>
+<p>El VTP sólo aprende sobre las VLAN de rango normal (ID de VLAN 1 a 1005). Las VLAN de rango extendido (ID mayor a 1005) no son admitidas por el VTP.</p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="831_dtp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="84_caso_prctico.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

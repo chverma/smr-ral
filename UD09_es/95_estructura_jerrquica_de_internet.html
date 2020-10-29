@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.5. Estructura jerárquica de internet </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-5"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">9. Encaminamiento</a></li>
+   <li><a href="91_introduccin.html" class="no-ch">9.1. Introducción</a></li>
+   <li><a href="92_clasificacin.html" class="daddy">9.2. Clasificación</a>
+   <ul class="other-section">
+      <li><a href="921_en_funcin_del_procedimiento.html" class="no-ch">9.2.1. En función del procedimiento.</a></li>
+      <li><a href="922_en_funcin_de_las_tablas_de_encaminamiento_empleadas.html" class="no-ch">9.2.2. En función de las tablas de encaminamiento empleadas.</a></li>
+   </ul>
+   </li>
+   <li><a href="93_aplicacin_prctica.html" class="daddy">9.3. Aplicación práctica</a>
+   <ul class="other-section">
+      <li><a href="931_gestin_del_encaminamiento_ip.html" class="no-ch">9.3.1. Gestión del encaminamiento IP</a></li>
+      <li><a href="932_sistemas_participantes.html" class="no-ch">9.3.2. Sistemas participantes</a></li>
+      <li><a href="933_tablas_de_encaminamiento.html" class="no-ch">9.3.3. Tablas de encaminamiento</a></li>
+      <li><a href="934_mtricas.html" class="no-ch">9.3.4. Métricas</a></li>
+      <li><a href="935_distancia_administrativa.html" class="no-ch">9.3.5. Distancia administrativa</a></li>
+      <li><a href="936_protocolos_de_enrutamiento_con_clase_y_sin_clase.html" class="no-ch">9.3.6. Protocolos de enrutamiento con clase y sin clase</a></li>
+      <li><a href="937_resumen_de_rutas.html" class="no-ch">9.3.7. Resumen de rutas</a></li>
+   </ul>
+   </li>
+   <li><a href="94_protocolos_interiores_y_exteriores.html" class="daddy">9.4. Protocolos interiores y exteriores</a>
+   <ul class="other-section">
+      <li><a href="941_protocolos_interiores_igp.html" class="no-ch">9.4.1. Protocolos interiores (IGP)</a></li>
+      <li><a href="942_protocolos_exteriores_egp.html" class="no-ch">9.4.2. Protocolos exteriores (EGP)</a></li>
+   </ul>
+   </li>
+   <li id="active"><a href="95_estructura_jerrquica_de_internet.html" class="active no-ch">9.5. Estructura jerárquica de internet</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="942_protocolos_exteriores_egp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">9.5. Estructura jerárquica de internet</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id16">
+<div class="iDevice emphasis0" >
+<div id="ta16_164_2" class="block iDevice_content">
+<div class="exe-text"><p><img alt="../_images/tema10-033.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema10-033.png" /></p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Tier es una palabra inglesa que puede traducirse por nivel.</p>
+</div>
+<p>Una red <strong>Tier 1</strong> (Tier 1 ISPs o Internet backbone networks) es capaz de alcanzar cualquier red de Internet sin tener que pagar por tránsito (por enviar sus bits a través de otras redes.)</p>
+<ul class="simple">
+<li>Grandes proveedores internacionales (AT&amp;T, Deutsche Telekom,</li>
+<li>AOL, Telefónica y algunos más)</li>
+<li>Conectados directamente a cada uno de los demás Tier 1 ISPs</li>
+<li>Conectados a un gran número de Tier 2 ISPs</li>
+<li>Cobertura internacional</li>
+</ul>
+<p>Los <strong>Tier 2</strong> ISPs suelen ser regionales o nacionales y son los ISPs más comunes.</p>
+<ul class="simple">
+<li>Se conectan sólo a algunos Tier 1 ISPs (pagando por el uso de sus redes).</li>
+<li>También se conectan a muchos otros Tier 2 ISPs (mediante acuerdos de peering), de forma que el tráfico fluye entre ambas redes sin necesidad de usar una red Tier 1.</li>
+<li>Pero para alcanzar una gran cantidad de redes necesitan encaminar su tráfico a través de los ISP de nivel 1 a los que están conectados (ellos son los clientes y el Tier 1 el proveedor de tránsito).</li>
+</ul>
+<p>Los <strong>Tier 3</strong> ISPs son ISPs locales de acceso</p>
+<ul class="simple">
+<li>Para alcanzar internet solamente contratan tránsito IP (normalmente a ISPs Tier2) ¿Cómo se conectan los ISPs?</li>
+<li>Point of Presence (PoP): es un interfaz entre dos ISPs. Pueden estar en las propias instalaciones de un ISP o en un IX.</li>
+<li>Internet eXchange point: infraestructura en la que los ISPs intercambian tráfico entre sus redes.
+<ul>
+<li>Reducen la cantidad de tráfico que deben enviar a los ISPs superiores → reducción de costes</li>
+<li>Aprenden nuevas rutas → mayor eficiencia y tolerancia a fallos</li>
+<li>Mantienen el tráfico local → mejor latencia</li>
+</ul>
+</li>
+</ul></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="942_protocolos_exteriores_egp.html" class="prev"><span><span>&laquo; </span>Anterior</span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

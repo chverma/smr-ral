@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>11.4. PLC </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">11. Conexión a redes de área extensa</a></li>
+   <li><a href="111_introduccin.html" class="no-ch">11.1. Introducción</a></li>
+   <li><a href="112_mdem_telefnico.html" class="daddy">11.2. Módem telefónico</a>
+   <ul class="other-section">
+      <li><a href="1121_tipos_de_mdems.html" class="no-ch">11.2.1. Tipos de módems</a></li>
+   </ul>
+   </li>
+   <li><a href="113_mdem_de_cable_cablemdem.html" class="no-ch">11.3. Módem de cable (cablemódem)</a></li>
+   <li id="active"><a href="114_plc.html" class="active no-ch">11.4. PLC</a></li>
+   <li><a href="115_rdsi.html" class="daddy">11.5. RDSI</a>
+   <ul class="other-section">
+      <li><a href="1151_la_interfaz_del_usuario.html" class="no-ch">11.5.1. La interfaz del usuario</a></li>
+      <li><a href="1152_canales_rdsi.html" class="no-ch">11.5.2. Canales RDSI</a></li>
+      <li><a href="1153_tipos_de_contratacin.html" class="no-ch">11.5.3. Tipos de contratación</a></li>
+   </ul>
+   </li>
+   <li><a href="116_adslvdsl.html" class="daddy">11.6. ADSL-VDSL</a>
+   <ul class="other-section">
+      <li><a href="1161_tecnologas_xdsl.html" class="no-ch">11.6.1. Tecnologías xDSL</a></li>
+      <li><a href="1162_adsl_adsl2_y_adsl2.html" class="no-ch">11.6.2. ADSL, ADSL2 y ADSL2+</a></li>
+      <li><a href="1163_vdsl_y_vdsl2.html" class="no-ch">11.6.3. VDSL y VDSL2</a></li>
+      <li><a href="1164_adslvdsl_estndares.html" class="no-ch">11.6.4. ADSL-VDSL Estándares</a></li>
+   </ul>
+   </li>
+   <li><a href="117_ftth.html" class="daddy">11.7. FTTH</a>
+   <ul class="other-section">
+      <li><a href="1171_tecnologas_fttx.html" class="no-ch">11.7.1. Tecnologías FTTx</a></li>
+      <li><a href="1172_ftth.html" class="no-ch">11.7.2. FTTH</a></li>
+   </ul>
+   </li>
+   <li><a href="118_lmds.html" class="no-ch">11.8. LMDS</a></li>
+   <li><a href="119_mmds.html" class="no-ch">11.9. MMDS</a></li>
+   <li><a href="1110_wifi.html" class="no-ch">11.10. Wi-Fi</a></li>
+   <li><a href="1111_wimax.html" class="no-ch">11.11. WiMax</a></li>
+   <li><a href="1112_4g.html" class="no-ch">11.12. 4G</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="113_mdem_de_cable_cablemdem.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="115_rdsi.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">11.4. PLC</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id4">
+<div class="iDevice emphasis0" >
+<div id="ta4_182_2" class="block iDevice_content">
+<div class="exe-text"><p><strong>PLC</strong> (<strong>Power Line Comunications</strong>) es una tecnología basada en la transmisión de datos utilizando como infraestructura la red eléctrica.</p>
+<p>Hay dos tipos principales de Power Line Communications:</p>
+<ul class="simple">
+<li>PLOC ( Power Line Outdoors Telecoms o comunicaciones extrahogareñas utilizando la red eléctrica ). Esto es, la comunicación entre la subestación eléctrica y la red doméstica (electro-módem). El estándar es ETSI</li>
+<li>PLIC ( Power Line Indoors Telecoms o comunicaciones intrahogareñas utilizando la red eléctrica ). Esto es, utilizando la red eléctrica interior de la casa, para establecer comunicaciones internas. Un ejemplo: PLIC es una de las vías utilizadas en domótica ( otra que se suele utilizar también es la comunicación vía radio</li>
+</ul>
+<p>El concepto técnico es sencillo, desde la estación de transformación hasta el usuario final se utiliza la red eléctrica y a partir de la estación de transformación se conecta con la red de telecomunicaciones convencional. Esto supone que se podrá tener acceso a Internet en cualquier punto de la geografía donde llegue la red eléctrica.</p>
+<p>La señal utilizada para transmitir datos a través de la red eléctrica suele ser de 1,6 a 30 MHz.</p>
+<p>Se consiguen velocidades de transmisión de hasta 200 Mbps en el tramo de la Media y Baja Tensión. Como desventaja, dependiendo de la frecuencia utilizada, se pueden producir interferencias en frecuencias correspondientes a las fuerzas de seguridad, frecuencias de emergencia de la aviación civil y bandas de radioaficionados.</p></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="113_mdem_de_cable_cablemdem.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="115_rdsi.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>11.5.2. Canales RDSI </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">11. Conexión a redes de área extensa</a></li>
+   <li><a href="111_introduccin.html" class="no-ch">11.1. Introducción</a></li>
+   <li><a href="112_mdem_telefnico.html" class="daddy">11.2. Módem telefónico</a>
+   <ul class="other-section">
+      <li><a href="1121_tipos_de_mdems.html" class="no-ch">11.2.1. Tipos de módems</a></li>
+   </ul>
+   </li>
+   <li><a href="113_mdem_de_cable_cablemdem.html" class="no-ch">11.3. Módem de cable (cablemódem)</a></li>
+   <li><a href="114_plc.html" class="no-ch">11.4. PLC</a></li>
+   <li class="current-page-parent"><a href="115_rdsi.html" class="current-page-parent daddy">11.5. RDSI</a>
+   <ul>
+      <li><a href="1151_la_interfaz_del_usuario.html" class="no-ch">11.5.1. La interfaz del usuario</a></li>
+      <li id="active"><a href="1152_canales_rdsi.html" class="active no-ch">11.5.2. Canales RDSI</a></li>
+      <li><a href="1153_tipos_de_contratacin.html" class="no-ch">11.5.3. Tipos de contratación</a></li>
+   </ul>
+   </li>
+   <li><a href="116_adslvdsl.html" class="daddy">11.6. ADSL-VDSL</a>
+   <ul class="other-section">
+      <li><a href="1161_tecnologas_xdsl.html" class="no-ch">11.6.1. Tecnologías xDSL</a></li>
+      <li><a href="1162_adsl_adsl2_y_adsl2.html" class="no-ch">11.6.2. ADSL, ADSL2 y ADSL2+</a></li>
+      <li><a href="1163_vdsl_y_vdsl2.html" class="no-ch">11.6.3. VDSL y VDSL2</a></li>
+      <li><a href="1164_adslvdsl_estndares.html" class="no-ch">11.6.4. ADSL-VDSL Estándares</a></li>
+   </ul>
+   </li>
+   <li><a href="117_ftth.html" class="daddy">11.7. FTTH</a>
+   <ul class="other-section">
+      <li><a href="1171_tecnologas_fttx.html" class="no-ch">11.7.1. Tecnologías FTTx</a></li>
+      <li><a href="1172_ftth.html" class="no-ch">11.7.2. FTTH</a></li>
+   </ul>
+   </li>
+   <li><a href="118_lmds.html" class="no-ch">11.8. LMDS</a></li>
+   <li><a href="119_mmds.html" class="no-ch">11.9. MMDS</a></li>
+   <li><a href="1110_wifi.html" class="no-ch">11.10. Wi-Fi</a></li>
+   <li><a href="1111_wimax.html" class="no-ch">11.11. WiMax</a></li>
+   <li><a href="1112_4g.html" class="no-ch">11.12. 4G</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1151_la_interfaz_del_usuario.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1153_tipos_de_contratacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">11.5.2. Canales RDSI</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id6">
+<div class="iDevice emphasis0" >
+<div id="ta6_184_2" class="block iDevice_content">
+<div class="exe-text"><p>El flujo digital entre la central y el usuario RDSI se usa para llevar varios canales de comunicación. La capacidad del flujo, y por tanto el número de canales de comunicación, puede variar de un usuario a otro. Para la transferencia de información y señalización se han definido los siguientes canales:</p>
+<ul class="simple">
+<li><strong>Canal B</strong>: es el canal básico de usuario. Es un canal a 64 kbps para transporte de la información generada por el terminal de usuario. Se puede usar para transferir datos digitales, voz digital codificada PCM, o una mezcla de tráfico de baja velocidad, incluyendo datos digitales y voz digitalizada descodificada a la velocidad antes mencionada de 64 kbps. Puede subdividirse en subcanales, en cuyo caso todos ellos deben establecerse entre los mismos extremos subcriptores. Puede soportar las siguientes clases de conexiones:</li>
+<li><strong>Conmutación de circuitos</strong>: es el equivalente al servicio digital conmutado disponible en la RDI. El usuario hace una llamada y se establece una conexión de circuito conmutado con otro usuario de la red, con unos recursos dedicados. Cabe destacar que el diálogo de establecimiento de la llamada no tiene lugar en el canal B, sino en el D, que se define a continuación.</li>
+<li><strong>Conmutación de paquetes</strong>: el usuario se conecta a un nodo de conmutación de paquetes y los datos se intercambian con otros usuarios vía X.25. Los recursos no son dedicados.</li>
+<li><strong>Permanentes</strong>: no requiere un protocolo de establecimiento de llamada. Es equivalente a una línea alquilada. Se contrata un canal fijo, permanente.</li>
+<li><strong>Canal D</strong>: es un canal de señalización a 16 ó 64 kbps. Sirve para dos fines. Primero, lleva información de señalización para controlar las llamadas de circuitos conmutados asociadas con los canales B. Además el canal D puede usarse para conmutación de paquetes de baja velocidad mientras no haya esperando información de señalización.</li>
+<li><strong>Canales H</strong>: son canales destinados al transporte de flujos de información de usuario a altas velocidades, superiores a 64 kbps.</li>
+</ul>
+<p>Los canales tipos B y D se agrupan, a su vez, en diferentes tipos o grupos, según el siguiente esquema:</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="12%" /> <col width="49%" /> <col width="39%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Tipo</th>
+<th class="head">Función</th>
+<th class="head">Velocidad</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>B</td>
+<td>Servicios básicos</td>
+<td>64 Kbps.</td>
+</tr>
+<tr class="row-odd">
+<td>D</td>
+<td>Señalización</td>
+<td>16 Kbps. (BRI)</td>
+</tr>
+<tr class="row-even">
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>64 Kbps. (PRI)</td>
+</tr>
+<tr class="row-odd">
+<td>H0</td>
+<td>6 canales B</td>
+<td>384 Kbps. (PRI)</td>
+</tr>
+<tr class="row-even">
+<td>H1</td>
+<td>todos los canales H0</td>
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd">
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>H11 (24B)</td>
+<td>1.536 Kbps.(PRI)</td>
+</tr>
+<tr class="row-even">
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>H12 (30B)</td>
+<td>1.920 Kbps. (PRI)</td>
+</tr>
+<tr class="row-odd">
+<td>H2</td>
+<td>RDSI de banda ancha</td>
+<td>(propuesta actual)</td>
+</tr>
+<tr class="row-even">
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>H21</td>
+<td>32.768 Kbps.</td>
+</tr>
+<tr class="row-odd">
+<td>
+<ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>H22</td>
+<td>43-45 Mbps.</td>
+</tr>
+<tr class="row-even">
+<td>H4</td>
+<td>RDSI de banda ancha</td>
+<td>132-138,240 Mbps.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Por tanto, las interfaces BRI y PRI tienen la siguiente estructura:</p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="17%" /> <col width="17%" /> <col width="23%" /> <col width="42%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Interfaz</th>
+<th class="head">Estructura</th>
+<th class="head">Velocidad total</th>
+<th class="head">Velocidad disponible</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>BRI</td>
+<td>2B + D16</td>
+<td>192 Kbps.</td>
+<td>144 Kbps.</td>
+</tr>
+<tr class="row-odd">
+<td>PRI</td>
+<td>23B + D64</td>
+<td>1.544 Kbps.</td>
+<td>1.536 Kbps. (EE.UU.)</td>
+</tr>
+<tr class="row-even">
+<td>PRI</td>
+<td>30B + D64</td>
+<td>2.048 Kbps.</td>
+<td>1.984 Kbps. (Europa)</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1151_la_interfaz_del_usuario.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1153_tipos_de_contratacin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

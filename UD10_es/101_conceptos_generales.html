@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>10.1. Conceptos generales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">10. La capa de transporte</a></li>
+   <li id="active"><a href="101_conceptos_generales.html" class="active daddy">10.1. Conceptos generales</a>
+   <ul>
+      <li><a href="1011_puertos.html" class="no-ch">10.1.1. Puertos</a></li>
+   </ul>
+   </li>
+   <li><a href="102_estndares.html" class="daddy">10.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="1021_protocolo_udp.html" class="no-ch">10.2.1. Protocolo UDP</a></li>
+      <li><a href="1022_protocolo_tcp.html" class="no-ch">10.2.2. Protocolo TCP</a></li>
+   </ul>
+   </li>
+   <li><a href="103_tcnicas.html" class="daddy">10.3. Técnicas</a>
+   <ul class="other-section">
+      <li><a href="1031_nat_network_address_translation.html" class="no-ch">10.3.1. NAT (Network Address Translation)</a></li>
+   </ul>
+   </li>
+   <li><a href="104_herramientas.html" class="daddy">10.4. Herramientas</a>
+   <ul class="other-section">
+      <li><a href="1041_netstat.html" class="no-ch">10.4.1. netstat</a></li>
+      <li><a href="1042_nmap.html" class="no-ch">10.4.2. nmap</a></li>
+      <li><a href="1043_cortafuegos.html" class="no-ch">10.4.3. Cortafuegos</a></li>
+      <li><a href="1044_proxycach.html" class="no-ch">10.4.4. Proxy-caché</a></li>
+      <li><a href="1045_cortafuegos_y_proxycach_en_un_slo_equipo.html" class="no-ch">10.4.5. Cortafuegos y Proxy-caché en un sólo equipo</a></li>
+      <li><a href="1046_balanceadores_de_carga_de_red.html" class="no-ch">10.4.6. Balanceadores de carga de red</a></li>
+      <li><a href="1047_vpn.html" class="no-ch">10.4.7. VPN</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1011_puertos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">10.1. Conceptos generales</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id0">
+<div class="iDevice emphasis0" >
+<div id="ta0_165_2" class="block iDevice_content">
+<div class="exe-text"><p>La capa de red transfiere datagramas entre dos ordenadores a través de la red utilizando como identificadores las direcciones IP. La capa de transporte añade la noción de puerto para distinguir entre los muchos destinos dentro de un mismo host. No es suficiente con indicar la dirección IP del destino, además hay que especificar la aplicación que recogerá el mensaje. Cada aplicación que esté esperando un mensaje utiliza un número de puerto distinto; más concretamente, la aplicación está a la espera de un mensaje en un puerto determinado (escuchando un puerto).</p>
+<p>Pero no sólo se utilizan los puertos para la recepción de mensajes, también para el envío: todos los mensajes que envíe un ordenador debe hacerlo a través de uno de sus puertos. El siguiente diagrama representa una transmisión entre el ordenador 194.35.133.5 y el 135.22.8.165. El primero utiliza su puerto 1256 y el segundo, el 80.</p>
+<p><img alt="../_images/tema11-001.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-001.png" /></p>
+<p>La capa de transporte transmite mensajes entre las aplicaciones de dos ordenadores. Por ejemplo, entre nuestro navegador de páginas web y un servidor de páginas web, o entre nuestro programa de correo electrónico y un servidor de correo.</p>
+<p><img alt="../_images/tema11-002.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-002.png" /></p>
+<div class="section" id="puertos">
+<div class="section" id="puertos-registrados">
+<p></p>
+</div>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1011_puertos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

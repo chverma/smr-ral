@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.3.5. Distancia administrativa </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-12"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">9. Encaminamiento</a></li>
+   <li><a href="91_introduccin.html" class="no-ch">9.1. Introducción</a></li>
+   <li><a href="92_clasificacin.html" class="daddy">9.2. Clasificación</a>
+   <ul class="other-section">
+      <li><a href="921_en_funcin_del_procedimiento.html" class="no-ch">9.2.1. En función del procedimiento.</a></li>
+      <li><a href="922_en_funcin_de_las_tablas_de_encaminamiento_empleadas.html" class="no-ch">9.2.2. En función de las tablas de encaminamiento empleadas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="93_aplicacin_prctica.html" class="current-page-parent daddy">9.3. Aplicación práctica</a>
+   <ul>
+      <li><a href="931_gestin_del_encaminamiento_ip.html" class="no-ch">9.3.1. Gestión del encaminamiento IP</a></li>
+      <li><a href="932_sistemas_participantes.html" class="no-ch">9.3.2. Sistemas participantes</a></li>
+      <li><a href="933_tablas_de_encaminamiento.html" class="no-ch">9.3.3. Tablas de encaminamiento</a></li>
+      <li><a href="934_mtricas.html" class="no-ch">9.3.4. Métricas</a></li>
+      <li id="active"><a href="935_distancia_administrativa.html" class="active no-ch">9.3.5. Distancia administrativa</a></li>
+      <li><a href="936_protocolos_de_enrutamiento_con_clase_y_sin_clase.html" class="no-ch">9.3.6. Protocolos de enrutamiento con clase y sin clase</a></li>
+      <li><a href="937_resumen_de_rutas.html" class="no-ch">9.3.7. Resumen de rutas</a></li>
+   </ul>
+   </li>
+   <li><a href="94_protocolos_interiores_y_exteriores.html" class="daddy">9.4. Protocolos interiores y exteriores</a>
+   <ul class="other-section">
+      <li><a href="941_protocolos_interiores_igp.html" class="no-ch">9.4.1. Protocolos interiores (IGP)</a></li>
+      <li><a href="942_protocolos_exteriores_egp.html" class="no-ch">9.4.2. Protocolos exteriores (EGP)</a></li>
+   </ul>
+   </li>
+   <li><a href="95_estructura_jerrquica_de_internet.html" class="no-ch">9.5. Estructura jerárquica de internet</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="934_mtricas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="936_protocolos_de_enrutamiento_con_clase_y_sin_clase.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">9.3.5. Distancia administrativa</h1></header>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id9">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Texto</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta9_157_2" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice" id="id10">
+<div class="iDevice emphasis0" >
+<div id="ta10_158_2" class="block iDevice_content">
+<div class="exe-text"><p>Aunque es menos común, puede implementarse más de un protocolo de enrutamiento dinámico en la misma red. <strong>En algunas situaciones, posiblemente sea necesario enrutar la misma dirección de red utilizando múltiples protocolos de enrutamiento</strong> como RIP y OSPF. Debido a que diferentes protocolos de enrutamiento usan diferentes métricas, RIP usa el conteo de saltos y OSPF usa el ancho de banda, no es posible comparar las métricas para determinar la mejor ruta.</p>
+<p><strong>La distancia administrativa (AD) define la preferencia de un origen de enrutamiento</strong>. A cada origen de enrutamiento, entre ellas protocolos de enrutamiento específicos, rutas estáticas e incluso redes conectadas directamente, se le asigna un orden de preferencia de la más preferible a la menos preferible utilizando el valor de distancia administrativa. Los routers Cisco usan la función de AD para seleccionar la mejor ruta cuando aprende sobre la misma red de destino desde dos o más orígenes de enrutamiento diferentes.</p>
+<p>La distancia administrativa es un valor entero entre 0 y 255. Cuanto menor es el valor, mayor es la preferencia del origen de ruta. <strong>Una distancia administrativa de 0 es la más preferida</strong>. Solamente una red conectada directamente tiene una distancia administrativa igual a 0 que no puede cambiarse. Cada protocolo tiene AD predeterminada: OSPF 110, EIGRP 90, IGRP 100, RIP 120 que aparecen en las tablas de enrutamiento precediendo a la métrica. <strong>La AD de 0 se reserva para las redes conectadas directamente y la de 1 para las redes estáticas</strong>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Advertencia</p>
+<p class="last">Ojo, si agregamos una ruta estática que también haya sido aprendida por un protocolo dinámico, la ruta estática tendrá preferencia al tener una distancia administrativa de 1.</p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="934_mtricas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="936_protocolos_de_enrutamiento_con_clase_y_sin_clase.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

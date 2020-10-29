@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>9.3.1. Gestión del encaminamiento IP </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">9. Encaminamiento</a></li>
+   <li><a href="91_introduccin.html" class="no-ch">9.1. Introducción</a></li>
+   <li><a href="92_clasificacin.html" class="daddy">9.2. Clasificación</a>
+   <ul class="other-section">
+      <li><a href="921_en_funcin_del_procedimiento.html" class="no-ch">9.2.1. En función del procedimiento.</a></li>
+      <li><a href="922_en_funcin_de_las_tablas_de_encaminamiento_empleadas.html" class="no-ch">9.2.2. En función de las tablas de encaminamiento empleadas.</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="93_aplicacin_prctica.html" class="current-page-parent daddy">9.3. Aplicación práctica</a>
+   <ul>
+      <li id="active"><a href="931_gestin_del_encaminamiento_ip.html" class="active no-ch">9.3.1. Gestión del encaminamiento IP</a></li>
+      <li><a href="932_sistemas_participantes.html" class="no-ch">9.3.2. Sistemas participantes</a></li>
+      <li><a href="933_tablas_de_encaminamiento.html" class="no-ch">9.3.3. Tablas de encaminamiento</a></li>
+      <li><a href="934_mtricas.html" class="no-ch">9.3.4. Métricas</a></li>
+      <li><a href="935_distancia_administrativa.html" class="no-ch">9.3.5. Distancia administrativa</a></li>
+      <li><a href="936_protocolos_de_enrutamiento_con_clase_y_sin_clase.html" class="no-ch">9.3.6. Protocolos de enrutamiento con clase y sin clase</a></li>
+      <li><a href="937_resumen_de_rutas.html" class="no-ch">9.3.7. Resumen de rutas</a></li>
+   </ul>
+   </li>
+   <li><a href="94_protocolos_interiores_y_exteriores.html" class="daddy">9.4. Protocolos interiores y exteriores</a>
+   <ul class="other-section">
+      <li><a href="941_protocolos_interiores_igp.html" class="no-ch">9.4.1. Protocolos interiores (IGP)</a></li>
+      <li><a href="942_protocolos_exteriores_egp.html" class="no-ch">9.4.2. Protocolos exteriores (EGP)</a></li>
+   </ul>
+   </li>
+   <li><a href="95_estructura_jerrquica_de_internet.html" class="no-ch">9.5. Estructura jerárquica de internet</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="93_aplicacin_prctica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="932_sistemas_participantes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">9.3.1. Gestión del encaminamiento IP</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id5">
+<div class="iDevice emphasis0" >
+<div id="ta5_153_2" class="block iDevice_content">
+<div class="exe-text"><p>No existe un único protocolo para actualizar las tablas de encaminamiento IP, pudiendo elegirse el más adecuado dependiendo de los requisitos internos de las redes a interconectar y las preferencias de cada administrador.</p>
+<p>A lo largo del tiempo, se han impuesto distintas soluciones, tanto abiertas como propietarias. Todas ellas operan con estrategias <strong>Adaptativas Salto a Salto</strong>.</p>
+<p>¿Cómo pueden convivir todas ellas? Mediante los Dominios de Encaminamiento o <strong>Sistemas Autónomos</strong> (SA). <strong>Un SA es un conjunto de redes gestionadas por una administración común y que comparten una estrategia de encaminamiento común</strong>. En inglés sus siglas son AS.</p>
+<p>Cada sistema autónomo:</p>
+<ul class="simple">
+<li>Elige su arquitectura y protocolos de encaminamiento internos.</li>
+<li>Es responsable de la consistencia de sus rutas internas.</li>
+<li>Debe recolectar información sobre todas sus redes y designar uno a más routers para pasar la información a otros sistemas autónomos.</li>
+</ul>
+<p>Será por tanto necesario definir dos tipos de encaminamiento:</p>
+<ul class="simple">
+<li>Intradominio o IGP (Internal Gateway Protocol): Es el utilizado dentro del SA. Ejemplos: RIP, OSPF, IGRP, EIGRP, …</li>
+<li>Interdominio o EGP (External Gateway Protocol): Encamina entre Sistemas Autónomos. Ejemplos: BGP, IDPR, …</li>
+</ul>
+<p>Los routers frontera ejecutan el encaminamiento EGP para cambiar información con routers de otros sistemas autónomos, y el IGP para cambiar información con otros routers de su SA:</p>
+<div class="figure" id="id2"><img alt="../_images/tema10-027.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema10-027.png" />
+<p class="caption"><span class="caption-text">Interconexión de redes mediante BGP y distintos protocolos interiores</span></p>
+</div>
+<div class="figure" id="id3"><img alt="../_images/tema10-028.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema10-028.png" />
+<p class="caption"><span class="caption-text">Clasificación de los protocolos de enrutamiento</span></p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="93_aplicacin_prctica.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="932_sistemas_participantes.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

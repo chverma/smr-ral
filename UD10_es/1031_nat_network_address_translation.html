@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>10.3.1. NAT (Network Address Translation) </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-8"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">10. La capa de transporte</a></li>
+   <li><a href="101_conceptos_generales.html" class="daddy">10.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="1011_puertos.html" class="no-ch">10.1.1. Puertos</a></li>
+   </ul>
+   </li>
+   <li><a href="102_estndares.html" class="daddy">10.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="1021_protocolo_udp.html" class="no-ch">10.2.1. Protocolo UDP</a></li>
+      <li><a href="1022_protocolo_tcp.html" class="no-ch">10.2.2. Protocolo TCP</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="103_tcnicas.html" class="current-page-parent daddy">10.3. Técnicas</a>
+   <ul>
+      <li id="active"><a href="1031_nat_network_address_translation.html" class="active no-ch">10.3.1. NAT (Network Address Translation)</a></li>
+   </ul>
+   </li>
+   <li><a href="104_herramientas.html" class="daddy">10.4. Herramientas</a>
+   <ul class="other-section">
+      <li><a href="1041_netstat.html" class="no-ch">10.4.1. netstat</a></li>
+      <li><a href="1042_nmap.html" class="no-ch">10.4.2. nmap</a></li>
+      <li><a href="1043_cortafuegos.html" class="no-ch">10.4.3. Cortafuegos</a></li>
+      <li><a href="1044_proxycach.html" class="no-ch">10.4.4. Proxy-caché</a></li>
+      <li><a href="1045_cortafuegos_y_proxycach_en_un_slo_equipo.html" class="no-ch">10.4.5. Cortafuegos y Proxy-caché en un sólo equipo</a></li>
+      <li><a href="1046_balanceadores_de_carga_de_red.html" class="no-ch">10.4.6. Balanceadores de carga de red</a></li>
+      <li><a href="1047_vpn.html" class="no-ch">10.4.7. VPN</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="103_tcnicas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="104_herramientas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">10.3.1. NAT (Network Address Translation)</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id5">
+<div class="iDevice emphasis0" >
+<div id="ta5_170_2" class="block iDevice_content">
+<div class="exe-text"><p>Es un estándar creado por la Internet Engineering Task Force (IETF) el cual utiliza una o más direcciones IP para conectar varios computadores a otra red (normalmente a Internet), los cuales tiene una dirección IP completamente distinta (normalmente una IP no válida de Internet). Por lo tanto, se puede utilizar para dar salida a redes públicas a computadores que se encuentran con direccionamiento privado o para proteger máquinas públicas.</p>
+<p>Fue inicialmente propuesto como otra solución para la extinción de direcciones IP. Como ya sabemos para poder comunicarse en Internet se requieren direcciones IP públicas únicas (“legales”) para cada host. La idea en la que se basa NAT es que sólo una pequeña parte de la red de una organización está conectada con el exterior simultáneamente, es decir, sólo se asigna una dirección IP pública oficial a un host cuando va a comunicarse con el exterior, por tanto, solo es necesario un pequeño número de direcciones públicas. Los hosts internos pueden utilizar direcciones IP privadas (o direcciones IP no oficiales) y para los paquetes de salida el dispositivo NAT cambia la dirección origen privada por una dirección pública oficial. Igualmente para los paquetes de entrada el dispositivo NAT cambia la dirección pública por otra privada.</p>
+<div class="section" id="funcionamiento">
+<h3>10.3.1.1. Funcionamiento<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#funcionamiento" title="Enlazar permanentemente con este título"></a></h3>
+<p>El protocolo TCP/IP tiene la capacidad de generar varias conexiones simultáneas con un dispositivo remoto. Para realizar esto, dentro de la cabecera de un paquete IP, existen campos en los que se indica la dirección fuente y destino con sus respectivos puertos. Esta combinación de números define una única conexión.</p>
+<p>Un encaminador NAT cambia la dirección fuente (lo que se conoce como SNAT, <strong>Source NAT</strong>) en cada paquete de salida y, dependiendo del método, también el puerto de fuente para que sea único. Estas traducciones de dirección se almacenan en una tabla, para recordar que dirección y puerto le corresponde a cada dispositivo cliente y así saber donde deben regresar los paquetes de respuesta. Si un paquete que intente ingresar a la red interna no existe en la <strong>tabla de traducciones</strong>, entonces es descartado. Por ello las conexiones que se inicien en el exterior (Internet) hacia el interior (Intranet) no están permitidas, lo que hace que dicho encaminador NAT tenga el “efecto secundario” de servir de cortafuegos.</p>
+<p>Debido a este comportamiento, si queremos ofrecer al exterior (Internet) un servicio, se puede definir en la tabla que en un determinado puerto y dirección, se pueda acceder a un determinado dispositivo, como por ejemplo un servidor web, lo que se denomina NAT inverso o DNAT (<strong>Destination NAT</strong>).</p>
+<p>Resumiendo:</p>
+<ul class="simple">
+<li><strong>SNAT - Source NAT</strong> es cuando alteramos el origen del primer paquete: esto es, estamos cambiando el lugar de donde viene la conexión. Source NAT siempre se hace después del encaminamiento, justo antes de que el paquete salga por el cable. El enmascaramiento es una forma especializada de SNAT.</li>
+<li><strong>DNAT - Destination NAT</strong> es cuando alteramos la dirección de destino del primer paquete: esto es, cambiamos la dirección a donde se dirige la conexión. DNAT siempre se hace antes del encaminamiento, cuando el paquete entra por el cable. El port forwarding (reenvío de puerto), el balanceo de carga y el proxy transparente son formas de DNAT.</li>
+</ul>
+</div>
+<div class="section" id="tipos-de-nat">
+<h3>10.3.1.2. Tipos de NAT<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#tipos-de-nat" title="Enlazar permanentemente con este título"></a></h3>
+<p>NAT tiene muchas formas de funcionamiento, entre las que destaca:</p>
+<ul class="simple">
+<li><strong>NAT estático (Static NAT)</strong>: Realiza un mapeo en la que una dirección IP privada se traduce a una correspondiente dirección IP pública de forma unívoca. Normalmente se utiliza cuando un dispositivo necesita ser accesible desde fuera de la red privada.</li>
+<li><strong>NAT dinámico (Dynamic NAT)</strong>: Varias direcciones IP privadas se traducen a una dirección pública. Por ejemplo, si un router posee la IP pública 194.68.10.10, esta dirección se utiliza para representar todo un rango de direcciones privadas como puede ser 192.168.1.x. Implementando esta forma de NAT se genera automáticamente un firewall entre la red pública y la privada, ya que sólo se permite la conexión que se origina desde ésta última.</li>
+</ul>
+</div>
+<div class="section" id="sobrecarga">
+<h3>10.3.1.3. Sobrecarga<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#sobrecarga" title="Enlazar permanentemente con este título"></a></h3>
+<p>La forma más utilizada de NAT, proviene del NAT dinámico ya que toma múltiples direcciones IP privadas (normalmente entregadas mediante DHCP) y las traduce a una única dirección IP pública utilizando diferentes puertos. Esto se conoce también como <strong>PAT (Port Address Translation - Traducción de Direcciones por Puerto)</strong>, NAT de única dirección o NAT multiplexado a nivel de puerto. Otra denominación es Network Address Port Translation (NAPT).</p>
+<div class="figure"><img alt="../_images/tema11-012.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-012.png" /></div>
+<div class="figure"><img alt="../_images/tema11-014.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-014.png" /></div>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="103_tcnicas.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="104_herramientas.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

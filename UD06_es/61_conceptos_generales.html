@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1. Conceptos generales </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-1"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">6. La capa de enlace</a></li>
+   <li id="active"><a href="61_conceptos_generales.html" class="active daddy">6.1. Conceptos generales</a>
+   <ul>
+      <li><a href="611_delimitacin_de_trama.html" class="no-ch">6.1.1. Delimitación de trama</a></li>
+      <li><a href="612_segmentacin_y_bloque.html" class="no-ch">6.1.2. Segmentación y bloque</a></li>
+      <li><a href="613_uso_del_medio_compartido.html" class="no-ch">6.1.3. Uso del medio compartido</a></li>
+      <li><a href="614_control_de_flujo.html" class="no-ch">6.1.4. Control de flujo</a></li>
+      <li><a href="615_control_de_errores.html" class="no-ch">6.1.5. Control de errores</a></li>
+   </ul>
+   </li>
+   <li><a href="62_estndares.html" class="daddy">6.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="621_ethernet_ieee_8023.html" class="no-ch">6.2.1. Ethernet (IEEE 802.3)</a></li>
+      <li><a href="622_poe_power_over_ethernet.html" class="no-ch">6.2.2. PoE (Power over Ethernet)</a></li>
+      <li><a href="623_punto_a_punto.html" class="no-ch">6.2.3. Punto a punto</a></li>
+   </ul>
+   </li>
+   <li><a href="63_dispositivos.html" class="daddy">6.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="631_dominios.html" class="no-ch">6.3.1. Dominios</a></li>
+      <li><a href="632_adaptadores_de_red.html" class="no-ch">6.3.2. Adaptadores de red</a></li>
+      <li><a href="633_puentes.html" class="no-ch">6.3.3. Puentes</a></li>
+      <li><a href="634_switches.html" class="no-ch">6.3.4. Switches</a></li>
+      <li><a href="635_distribucin.html" class="no-ch">6.3.5. Distribución</a></li>
+      <li><a href="636_cableado_entre_dispositivos.html" class="no-ch">6.3.6. Cableado entre dispositivos</a></li>
+      <li><a href="637_otras_caractersticas_de_los_switches.html" class="no-ch">6.3.7. Otras características de los switches</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="611_delimitacin_de_trama.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.1. Conceptos generales</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id0">
+<div class="iDevice emphasis0" >
+<div id="ta0_119_2" class="block iDevice_content">
+<div class="exe-text"><p>La capa de enlace de datos se sitúa en el <strong>nivel 2</strong> del modelo OSI. La misión de la capa de enlace es establecer una línea de comunicación libre de errores que pueda ser utilizada por la capa inmediatamente superior: la capa de red.</p>
+<p>Como el nivel físico opera con bits, la capa de enlace tiene que montar bloques de información (llamados <strong>tramas</strong> en esta capa), dotarles de una dirección de capa de enlace (<strong>Dirección MAC</strong>), gestionar la detección o corrección de errores, y ocuparse del control de flujo entre equipos (para evitar que un equipo más rápido desborde a uno más lento).</p>
+<p><strong>En redes Ethernet</strong> esta capa se subdivide en dos subcapas:</p>
+<ul class="simple">
+<li><strong>Subcapa de enlace lógico</strong> (<strong>LLC</strong> – Logical Link Control)</li>
+<li><strong>Subcapa de acceso al medio</strong> (<strong>MAC</strong> - Medium Access Control)</li>
+</ul>
+<div class="figure"><img alt="../_images/tema06-001.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-001.png" /></div>
+<p>La <strong>subcapa de enlace lógico</strong> se recoge en la norma IEEE 802.2 y es común para todos los demás tipos de redes (Ethernet o IEEE 802.3, IEEE 802.11 o Wi-Fi, IEEE 802.16 o WiMAX, etc.); todas ellas especifican un subcapa de acceso al medio así como una capa física distinta.</p>
+<p>La <strong>subcapa de control de acceso al medio</strong> es la encargada de <strong>arbitrar el uso del medio</strong> de comunicación cuando este está compartido entre más de dos equipos como suele ser habitual en muchas LAN.</p>
+<div class="figure"><img alt="../_images/tema06-002.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-002.png" /></div>
+<p>En la práctica la subcapa de acceso al medio suele formar parte de la propia tarjeta de comunicaciones, mientras que la subcapa de enlace lógico estaría en el programa adaptador de la tarjeta (<em>driver</em> en inglés).</p>
+<p>Además de la <strong>formación de tramas</strong>, el nivel de enlace se ocupará del <strong>tratamiento de los errores</strong> que se produzcan en la recepción de las tramas, de eliminar tramas erróneas, solicitar retransmisiones, descartar tramas duplicadas, <strong>adecuar el flujo de datos</strong> entre emisores rápidos y receptores lentos, etc</p>
+<p>Algunos protocolos y estándares que regulan aspectos de la capa de enlace</p>
+<ul class="simple">
+<li>Parte de la especificación de los protocolos <strong>Ethernet y del estándar IEEE 802.3</strong>.</li>
+<li>Parte de la especificación de la familia de estándares IEEE 802.11, para redes sin hilos.</li>
+<li>Point to point protocol (PPP).</li>
+<li>Parte de la especificación de tecnologías de enlace para WAN como HDLC, X.25, ATM, Frame Relay o xDSL.</li>
+</ul>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="19%" /> <col width="63%" /> <col width="19%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Protocolo</th>
+<th class="head">Denominación</th>
+<th class="head">Usado en</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>HDLC</td>
+<td>High–level Data Link Control</td>
+<td>ISO</td>
+</tr>
+<tr class="row-odd">
+<td>SDLC</td>
+<td>Synchronous Data Link Control</td>
+<td>IBM SNA</td>
+</tr>
+<tr class="row-even">
+<td>LAPB</td>
+<td>Link Access Procedure – Balanced</td>
+<td>X.25</td>
+</tr>
+<tr class="row-odd">
+<td>LAPD</td>
+<td>Link Access Procedure – D-channel</td>
+<td>RDSI</td>
+</tr>
+<tr class="row-even">
+<td>LAPF</td>
+<td>Link Access Procedure for Frame-mode</td>
+<td>Frame Relay</td>
+</tr>
+<tr class="row-odd">
+<td>LLC</td>
+<td>Logical Link Control</td>
+<td>IEEE 802</td>
+</tr>
+<tr class="row-even">
+<td>SLIP</td>
+<td>Serial Line Internet Protocol</td>
+<td> </td>
+</tr>
+<tr class="row-odd">
+<td>PPP</td>
+<td>Point-to-Point Protocol</td>
+<td> </td>
+</tr>
+<tr class="row-even">
+<td>ATM</td>
+<td>Asynchronous Transfer Mode</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>La capa de enlace se encarga de los siguientes aspectos:</p>
+<ul class="simple">
+<li>Delimitación de trama</li>
+<li>Segmentación y bloque</li>
+<li>Uso del medio compartido</li>
+<li>Control de flujo</li>
+<li>Control de errores</li>
+</ul></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="index.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="611_delimitacin_de_trama.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

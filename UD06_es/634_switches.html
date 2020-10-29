@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.3.4. Switches </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-15"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">6. La capa de enlace</a></li>
+   <li><a href="61_conceptos_generales.html" class="daddy">6.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="611_delimitacin_de_trama.html" class="no-ch">6.1.1. Delimitación de trama</a></li>
+      <li><a href="612_segmentacin_y_bloque.html" class="no-ch">6.1.2. Segmentación y bloque</a></li>
+      <li><a href="613_uso_del_medio_compartido.html" class="no-ch">6.1.3. Uso del medio compartido</a></li>
+      <li><a href="614_control_de_flujo.html" class="no-ch">6.1.4. Control de flujo</a></li>
+      <li><a href="615_control_de_errores.html" class="no-ch">6.1.5. Control de errores</a></li>
+   </ul>
+   </li>
+   <li><a href="62_estndares.html" class="daddy">6.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="621_ethernet_ieee_8023.html" class="no-ch">6.2.1. Ethernet (IEEE 802.3)</a></li>
+      <li><a href="622_poe_power_over_ethernet.html" class="no-ch">6.2.2. PoE (Power over Ethernet)</a></li>
+      <li><a href="623_punto_a_punto.html" class="no-ch">6.2.3. Punto a punto</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="63_dispositivos.html" class="current-page-parent daddy">6.3. Dispositivos</a>
+   <ul>
+      <li><a href="631_dominios.html" class="no-ch">6.3.1. Dominios</a></li>
+      <li><a href="632_adaptadores_de_red.html" class="no-ch">6.3.2. Adaptadores de red</a></li>
+      <li><a href="633_puentes.html" class="no-ch">6.3.3. Puentes</a></li>
+      <li id="active"><a href="634_switches.html" class="active no-ch">6.3.4. Switches</a></li>
+      <li><a href="635_distribucin.html" class="no-ch">6.3.5. Distribución</a></li>
+      <li><a href="636_cableado_entre_dispositivos.html" class="no-ch">6.3.6. Cableado entre dispositivos</a></li>
+      <li><a href="637_otras_caractersticas_de_los_switches.html" class="no-ch">6.3.7. Otras características de los switches</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="633_puentes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="635_distribucin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.3.4. Switches</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id13">
+<div class="iDevice emphasis0" >
+<div id="ta13_132_2" class="block iDevice_content">
+<div class="exe-text"><p>Un <strong>conmutador</strong> o <strong>switch</strong> es un dispositivo digital lógico de interconexión de redes de computadoras que opera en la capa de enlace de datos del modelo OSI. Su función es interconectar dos o más segmentos de red, de manera similar a los puentes de red, pasando datos de un segmento a otro de acuerdo con la dirección MAC de destino de las tramas en la red.</p>
+<p>Un conmutador en el centro de una red en estrella.</p>
+<p>Los conmutadores se utilizan cuando se desea conectar múltiples redes, fusionándolas en una sola. Al igual que los puentes, dado que funcionan como un filtro en la red, mejoran el rendimiento y la seguridad de las redes de área local.</p>
+<p>Tipos:</p>
+<ul class="simple">
+<li>compacto</li>
+<li>de configuración modular</li>
+<li>apilable</li>
+<li>multicapa (multilayer)</li>
+<li>gestionable</li>
+</ul>
+<div class="section" id="switch-compacto">
+<h3>6.3.4.1. Switch compacto<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#switch-compacto" title="Enlazar permanentemente con este título"></a></h3>
+<p>Estos switches de configuración fija son los que más comúnmente estamos acostumbrados a ver en las redes locales y cibercafés, en las cuales los switches sólo soportan una tecnología y cuyas características no podemos cambiar, es decir, si compramos un switch de 24 puertos FastEthernet no podremos agregarle mas puertos.</p>
+<div class="figure"><img alt="../_images/tema06-120.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-120.png" /></div>
+<p>Para unir 2 switches en cascada existen dos posibilidades:</p>
+<ul class="simple">
+<li><strong>Uplink</strong></li>
+<li>MDI/<strong>MDIX</strong> (Auto Cross)</li>
+</ul>
+<p>Antiguamente se usaban puertos UPLINK para unir dos hubs o dos switches, usándose cables cruzados para ello. Por ejemplo, en un switch de 6 puertos, el puerto 6 solía ser uplink.</p>
+<p>La forma de conexión se muestra a continuación:</p>
+<div class="figure"><img alt="../_images/tema06-121.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-121.png" /></div>
+<p>Los switches más avanzados soportan MDIX, lo cual permite utilizar un cable directo para conectar 2 switches entre sí utilizando cualquier puerto. El propio switch detecta el tipo de conexión (Auto Cross), que es equivalente a usar un cable crossover (568A ↔ 568B).</p>
+<p>Los puertos estándar para las estaciones terminales se conocen como MDI (Media Dependent Interface ), y los puertos estándar para los concentradores y conmutadores se conoce como MDIX (Media Dependent Interface Crossover) .</p>
+<p>En los concentradores (hubs) y conmutadores (switches) las interfaces MDI se usan para conectar a otros hubs o switches sin el cable de red cruzado (que sería lo habitual) y se conocen como puertos MDI o puertos uplink. Estas interfaces son especiales y normalmente pueden ser configuradas manualmente o por software para que se comporten como MDI o MDIX. Existen interfaces que cambian su estado de MDI a MDIX automáticamente.</p>
+</div>
+<div class="section" id="switch-de-configuracion-modular">
+<h3>6.3.4.2. Switch de configuración modular<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#switch-de-configuracion-modular" title="Enlazar permanentemente con este título"></a></h3>
+<p>Estos switches están diseñados con ranuras que permiten insertar tarjetas en linea que le proporcionan nuevas funcionalidades, de tal forma que es posible agregar mas puertos Fast Ethernet, Modems o puertos de conexión Gigabit Ethernet, claro está que el switch en cuestión solo soporta un número y modelos determinados de tarjetas.</p>
+<div class="figure"><img alt="../_images/tema06-122.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-122.png" /></div>
+<div class="figure" id="id1"><img alt="../_images/tema06-123.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-123.png" />
+<p class="caption"><span class="caption-text">Módulos de switch</span></p>
+</div>
+<div class="figure" id="id2"><img alt="../_images/tema06-124.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-124.png" />
+<p class="caption"><span class="caption-text">Módulos de switch más actuales</span></p>
+</div>
+<p><strong>Transceptores SFP</strong></p>
+<p>Un transceptor es un dispositivo que cuenta con <strong>un transmisor y un receptor</strong> que comparten parte de la circuitería o se encuentran dentro de la misma caja.</p>
+<p>El módulo de factor de forma pequeño (SFP: <strong>Small Form-factor Pluggable</strong>) es un transceptor (en inglés transceiver) modular óptico de intercambio dinámico para conectar dos equipos de telecomunicaciones, normalmente switches o routers…</p>
+<div class="figure" id="id3"><img alt="../_images/tema06-125.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-125.png" />
+<p class="caption"><span class="caption-text">Transceptores SFP - Esquema</span></p>
+</div>
+<div class="figure" id="id4"><img alt="../_images/tema06-126.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-126.png" />
+<p class="caption"><span class="caption-text">Transceptores SFP - Foto</span></p>
+</div>
+<p>Los módulos <strong>SFP</strong> fueron desarrollados para velocidades de <strong>1 Gbit/s</strong>. No todos son ópticos (los hay de cobre) y los hay de muchos más tipos que 1000BaseSX ó 1000BaseLX (como por ejemplo, hay SFP de 1000BaseT, 1000BaseZX, SONET/SDH).</p>
+<p>El transceptor SFP no ha sido estandarizado por ningún organismo de normalización oficial, sino que se especifica mediante un acuerdo multi-fuente entre fabricantes competidores. SFP fue diseñado después de la interfaz GBIC, y permite una mayor densidad de puertos (número de transceptores por cm a lo largo del borde de una placa) que el GBIC, que es la razón por la SFP también se conoce como mini-GBIC.</p>
+<p>La versión mejorada de Small Form Factor Pluggable (<strong>SFP+</strong>) admite velocidades de datos de hasta <strong>10 Gbit/s</strong>. La especificación SFP+ se publicó el 9 de mayo de 2006, y la versión 4.1 fue publicada el 6 de julio de 2009. SFP+ soporta 10 Gigabit Ethernet y 8 Gbit/s en redes Fibre Channel (usadas comúnmente en redes Storage Area Networks (SAN)). Es un formato popular de la industria con el apoyo de muchos fabricantes de componentes de red.</p>
+<p><strong>Transceptores CFP</strong></p>
+<div class="figure" id="id5"><img alt="../_images/tema06-127.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-127.png" />
+<p class="caption"><span class="caption-text">Transceptores CFP - Foto</span></p>
+</div>
+<p>El módulo de factor de forma C (<strong>CFP: C Form-factor Pluggable</strong>) es un transceptor para la transmisión de señales digitales de alta velocidad. La C indica la letra latina C para expresar el número 100 (centum), ya que el estándar fue desarrollado principalmente para sistemas Ethernet 100 Gigabit.</p>
+<p>El transceptor CFP se especifica mediante un acuerdo multi-fuente entre fabricantes competidores. El CFP fue diseñado posteriormente a la interface SFP, pero es significativamente más rápido para soportar <strong>40 y 100 Gbit/s</strong>.</p>
+</div>
+<div class="section" id="switch-apilable">
+<h3>6.3.4.3. Switch apilable<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#switch-apilable" title="Enlazar permanentemente con este título"></a></h3>
+<p>A esta configuración de switch se les conoce como en stack o stackwise. Se trata de conectar con cables de alta velocidad varios switches, el objetivo es obtener tolerancia a fallos, ofreciendo una configuración redundante.</p>
+<div class="figure" id="id6"><img alt="../_images/tema06-128.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-128.png" />
+<p class="caption"><span class="caption-text">Cisco Catalyst 3750-X frontal y trasero</span></p>
+</div>
+<p>Un grupo de switches (stack) puede apilarse (uniéndolos con enlaces de alta velocidad) y comportarse como un único switch con la capacidad de puertos de la suma de todos ellos. Por ejemplo 12 swiches de 48 puertos cada uno, equivalen a un switch de 576 puertos.</p>
+<p>Los enlaces que unen los switch del stack pueden alcanzar los 20 Gbps.</p>
+<div class="figure" id="id7"><img alt="../_images/tema06-129.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-129.png" />
+<p class="caption"><span class="caption-text">Switch apilable (Maestro y Backup)</span></p>
+</div>
+<p>Dentro de la pila (stack) existe un switch maestro y otro de respaldo (backup). El switch Master y el Backup se sincronizan constantemente para tener la misma configuración Si el Master falla, el Backup se convierte en el nuevo Master y otro switch del stack toma el rol de Backup.</p>
+</div>
+<div class="section" id="switch-multicapa-multilayer">
+<h3>6.3.4.4. Switch multicapa (multilayer)<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#switch-multicapa-multilayer" title="Enlazar permanentemente con este título"></a></h3>
+<p>Son los conmutadores que, además de las funciones tradicionales de la capa 2, incorporan algunas funciones de enrutamiento o routing, como por ejemplo la determinación del camino basado en informaciones de capa de red (capa 3 del modelo OSI), validación de la integridad del cableado de la capa 3 por checksum y soporte a los protocolos de routing tradicionales (RIP, OSPF, etc)</p>
+<p>Los conmutadores de capa 3 (Layer 3) soportan también la definición de redes virtuales (VLAN), y según modelos posibilitan la comunicación entre las diversas VLAN sin la necesidad de utilizar un router externo.</p>
+<p>Por permitir la unión de segmentos de diferentes dominios de difusión o broadcast, los switches de capa 3 son particularmente recomendados para la segmentación de redes LAN muy grandes, donde la simple utilización de switches de capa 2 provocaría una pérdida de rendimiento y eficiencia de la LAN, debido a la cantidad excesiva de broadcasts.</p>
+<p>Se puede afirmar que la implementación típica de un switch de capa 3 es más escalable que un enrutador, pues éste último utiliza las técnicas de enrutamiento a nivel 3 y enrutamiento a nivel 2 como complementos, mientras que los switches sobreponen la función de enrutamiento encima del encaminamiento, aplicando el primero donde sea necesario.</p>
+<p>Asimismo existen en el mercado algunos switches denominados Layer 3+ (Layer 3 Plus). Básicamente, incorporan a las funcionalidades de un conmutador de la capa 3; la habilidad de implementar la políticas y filtros a partir de informaciones de la capa 4 o superiores, como puertos TCP/UDP, SNMP, FTP, etc.</p>
+<p>El icono utilizado para un switch multicapa es el siguiente:</p>
+<div class="figure"><img alt="../_images/tema06-130.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-130.png" /></div>
+</div>
+<div class="section" id="switch-gestionable">
+<h3>6.3.4.5. Switch gestionable<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#switch-gestionable" title="Enlazar permanentemente con este título"></a></h3>
+<p>Los switches multicapa (L3 o superiores) soportan la administración a través de red. Se accede a ellos a través de una dirección IP mediante servicios telnet, ssh o incluso web. Permiten la administración de diversos parámetros como pueden ser la creación y gestión de VLANs, el soporte de STP o RSTP, agregación de puertos (trunk), etc.</p>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="633_puentes.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="635_distribucin.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

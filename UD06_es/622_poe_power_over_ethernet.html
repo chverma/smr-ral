@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.2.2. PoE (Power over Ethernet) </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-10"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">6. La capa de enlace</a></li>
+   <li><a href="61_conceptos_generales.html" class="daddy">6.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="611_delimitacin_de_trama.html" class="no-ch">6.1.1. Delimitación de trama</a></li>
+      <li><a href="612_segmentacin_y_bloque.html" class="no-ch">6.1.2. Segmentación y bloque</a></li>
+      <li><a href="613_uso_del_medio_compartido.html" class="no-ch">6.1.3. Uso del medio compartido</a></li>
+      <li><a href="614_control_de_flujo.html" class="no-ch">6.1.4. Control de flujo</a></li>
+      <li><a href="615_control_de_errores.html" class="no-ch">6.1.5. Control de errores</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="62_estndares.html" class="current-page-parent daddy">6.2. Estándares</a>
+   <ul>
+      <li><a href="621_ethernet_ieee_8023.html" class="no-ch">6.2.1. Ethernet (IEEE 802.3)</a></li>
+      <li id="active"><a href="622_poe_power_over_ethernet.html" class="active no-ch">6.2.2. PoE (Power over Ethernet)</a></li>
+      <li><a href="623_punto_a_punto.html" class="no-ch">6.2.3. Punto a punto</a></li>
+   </ul>
+   </li>
+   <li><a href="63_dispositivos.html" class="daddy">6.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="631_dominios.html" class="no-ch">6.3.1. Dominios</a></li>
+      <li><a href="632_adaptadores_de_red.html" class="no-ch">6.3.2. Adaptadores de red</a></li>
+      <li><a href="633_puentes.html" class="no-ch">6.3.3. Puentes</a></li>
+      <li><a href="634_switches.html" class="no-ch">6.3.4. Switches</a></li>
+      <li><a href="635_distribucin.html" class="no-ch">6.3.5. Distribución</a></li>
+      <li><a href="636_cableado_entre_dispositivos.html" class="no-ch">6.3.6. Cableado entre dispositivos</a></li>
+      <li><a href="637_otras_caractersticas_de_los_switches.html" class="no-ch">6.3.7. Otras características de los switches</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="621_ethernet_ieee_8023.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="623_punto_a_punto.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.2.2. PoE (Power over Ethernet)</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id8">
+<div class="iDevice emphasis0" >
+<div id="ta8_127_2" class="block iDevice_content">
+<div class="exe-text"><p>La <strong>alimentación a través de Ethernet (Power over Ethernet, PoE)</strong> es una tecnología que incorpora alimentación eléctrica a una infraestructura LAN estándar. Permite que la alimentación eléctrica se suministre a un dispositivo de red (switch, punto de acceso, router, teléfono o cámara IP, etc) usando el mismo cable que se utiliza para la conexión de red. Elimina la necesidad de utilizar tomas de corriente en las ubicaciones del dispositivo alimentado y permite una aplicación más sencilla de los sistemas de alimentación ininterrumpida (SAI) para garantizar un funcionamiento las 24 horas del día, 7 días a la semana.</p>
+<p>Power over Ethernet se regula en la norma <strong>IEEE 802.3af</strong>, y está diseñado de manera que no haga disminuir el rendimiento de comunicación de los datos en la red o reducir el alcance de la red. La corriente suministrada a través de la infraestructura LAN se activa de forma automática cuando se identifica un terminal compatible y se bloquea ante dispositivos preexistentes que no sean compatibles. Esta característica permite a los usuarios mezclar en la red con total libertad y seguridad dispositivos preexistentes con dispositivos compatibles con PoE.</p>
+<p>Actualmente existen en el mercado varios dispositivos de red como switches o hubs que soportan esta tecnología. Para implementar PoE en una red que no se dispone de dispositivos que la soporten directamente se usa una unidad base (con conectores RJ45 de entrada y de salida) con un adaptador de alimentación para recoger la electricidad y una unidad terminal (también con conectores RJ45) con un cable de alimentación para que el dispositivo final obtenga la energía necesaria para su funcionamiento.</p>
+<p><strong>Ventajas</strong></p>
+<ul class="simple">
+<li>PoE es una fuente de alimentación inteligente: Los dispositivos se pueden apagar o reiniciar desde un lugar remoto usando los protocolos existentes, como el Protocolo simple de administración de redes (SNMP, Simple Network Management Protocol).</li>
+<li>PoE simplifica y abarata la creación de un suministro eléctrico altamente robusto para los sistemas: La centralización de la alimentación a través de concentradores (hubs) PoE significa que los sistemas basados en PoE se pueden enchufar al Sistema de alimentación ininterrumpida (SAI) central, que ya se emplea en la mayor parte de las redes informáticas formadas por más de uno o dos PC, y en caso de corte de electricidad, podrá seguir funcionando sin problemas.</li>
+<li>Los dispositivos se instalan fácilmente allí donde pueda colocarse un cable LAN, y no existen las limitaciones debidas a la proximidad de una base de alimentación (dependiendo la longitud del cable se deberá utilizar una fuente de alimentación de mayor voltaje debido a la caída del mismo, a mayor longitud mayor perdida de voltaje, superando los 25 metros de cableado aproximadamente).</li>
+<li>Un único juego de cables para conectar el dispositivo Ethernet y suministrarle alimentación, lo que simplifica la instalación y ahorra espacio.</li>
+<li>La instalación no supone gasto de tiempo ni de dinero ya que no es necesario realizar un nuevo cableado.</li>
+<li>PoE dificulta enormemente cortar o destrozar el cableado: Generalmente el cableado se encuentra unido a bandejas en los huecos del techo o detrás de conductos de plástico de muy difícil acceso. Cualquier corte de estos cables resultará obvio al momento para quien pase por el lugar y, por supuesto, para los usuarios de los ordenadores que serán incapaces de proseguir con su trabajo.</li>
+</ul>
+<p><strong>Desventajas</strong></p>
+<ul class="simple">
+<li>Ausencia de estándares tecnológicos para la interoperabilidad de equipos.</li>
+<li>Para poder usar <strong>PoE</strong>, todos los dispositivos de Red (Hub/Switch, Cámaras IP, Puntos de Acceso,…) deben ser compatibles con esta norma.</li>
+</ul>
+<p>El estándar original IEEE 802.3af-2003 de PoE proporciona hasta <strong>15,4 W</strong> de potencia de CC (mínimo 44 V DC y 350 mA) para cada dispositivo. Sólo se aseguran 12,95 W en el dispositivo puesto que cierta energía se disipa en el cable.</p>
+<p>El estandar actualizado IEEE 802.3af-2009 de PoE también conocido como <strong>PoE+</strong> o PoE plus, proporciona hasta <strong>25,5 W</strong> de potencia. Algunos vendedores han anunciado productos que dicen ser compatibles con el estándar 802.3af y ofrecen hasta 51 W de potencia en un solo cable utilizando los cuatro pares del cable de categoría 5.</p>
+<p><strong>Comparativa PoE y PoE+</strong></p>
+<div class="wy-table-responsive">
+<table class="docutils" border="1"><colgroup> <col width="38%" /> <col width="30%" /> <col width="32%" /> </colgroup>
+<thead valign="bottom">
+<tr class="row-odd">
+<th class="head">Propiedad</th>
+<th class="head">802.3af (802.3at Tipo1)</th>
+<th class="head">802.3at Tipo 2</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even">
+<td>Potencia en el origen</td>
+<td>15.40 W</td>
+<td>34.20 W</td>
+</tr>
+<tr class="row-odd">
+<td>Potencia para dispositivo final</td>
+<td>12.95 W</td>
+<td>25.50 W</td>
+</tr>
+<tr class="row-even">
+<td>Voltaje en el origen</td>
+<td>44.0–57.0 V</td>
+<td>50.0–57.0 V</td>
+</tr>
+<tr class="row-odd">
+<td>Voltaje para el dispositivo final</td>
+<td>37.0–57.0 V</td>
+<td>42.5–57.0 V</td>
+</tr>
+<tr class="row-even">
+<td>Intensidad máxima</td>
+<td>350 mA</td>
+<td>600 mA</td>
+</tr>
+<tr class="row-odd">
+<td>Resistencia máxima del cable</td>
+<td>20 Ω (Categoría 3)</td>
+<td>12.5 Ω (Categoría 5)</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="621_ethernet_ieee_8023.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="623_punto_a_punto.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

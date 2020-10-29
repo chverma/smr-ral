@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>10.4.5. Cortafuegos y Proxy-caché en un sólo equipo </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-13"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">10. La capa de transporte</a></li>
+   <li><a href="101_conceptos_generales.html" class="daddy">10.1. Conceptos generales</a>
+   <ul class="other-section">
+      <li><a href="1011_puertos.html" class="no-ch">10.1.1. Puertos</a></li>
+   </ul>
+   </li>
+   <li><a href="102_estndares.html" class="daddy">10.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="1021_protocolo_udp.html" class="no-ch">10.2.1. Protocolo UDP</a></li>
+      <li><a href="1022_protocolo_tcp.html" class="no-ch">10.2.2. Protocolo TCP</a></li>
+   </ul>
+   </li>
+   <li><a href="103_tcnicas.html" class="daddy">10.3. Técnicas</a>
+   <ul class="other-section">
+      <li><a href="1031_nat_network_address_translation.html" class="no-ch">10.3.1. NAT (Network Address Translation)</a></li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="104_herramientas.html" class="current-page-parent daddy">10.4. Herramientas</a>
+   <ul>
+      <li><a href="1041_netstat.html" class="no-ch">10.4.1. netstat</a></li>
+      <li><a href="1042_nmap.html" class="no-ch">10.4.2. nmap</a></li>
+      <li><a href="1043_cortafuegos.html" class="no-ch">10.4.3. Cortafuegos</a></li>
+      <li><a href="1044_proxycach.html" class="no-ch">10.4.4. Proxy-caché</a></li>
+      <li id="active"><a href="1045_cortafuegos_y_proxycach_en_un_slo_equipo.html" class="active no-ch">10.4.5. Cortafuegos y Proxy-caché en un sólo equipo</a></li>
+      <li><a href="1046_balanceadores_de_carga_de_red.html" class="no-ch">10.4.6. Balanceadores de carga de red</a></li>
+      <li><a href="1047_vpn.html" class="no-ch">10.4.7. VPN</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="1044_proxycach.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1046_balanceadores_de_carga_de_red.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">10.4.5. Cortafuegos y Proxy-caché en un sólo equipo</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id10">
+<div class="iDevice emphasis0" >
+<div id="ta10_175_2" class="block iDevice_content">
+<div class="exe-text"><div class="section" id="proxies-transparentes">
+<h3>10.4.5.1. Proxies transparentes<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema11/Teoria.html#proxies-transparentes" title="Enlazar permanentemente con este título"></a></h3>
+<p>Muchas organizaciones (incluyendo empresas, colegios y familias) usan los proxies para reforzar las políticas de uso de la red o para proporcionar seguridad y servicios de caché. Normalmente, un proxy Web o NAT no es transparente a la aplicación cliente: debe ser configurada para usar el proxy, manualmente. Por lo tanto, el usuario puede evadir el proxy cambiando simplemente la configuración.</p>
+<div class="figure" id="id10"><img alt="../_images/tema11-030.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-030.png" />
+<p class="caption"><span class="caption-text">Configuración de proxy en Firefox</span></p>
+</div>
+<div class="figure" id="id11"><img alt="../_images/tema11-031.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-031.png" />
+<p class="caption"><span class="caption-text">Configuración de proxy en Internet Explorer</span></p>
+</div>
+<p><strong>Un proxy transparente combina un servidor proxy con un cortafuegos de manera que las conexiones son interceptadas y desviadas hacia el proxy sin necesidad de configuración en el cliente, y habitualmente sin que el propio usuario conozca de su existencia</strong>.</p>
+<p>Además, suele ser frecuente en el proxy-caché la instalación de un servicio de control de acceso a la web y algún antivirus de red. El control de acceso a la web normalmente se implementa mediante algún tipo de software de <strong>filtrado por contenido</strong> (además de URL e IP, puede bloquear accesos a páginas web según el contenido de estás (palabras desagradables, obscenas o similares e incluso por imágenes -aunque esté último método suele dar peores resultados-). Un software libre muy utilizado para ello es <strong>Dansguardian</strong> y sus listas negras asociadas.</p>
+<div class="figure" id="id12"><img alt="../_images/tema11-032.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema11-032.png" />
+<p class="caption"><span class="caption-text">Squid + Dansguardian.png</span></p>
+</div>
+<p>A continuación se muestra un ejemplo de script Linux para cortafuegos con reglas activadas para habilitar un proxy-transparente. Básicamente lo que hace es dirigir todas las petición a puertos destino 80 (web), 3128 (cliente despistado con configuración manual de proxy) y algunos otros puertos que nos interesen al puerto 8080 (dansguardian) donde tenemos el filtro de contenido.</p>
+<div class="highlight-bash notranslate">
+<div class="highlight">
+<pre><span></span><span class="ch">#!/bin/sh</span>
+<span class="c1">### BEGIN INIT INFO</span>
+<span class="c1"># Provides:          cortafuegos</span>
+<span class="c1"># Required-Start:    balanceo-de-carga</span>
+<span class="c1"># Required-Stop:</span>
+<span class="c1"># Should-Start:</span>
+<span class="c1"># Default-Start:     2 3 4 5</span>
+<span class="c1"># Default-Stop:      0 1 6</span>
+<span class="c1"># Short-Description: Cortafuegos para IES Guadalpeña - Dpto. Informática</span>
+<span class="c1"># Description:       Cortafuegos contiene las reglas de iptables que se aplicarán</span>
+<span class="c1">#                    después de la configuración del soporte de red o networking</span>
+<span class="c1">#                    y del balanceo de carga (si está habilitado).</span>
+<span class="c1">#                    Proporciona redirección de puertos en el canal PREROUTING</span>
+<span class="c1">#                    para dar soporte a un proxy transparente.</span>
+<span class="c1">### END INIT INFO</span>
+
+
+<span class="c1"># Variables generales</span>
+<span class="nv">PATH</span><span class="o">=</span>/sbin:/usr/sbin:/bin:/usr/bin
+<span class="nv">NAME</span><span class="o">=</span>cortafuegos
+<span class="nv">PIDFILE</span><span class="o">=</span>/var/run/<span class="nv">$NAME</span>.pid
+
+<span class="c1"># Variables de red</span>
+<span class="nv">IF_ADSL1</span><span class="o">=</span><span class="s2">"p1p1"</span>            <span class="c1"># Interface conectada a ADSL1</span>
+<span class="nv">IF_ADSL2</span><span class="o">=</span><span class="s2">"p4p1"</span>            <span class="c1"># Interface conectada a ADSL2</span>
+<span class="nv">IF_LOCAL</span><span class="o">=</span><span class="s2">"p2p1"</span>            <span class="c1"># Interface conectada a la LAN</span>
+<span class="nv">IP_ADSL1</span><span class="o">=</span><span class="s2">"192.168.1.2"</span>     <span class="c1"># IP de la IF_ADSL1</span>
+<span class="nv">IP_ADSL2</span><span class="o">=</span><span class="s2">"192.168.2.2"</span>     <span class="c1"># IP de la IF_ADLS2</span>
+<span class="nv">IP_LOCAL</span><span class="o">=</span><span class="s2">"10.0.0.1"</span>        <span class="c1"># IP de la IF_LOCAL, Gateway Local</span>
+<span class="nv">NET_ADSL1</span><span class="o">=</span><span class="s2">"192.168.1.0/24"</span> <span class="c1"># Red para IF_ADSL1</span>
+<span class="nv">NET_ADSL2</span><span class="o">=</span><span class="s2">"192.168.2.0/24"</span> <span class="c1"># Red para IF_ADLS2</span>
+<span class="nv">NET_LOCAL</span><span class="o">=</span><span class="s2">"10.0.0.0/8"</span>     <span class="c1"># Red para IF_LOCAL</span>
+<span class="nv">GW_ADSL1</span><span class="o">=</span><span class="s2">"192.168.1.1"</span>     <span class="c1"># Gateway para ADSL1</span>
+<span class="nv">GW_ADSL2</span><span class="o">=</span><span class="s2">"192.168.2.1"</span>     <span class="c1"># Gateway para ADSL2</span>
+
+
+<span class="c1">###### START</span>
+do_start <span class="o">()</span> <span class="o">{</span>
+  <span class="c1"># Reglas de iptables</span>
+  <span class="nb">echo</span> <span class="s2">"Limpiando Reglas Anteriores..."</span>
+  iptables -F
+  iptables -X
+  iptables -Z
+  iptables -t nat -F
+  iptables -t mangle -F
+
+  <span class="c1"># Ahora hago el NAT</span>
+  <span class="nb">echo</span> <span class="s2">"Activando NAT ..."</span>
+  <span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/net/ipv4/ip_forward
+  <span class="c1"># iptables -t nat -A POSTROUTING -s ${NET_LOCAL} -o ${IF_ADSL1} -j MASQUERADE</span>
+  <span class="c1"># iptables -t nat -A POSTROUTING -s ${NET_LOCAL} -o ${IF_ADSL2} -j MASQUERADE</span>
+  iptables -t nat -A POSTROUTING -o <span class="si">${</span><span class="nv">IF_ADSL1</span><span class="si">}</span> -j SNAT --to-source <span class="si">${</span><span class="nv">IP_ADSL1</span><span class="si">}</span>
+  iptables -t nat -A POSTROUTING -o <span class="si">${</span><span class="nv">IF_ADSL2</span><span class="si">}</span> -j SNAT --to-source <span class="si">${</span><span class="nv">IP_ADSL2</span><span class="si">}</span>
+
+  <span class="c1"># Redirecciono al Proxy</span>
+  <span class="nb">echo</span> <span class="s2">"Creando reglas para proxy transparente..."</span>
+  iptables -t nat -A PREROUTING -i <span class="si">${</span><span class="nv">IF_LOCAL</span><span class="si">}</span> -p tcp --dport http      -j DNAT --to <span class="si">${</span><span class="nv">IP_LOCAL</span><span class="si">}</span><span class="s2">":8080"</span>
+  iptables -t nat -A PREROUTING -i <span class="si">${</span><span class="nv">IF_LOCAL</span><span class="si">}</span> -p tcp --dport <span class="m">81</span>        -j DNAT --to <span class="si">${</span><span class="nv">IP_LOCAL</span><span class="si">}</span><span class="s2">":8080"</span>
+  iptables -t nat -A PREROUTING -i <span class="si">${</span><span class="nv">IF_LOCAL</span><span class="si">}</span> -p tcp --dport <span class="m">8080</span>:8099 -j DNAT --to <span class="si">${</span><span class="nv">IP_LOCAL</span><span class="si">}</span><span class="s2">":8080"</span>
+  iptables -t nat -A PREROUTING -i <span class="si">${</span><span class="nv">IF_LOCAL</span><span class="si">}</span> -p tcp --dport <span class="m">3128</span>:3130 -j DNAT --to <span class="si">${</span><span class="nv">IP_LOCAL</span><span class="si">}</span><span class="s2">":8080"</span>
+
+  <span class="c1">#echo "Reglas Aplicadas"</span>
+<span class="o">}</span>
+
+
+<span class="c1">###### STATUS</span>
+do_status <span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">"Listado de Reglas activas"</span>
+  iptables -L -n -v
+  iptables -t nat -L -n -v
+  iptables -t mangle -L -n -v
+<span class="o">}</span>
+
+
+<span class="c1">###### STOP</span>
+do_stop <span class="o">()</span> <span class="o">{</span>
+  <span class="nb">echo</span> <span class="s2">"Limpiando Reglas anteriores..."</span>
+  iptables -F
+  iptables -X
+  iptables -Z
+  iptables -t nat -F
+  iptables -t mangle -F
+<span class="o">}</span>
+
+
+<span class="k">case</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> in
+  start<span class="p">|</span><span class="s2">""</span><span class="o">)</span>
+        do_start
+        <span class="p">;;</span>
+  restart<span class="o">)</span>
+        do_stop
+        do_start
+        <span class="p">;;</span>
+  reload<span class="p">|</span>force-reload<span class="o">)</span>
+        <span class="nb">echo</span> <span class="s2">"Error: el argumento '</span><span class="nv">$1</span><span class="s2">' no está soportado"</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+        <span class="nb">exit</span> <span class="m">3</span>
+        <span class="p">;;</span>
+  stop<span class="o">)</span>
+        do_stop
+        <span class="p">;;</span>
+  status<span class="o">)</span>
+        do_status
+        <span class="p">;;</span>
+  *<span class="o">)</span>
+        <span class="nb">echo</span> <span class="s2">"Uso: cortafuegos [start|stop|restart|status]"</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+        <span class="nb">exit</span> <span class="m">3</span>
+        <span class="p">;;</span>
+<span class="k">esac</span>
+:
+</pre>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="1044_proxycach.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="1046_balanceadores_de_carga_de_red.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>

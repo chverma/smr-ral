@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>6.1.1. Delimitación de trama </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.5 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+<body class="exe-web-site" id="exe-node-4"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<section id="emptyHeader"></section>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">6. La capa de enlace</a></li>
+   <li class="current-page-parent"><a href="61_conceptos_generales.html" class="current-page-parent daddy">6.1. Conceptos generales</a>
+   <ul>
+      <li id="active"><a href="611_delimitacin_de_trama.html" class="active no-ch">6.1.1. Delimitación de trama</a></li>
+      <li><a href="612_segmentacin_y_bloque.html" class="no-ch">6.1.2. Segmentación y bloque</a></li>
+      <li><a href="613_uso_del_medio_compartido.html" class="no-ch">6.1.3. Uso del medio compartido</a></li>
+      <li><a href="614_control_de_flujo.html" class="no-ch">6.1.4. Control de flujo</a></li>
+      <li><a href="615_control_de_errores.html" class="no-ch">6.1.5. Control de errores</a></li>
+   </ul>
+   </li>
+   <li><a href="62_estndares.html" class="daddy">6.2. Estándares</a>
+   <ul class="other-section">
+      <li><a href="621_ethernet_ieee_8023.html" class="no-ch">6.2.1. Ethernet (IEEE 802.3)</a></li>
+      <li><a href="622_poe_power_over_ethernet.html" class="no-ch">6.2.2. PoE (Power over Ethernet)</a></li>
+      <li><a href="623_punto_a_punto.html" class="no-ch">6.2.3. Punto a punto</a></li>
+   </ul>
+   </li>
+   <li><a href="63_dispositivos.html" class="daddy">6.3. Dispositivos</a>
+   <ul class="other-section">
+      <li><a href="631_dominios.html" class="no-ch">6.3.1. Dominios</a></li>
+      <li><a href="632_adaptadores_de_red.html" class="no-ch">6.3.2. Adaptadores de red</a></li>
+      <li><a href="633_puentes.html" class="no-ch">6.3.3. Puentes</a></li>
+      <li><a href="634_switches.html" class="no-ch">6.3.4. Switches</a></li>
+      <li><a href="635_distribucin.html" class="no-ch">6.3.5. Distribución</a></li>
+      <li><a href="636_cableado_entre_dispositivos.html" class="no-ch">6.3.6. Cableado entre dispositivos</a></li>
+      <li><a href="637_otras_caractersticas_de_los_switches.html" class="no-ch">6.3.7. Otras características de los switches</a></li>
+   </ul>
+   </li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="61_conceptos_generales.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="612_segmentacin_y_bloque.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">6.1.1. Delimitación de trama</h1></header>
+<article class="iDevice_wrapper textIdevice" id="id1">
+<div class="iDevice emphasis0" >
+<div id="ta1_120_2" class="block iDevice_content">
+<div class="exe-text"><div class="section" id="trama-de-802-3-ethernet">
+<h3>6.1.1.1. Trama de 802.3 Ethernet<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#trama-de-802-3-ethernet" title="Enlazar permanentemente con este título"></a></h3>
+<div class="figure"><img alt="../_images/tema06-003.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-003.png" /></div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">Al final de la trama hay un intervalo llamado IFG de 12 bytes que no se utiliza, se explica más adelante.</p>
+</div>
+<p><strong>Campos de la trama:</strong></p>
+<ul>
+<li>
+<p class="first"><strong>Preámbulo</strong>: Sincronización bit «10101010» (x7).</p>
+</li>
+<li>
+<p class="first"><strong>SDF</strong>: Delimitador de comienzo de trama «10101011».</p>
+</li>
+<li>
+<p class="first"><strong>Direcciones MAC origen y destino</strong>:</p>
+<ul class="simple">
+<li>Notación (por ejemplo): F2:3E:C1:8A:B1:01</li>
+<li>OUI: Identificador organización.(3 bytes primeros)</li>
+<li>NIC: Id. Tarjeta interfaz de Red. (3 bytes últimos)</li>
+<li>Dirección de difusión (broadcast) FF:FF:FF:FF:FF:FF. Este tipo de dirección se utiliza para que todos los equipos conectados en el mismo dominio de difusión recojan la trama.</li>
+</ul>
+</li>
+<li>
+<p class="first"><strong>Etiqueta</strong>: es un campo opcional que indica la pertenencia a una VLAN o prioridad en IEEE P802.1p.</p>
+</li>
+<li>
+<p class="first"><strong>Longitud</strong> (Valores &lt; 1536).</p>
+</li>
+<li>
+<p class="first"><strong>Datos + Relleno</strong>:</p>
+<ul class="simple">
+<li>Trama mínima de 64 bytes (512 bits -&gt; 51,2 μs).</li>
+<li>Como Tx ≥ 2Tp: Datos+Relleno ≥ 46 bytes.</li>
+</ul>
+</li>
+<li>
+<p class="first"><strong>FCS</strong> (Frame Check Sequence) -&gt; CRC (CRC, Cyclic Redundancy Check):</p>
+<p>Secuencia de chequeo de trama. Es un CRC de un polinomio generador de orden 33:</p>
+<p>x32+x26+x23+x22+x16+x12+x11+x10+x8+x7+x5+x4+x2+x+1</p>
+</li>
+</ul>
+<p><strong>Espacio mínimo entre tramas:</strong></p>
+<ul class="simple">
+<li><strong>IFG</strong>: «Inter-frame Gap» -&gt; 12 bytes (96 bits) es un intervalo de espera que se realiza siempre antes de empezar a transmitir aún si el medio está libre.</li>
+</ul>
+</div>
+<div class="section" id="crc">
+<h3>6.1.1.2. CRC<a class="headerlink" href="https://planificacionadministracionredes.readthedocs.io/es/latest/Tema06/Teoria.html#crc" title="Enlazar permanentemente con este título"></a></h3>
+<p>La <strong>comprobación de redundancia cíclica</strong> (CRC) es un código de detección de errores usado frecuentemente en redes digitales y en dispositivos de almacenamiento para detectar cambios accidentales en los datos. Los bloques de datos ingresados en estos sistemas contiene un valor de verificación adjunto, basado en el residuo de una división de polinomios; el cálculo es repetido en el destino, y la acción de corrección puede tomarse en caso de que el valor de verificación no concuerde; por lo tanto se puede afirmar que este código es un tipo de función que recibe un flujo de datos de cualquier longitud como entrada y devuelve un valor de longitud fija como salida. El término suele ser usado para designar tanto a la función como a su resultado. Pueden ser usadas como suma de verificación para detectar la alteración de datos durante su transmisión o almacenamiento. Las CRC son populares porque su implementación en hardware binario es simple, son fáciles de analizar matemáticamente y son particularmente efectivas para detectar errores ocasionados por ruido en los canales de transmisión.</p>
+<p>Ejemplo:</p>
+<ul class="simple">
+<li>Información a transmitir: 10110101101</li>
+<li>Polinomio generador: 10011</li>
+</ul>
+<div class="figure"><img alt="../_images/tema06-004.png" src="https://planificacionadministracionredes.readthedocs.io/es/latest/_images/tema06-004.png" /></div>
+<ul class="simple">
+<li>Trama transmitida: <code class="docutils literal notranslate"><span class="pre">10110101101</span> <span class="pre">0110</span></code></li>
+<li>Resto (CRC-4): <code class="docutils literal notranslate"><span class="pre">0110</span></code></li>
+</ul>
+</div></div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="61_conceptos_generales.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="612_segmentacin_y_bloque.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_cedec_js.js"></script></body></html>
